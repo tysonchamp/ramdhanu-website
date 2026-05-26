@@ -118,104 +118,16 @@
                            </a>
                         </div>
                         <div class="navbar__menu d-none d-xl-block">
-                           <!-- <ul class="navbar__list">
-                              <li class="navbar__item nav-fade">
-                                 <a href="#">Home</a>
-                              </li>
-                              <li class="navbar__item nav-fade">
-                                 <a href="about-us.html">About Us</a>
-                              </li>
-                              <li class="navbar__item navbar__item--has-children nav-fade">
-                                 <a href="#" aria-label="dropdown menu"
-                                    class="navbar__dropdown-label dropdown-label-alter">Causes</a>
-                                 <ul class="navbar__sub-menu">
-                                    <li>
-                                       <a href="our-causes.html">Our Causes</a>
-                                    </li>
-                                    <li>
-                                       <a href="cause-details.html">Cause Details</a>
-                                    </li>
-                                 </ul>
-                              </li>
-                              <li class="navbar__item navbar__item--has-children nav-fade">
-                                 <a href="#" aria-label="dropdown menu"
-                                    class="navbar__dropdown-label dropdown-label-alter">Pages</a>
-                                 <ul class="navbar__sub-menu">
-                                    <li>
-                                       <a href="faq.html">FAQ</a>
-                                    </li>
-                                    <li>
-                                       <a href="donate-us.html">Donate Us</a>
-                                    </li>
-                                    <li class="navbar__item navbar__item--has-children">
-                                       <a aria-label="dropdown menu"
-                                          class="navbar__dropdown-label navbar__dropdown-label-sub">Events</a>
-                                       <ul class="navbar__sub-menu navbar__sub-menu__nested">
-                                          <li>
-                                             <a href="events.html">Events</a>
-                                          </li>
-                                          <li>
-                                             <a href="event-details.html">Event Details</a>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                    <li class="navbar__item navbar__item--has-children">
-                                       <a aria-label="dropdown menu"
-                                          class="navbar__dropdown-label navbar__dropdown-label-sub">Shop</a>
-                                       <ul class="navbar__sub-menu navbar__sub-menu__nested">
-                                          <li>
-                                             <a href="shop.html">Our Shop</a>
-                                          </li>
-                                          <li>
-                                             <a href="product-details.html">Product Details</a>
-                                          </li>
-                                          <li>
-                                             <a href="cart.html">View Cart</a>
-                                          </li>
-                                          <li>
-                                             <a href="checkout.html">Cehckout</a>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                    <li class="navbar__item navbar__item--has-children">
-                                       <a aria-label="dropdown menu"
-                                          class="navbar__dropdown-label navbar__dropdown-label-sub">Team</a>
-                                       <ul class="navbar__sub-menu navbar__sub-menu__nested">
-                                          <li>
-                                             <a href="our-team.html">Our Teams</a>
-                                          </li>
-                                          <li>
-                                             <a href="team-details.html">Team Details</a>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                    <li>
-                                       <a href="coming-soon.html">Coming Soon</a>
-                                    </li>
-                                    <li>
-                                       <a href="404.html">Error</a>
-                                    </li>
-                                 </ul>
-                              </li>
-                              <li class="navbar__item navbar__item--has-children nav-fade">
-                                 <a href="#" aria-label="dropdown menu"
-                                    class="navbar__dropdown-label dropdown-label-alter">News</a>
-                                 <ul class="navbar__sub-menu">
-                                    <li>
-                                       <a href="blog-list.html">News List View</a>
-                                    </li>
-                                    <li>
-                                       <a href="blog-grid.html">News Grid View</a>
-                                    </li>
-                                    <li>
-                                       <a href="blog-details.html">News Details</a>
-                                    </li>
-                                 </ul>
-                              </li>
-                              <li class="navbar__item nav-fade">
-                                 <a href="contact-us.html">Contact Us</a>
-                              </li>
-                           </ul> -->
+                           <?php
+                           if ( has_nav_menu( 'header_menu' ) ) {
+                               wp_nav_menu( array(
+                                   'theme_location' => 'header_menu',
+                                   'menu_class'     => 'navbar__list',
+                                   'container'      => false,
+                                   'walker'         => new main_menu()
+                               ) );
+                           }
+                           ?>
                         </div>
                         <div class="navbar__options">
                            <div class="navbar__mobile-options ">

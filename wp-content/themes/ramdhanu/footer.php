@@ -58,10 +58,10 @@
                   <div class="col-12 col-md-6 col-xl-2 offset-xl-1">
                      <div class="footer__list" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                         <div class="footer__list-intro">
-                           <h5 class="title-animation">Services</h5>
+                           <h5 class="title-animation">Quick Links</h5>
                         </div>
                         <div class="footer__list-items">
-                           <ul>
+                           <!-- <ul>
                               <li><a href="about-us.html"><i class="fa-solid fa-angles-right"></i>About Us</a>
                               </li>
                               <li><a href="our-causes.html"><i class="fa-solid fa-angles-right"></i>Our
@@ -77,7 +77,17 @@
                               <li><a href="contact-us.html"><i class="fa-solid fa-angles-right"></i>Get A
                                     Quote</a>
                               </li>
-                           </ul>
+                           </ul> -->
+                           <?php
+                           if ( has_nav_menu( 'footer_menu1' ) ) {
+                              wp_nav_menu( array(
+                                 'theme_location' => 'footer_menu1',
+                                 'menu_class'     => '',
+                                 'container'      => false,
+                                 'walker'         => new footer_nav_menu()
+                              ));
+                           }
+                           ?>
                         </div>
                      </div>
                   </div>

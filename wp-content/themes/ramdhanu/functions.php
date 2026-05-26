@@ -204,128 +204,84 @@ endif;
 class main_menu extends Walker_Nav_Menu {
 
 	// add classes to ul sub-menus
-	function start_lvl( &$output, $depth = 0, $args = array() ) {
+	function start_lvl( &$output, $depth = 0, $args = null ) {
 	    // depth dependent classes
 	    $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
-	    $display_depth = ( $depth + 1); // because it counts the first submenu as 0
-	    $classes = array(
-	        'dropdown-menu'
-	    );
-	    $class_names = implode( ' ', $classes );
+	    
+	    $class_names = ($depth == 0) ? 'navbar__sub-menu' : 'navbar__sub-menu navbar__sub-menu__nested';
 	  
 	    // build html
-	    $output .= "\n" . $indent . '<ul role="menu" class="' . $class_names . '">' . "\n";
+	    $output .= "\n" . $indent . '<ul class="' . $class_names . '">' . "\n";
 	}
 	
 	// add main/sub classes to li's and links
-	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-	    static $item_count = 0;
-	    static $total_items = null;
-	    
-	    if ($total_items === null && isset($args->theme_location)) {
-	        $locations = get_nav_menu_locations();
-	        if (isset($locations[$args->theme_location])) {
-	            $menu = wp_get_nav_menu_object($locations[$args->theme_location]);
-	            $menu_items = wp_get_nav_menu_items($menu->term_id);
-	            $total_items = count($menu_items);
-	        }
-	    }
-	    
-	    $item_count++;
-	    global $wp_query;
+	function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
 	    $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
-		$class_names = $value = '';
-		//$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-		$class_names = in_array("current_page_item",$item->classes) ? '' : '';
-		$class_names1 = in_array("current-menu-ancestor",$item->classes) ? '' : '';
-		//$class_names1 = in_array("current_page_item",$item->menu_item_children->classes) ? ' active' : '';
-	    // depth dependent classes
-	    $depth_classes = array(
-	        ( $depth == 0 ? '' : '' ),$class_names,$class_names1
-	    );
-	    $depth_class_names = esc_attr( implode( ' ', $depth_classes ) );
 	  
 	    // passed classes
 	    $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-	    $class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) ) );
 	  
 	    $parents = array();
-		if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $args->theme_location ] ) ) {
+		if ( isset( $args->theme_location ) && ( $locations = get_nav_menu_locations() ) && isset( $locations[ $args->theme_location ] ) ) {
 			$menu = wp_get_nav_menu_object( $locations[ $args->theme_location ] );
-			$menu_items = wp_get_nav_menu_items($menu->term_id);
-			foreach( $menu_items as $menu_item ) {
-			  	if( $menu_item->menu_item_parent != 0 )
-			    	$parents[] = $menu_item->menu_item_parent;
-			}
+			if ($menu) {
+                $menu_items = wp_get_nav_menu_items($menu->term_id);
+                foreach( $menu_items as $menu_item ) {
+                    if( $menu_item->menu_item_parent != 0 )
+                        $parents[] = $menu_item->menu_item_parent;
+                }
+            }
 		}
 
-		$liClassDropdown = '';
+		$liClass = '';
 		$aTagClass = '';
-		$aTagdataToogle = '';
-		$liextra = '';
-		$liUnderDropdownClass = '';
-		$carrot = "";
+		$aTagAria = '';
 
-		if( in_array($item->ID, $parents ) ) {
-			// $carrot = "<i class='bx bx-chevron-down'></i>";
-			$liClassDropdown = ( $depth == 0 ? 'nav-item dropdown' : '' );
-			$aTagClass = ( $depth == 0 ? 'nav-link dropdown-toggle' : '' );
-			$aTagdataToogle = 'role="button" data-bs-toggle="dropdown" aria-expanded="false"';
-			// $liextra = ( $depth == 0 ? 'id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false"' : '' );
-		}else{
-			// $liClassDropdown = ( $depth > 0 ? 'menu-button' : '' );
-			$aTagClass = ( $depth == 0 ? 'nav-link' : 'dropdown-item' );
-			// $liUnderDropdownClass = ( $depth == 0 ? '' : 'dropdown-item' );
+		if( in_array($item->ID, $parents ) || in_array('menu-item-has-children', $classes) ) {
+			if ($depth == 0) {
+                $liClass = 'navbar__item navbar__item--has-children nav-fade';
+                $aTagClass = 'navbar__dropdown-label dropdown-label-alter';
+            } else {
+                $liClass = 'navbar__item navbar__item--has-children';
+                $aTagClass = 'navbar__dropdown-label navbar__dropdown-label-sub';
+            }
+            $aTagAria = 'aria-label="dropdown menu"';
+		} else {
+            if ($depth == 0) {
+                $liClass = 'navbar__item nav-fade';
+            }
 		}
+        
+        $classes[] = $liClass;
+        $class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) ) );
 
 	    // build html
-	    $output .= $indent . '<li class=" active ' . $class_names . ' ' . $depth_class_names . ' ' . $liClassDropdown . ' ' . $liUnderDropdownClass . '" '. $liextra .'>';
+	    $output .= $indent . '<li class="' . $class_names . '">';
 	  
 	    // link attributes
 	    $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
 	    $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
 	    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 	    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-		$attributes .= 'class="' . $aTagClass . '" ' . $aTagdataToogle . '';
-	    // $attributes .= ' class="nav-link"';
+		
+        if (!empty($aTagClass)) {
+            $attributes .= ' class="' . $aTagClass . '"';
+        }
+        if (!empty($aTagAria)) {
+            $attributes .= ' ' . $aTagAria;
+        }
+
 	    $item_output = $args->before;
         $item_output .= '<a'. $attributes .'>';
 	  	$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-	  	$item_output .= $carrot;
 	  	$item_output .= '</a>';
         $item_output .= $args->after;
-	   	/* $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
-	        $args->before,
-	        $attributes,
-	        $args->link_before,
-	        apply_filters( 'the_title', $item->title, $item->ID ),
-	        $args->link_after,
-	        $args->after
-	    );*/
-	    // build html
+        
 	    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args, $id );
-	    
 	}
 	
-	function end_el(&$output, $item, $depth = 0, $args = array()) {
+	function end_el(&$output, $item, $depth = 0, $args = null) {
 	    $output .= "</li>\n";
-	    
-	    // Add toggle button after the last top-level menu item
-	    if ($depth == 0) {
-	        static $processed_items = 0;
-	        $processed_items++;
-	        
-	        $locations = get_nav_menu_locations();
-	        if (isset($locations[$args->theme_location])) {
-	            $menu = wp_get_nav_menu_object($locations[$args->theme_location]);
-	            $menu_items = wp_get_nav_menu_items($menu->term_id);
-	            $top_level_items = array_filter($menu_items, function($item) { return $item->menu_item_parent == 0; });
-	            
-	            if ($processed_items == count($top_level_items)) {
-	                // $output .= '<li class="nav-item"><a class="nav-link toggle-btn" aria-current="page" href="#"><i class="bi bi-list"></i></a></li>';
-	            }
-	        }
-	    }
 	}
 }
 
@@ -338,7 +294,7 @@ class footer_nav_menu extends Walker_Nav_Menu {
 	    $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
 	    $display_depth = ( $depth + 1); // because it counts the first submenu as 0
 	    $classes = array(
-	        'submenu'
+	        ''
 	    );
 	    $class_names = implode( ' ', $classes );
 	  
@@ -405,9 +361,9 @@ class footer_nav_menu extends Walker_Nav_Menu {
 		// $attributes .= 'class="' . $aTagClass . '" ' . $aTagdataToogle . '';
 	    // $attributes .= ' class="nav-link"';
 	    $item_output = $args->before;
-        $item_output .= '<a'. $attributes .'>';
+        $item_output .= '<a'. $attributes .'><i class="fa-solid fa-angles-right"></i>';
 	  	$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-	  	$item_output .= $carrot;
+	  	// $item_output .= $carrot;
 	  	$item_output .= '</a>';
         $item_output .= $args->after;
 	   	/* $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
@@ -427,10 +383,9 @@ class footer_nav_menu extends Walker_Nav_Menu {
 add_action( 'after_setup_theme', 'td_setup' );
 function td_setup() {
 	register_nav_menus( array(
-		'Header_menu2' => 'Main Menu',
+		'header_menu' => 'Main Menu',
 		'footer_menu1' => 'Footer Menu 1',
 		'footer_menu2' => 'Footer Menu 2',
-		'footer_menu3' => 'Footer Menu 3',
 	) );
 }
 // add_theme_support( 'menus' );
