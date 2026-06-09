@@ -27,17 +27,16 @@ get_header();
       <section class="blog-main cm-details">
          <div class="container">
             <div class="row gutter-60">
-               <div class="col-12 col-xl-8">
+               <div class="col-12 col-xl-12">
                   <div class="cm-details__content">
-                     <?php if ( has_post_thumbnail() ) : ?>
+                     <?php /* if ( has_post_thumbnail() ) : ?>
                         <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                            <img src="<?php echo the_post_thumbnail_url('full'); ?>" alt="Image">
                         </div>
-                     <?php endif; ?>
-                     <div class="cm-details-meta">
+                     <?php endif; */?>
+                     <!-- <div class="cm-details-meta">
                         <p><i class="fa-solid fa-calendar-days"></i><?php echo get_the_date(); ?></p>
-                        <!-- <p><i class="fa-solid fa-location-dot"></i><?php echo get_the_author(); ?></p> -->
-                     </div>
+                     </div> -->
                      <div class="cm-group cta">
                         <h3 class="title-animation"><?php the_title(); ?></h3>
                         <?php the_content(); ?>
@@ -48,6 +47,7 @@ get_header();
             </div>
             <div class="row">
                 <?php $images = get_field('gallery'); ?>
+                <?php //print_r($images); ?>
                 <?php if(!empty($images)): ?>
                     <?php foreach( $images as $image ): ?>
                         <div class="col-lg-3 col-md-6 col-sm-6">
@@ -59,7 +59,7 @@ get_header();
                             </div>
                         </div>
                     <?php endforeach; ?>
-                <?php endif; ?>
+                <?php endif;?>
             </div>
          </div>
       </section>

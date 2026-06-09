@@ -1,13 +1,16 @@
 <?php
 // Theme Option Page Initializing
-if( function_exists("acf_add_options_page") ) {
-	acf_add_options_page(array(
-		'page_title' => 'Theme Options',
-		'menu_title' => 'Theme Options',
-		'menu_slug'  => 'theme-options',
-		'icon_url' => 'dashicons-screenoptions',
-		'capability' => 'edit_posts'
-	));
+add_action('acf/init', 'ramdhanu_acf_options_init');
+function ramdhanu_acf_options_init() {
+	if( function_exists("acf_add_options_page") ) {
+		acf_add_options_page(array(
+			'page_title' => 'Theme Options',
+			'menu_title' => 'Theme Options',
+			'menu_slug'  => 'theme-options',
+			'icon_url' => 'dashicons-screenoptions',
+			'capability' => 'edit_posts'
+		));
+	}
 }
 
 // Theme Option Page Initializing
