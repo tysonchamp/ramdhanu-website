@@ -99,9 +99,7 @@
                            </div>
                            <div class="content">
                               <p>
-                                 <a href="https://maps.app.goo.gl/Gr9pTNqz5FRNrjQw8" target="_blank">55 Main
-                                    Street, 2nd block
-                                    Malborne, Australia</a>
+                                 <a href="https://maps.app.goo.gl/Gr9pTNqz5FRNrjQw8" target="_blank"><?php echo get_field('registered_office','option'); ?></a>
                               </p>
                            </div>
                         </div>
@@ -111,10 +109,9 @@
                            </div>
                            <div class="content">
                               <p>
-                                 <a href="mailto:support@example.com">support@example.com</a>
+                                 <a href="mailto:<?php echo get_field('email_address','option'); ?>"><?php echo get_field('email_address','option'); ?></a>
                               </p>
-                              <p><a href="tel:2305-587-3407">+2(305)
-                                    587-3407</a>
+                              <p><a href="tel:<?php echo get_field('phone_no_1','option'); ?>"><?php echo get_field('phone_no_1','option'); ?></a>
                               </p>
                            </div>
                         </div>

@@ -19,16 +19,16 @@ get_header(); ?>
          <div class="container">
             <div class="row">
                <div class="common-banner__content text-center">
-                  <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span>
-                  <h2 class="title-animation">Our Events</h2>
+                  <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                  <h2 class="title-animation">Latest Events</h2>
                </div>
             </div>
          </div>
          <div class="banner-bg">
-            <img src="assets/images/banner/banner-bg.png" alt="Image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-bg.png" alt="Image">
          </div>
          <div class="shape">
-            <img src="assets/images/shape.png" alt="Image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shape.png" alt="Image">
          </div>
       </section>
       <!-- ==== / banner section end ==== -->
@@ -38,201 +38,41 @@ get_header(); ?>
             <div class="row gutter-60">
                <div class="col-12 col-xl-12">
                   <div class="row gutter-30">
-                     <div class="col-12 col-lg-4">
-                        <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
-                           <div class="blog__single van-tilt">
-                              <div class="blog__single-thumb">
-                                 <a href="blog-details.html">
-                                    <img src="assets/images/blog/one.png" alt="Image">
-                                 </a>
-                              </div>
-                              <div class="blog__single-inner">
-                                 <div class="blog__single-content">
-                                    <h5><a href="blog-details.html">IT Service Case Studies Accelerate
-                                          Business Fly Success Tech</a>
-                                    </h5>
-                                 </div>
-                                 <div class="blog__single-cta">
-                                    <a href="blog-details.html" aria-label="blog details" title="blog details">Read
-                                       More<i class="fa-solid fa-circle-arrow-right"></i></a>
-                                 </div>
-                              </div>
-                              <img src="assets/images/blog/spade.png" alt="Image" class="spade-two">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-4">
-                        <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                           data-aos-delay="300">
-                           <div class="blog__single van-tilt">
-                              <div class="blog__single-thumb">
-                                 <a href="blog-details.html">
-                                    <img src="assets/images/blog/two.png" alt="Image">
-                                 </a>
-                              </div>
-                              <div class="blog__single-inner">
-                                 <div class="blog__single-content">
-                                    <h5><a href="blog-details.html">IT Service Case Studies Accelerate
-                                          Business Fly Success Tech</a>
-                                    </h5>
-                                 </div>
-                                 <div class="blog__single-cta">
-                                    <a href="blog-details.html" aria-label="blog details" title="blog details">Read
-                                       More<i class="fa-solid fa-circle-arrow-right"></i></a>
-                                 </div>
-                              </div>
-                              <img src="assets/images/blog/spade.png" alt="Image" class="spade-two">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-4">
-                        <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                           data-aos-delay="600">
-                           <div class="blog__single van-tilt">
-                              <div class="blog__single-thumb">
-                                 <a href="blog-details.html">
-                                    <img src="assets/images/blog/three.png" alt="Image">
-                                 </a>
-                              </div>
-                              <div class="blog__single-inner">
-                                 <div class="blog__single-content">
-                                    <h5><a href="blog-details.html">IT Service Case Studies Accelerate
-                                          Business Fly Success Tech</a>
-                                    </h5>
-                                 </div>
-                                 <div class="blog__single-cta">
-                                       <a href="blog-details.html" aria-label="blog details" title="blog details">Read
-                                          More<i class="fa-solid fa-circle-arrow-right"></i></a>
+
+                     <?php if(have_posts()): ?>
+                        <?php while(have_posts()): the_post(); ?>
+                           <div class="col-12 col-lg-4">
+                              <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                                 <div class="blog__single van-tilt">
+                                    <div class="blog__single-thumb">
+                                       <a href="<?php the_permalink(); ?>">
+                                          <?php if (has_post_thumbnail()) : ?>
+                                             <?php the_post_thumbnail('large'); ?>
+                                          <?php endif; ?>
+                                       </a>
                                     </div>
+                                    <div class="blog__single-inner">
+                                       <div class="blog__single-content">
+                                          <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                          </h5>
+                                       </div>
+                                       <div class="blog__single-cta">
+                                          <a href="<?php the_permalink(); ?>" aria-label="blog details" title="blog details">Read
+                                             More<i class="fa-solid fa-circle-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/spade.png" alt="Image" class="spade-two">
+                                 </div>
                               </div>
-                              <img src="assets/images/blog/spade.png" alt="Image" class="spade-two">
                            </div>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-4">
-                        <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
-                           <div class="blog__single van-tilt">
-                              <div class="blog__single-thumb">
-                                 <a href="blog-details.html">
-                                    <img src="assets/images/blog/one.png" alt="Image">
-                                 </a>
-
-                              </div>
-                              <div class="blog__single-inner">
-                                 <div class="blog__single-content">
-                                    <h5><a href="blog-details.html">IT Service Case Studies Accelerate
-                                          Business Fly Success Tech</a>
-                                    </h5>
-                                 </div>
-                                 <div class="blog__single-cta">
-                                    <a href="blog-details.html" aria-label="blog details" title="blog details">Read
-                                       More<i class="fa-solid fa-circle-arrow-right"></i></a>
-                                 </div>
-                              </div>
-                              <img src="assets/images/blog/spade.png" alt="Image" class="spade-two">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-4">
-                        <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                           data-aos-delay="300">
-                           <div class="blog__single van-tilt">
-                              <div class="blog__single-thumb">
-                                 <a href="blog-details.html">
-                                    <img src="assets/images/blog/two.png" alt="Image">
-                                 </a>
-                              </div>
-                              <div class="blog__single-inner">
-                                 <div class="blog__single-content">
-                                    <h5><a href="blog-details.html">IT Service Case Studies Accelerate
-                                          Business Fly Success Tech</a>
-                                    </h5>
-                                 </div>
-                                 <div class="blog__single-cta">
-                                    <a href="blog-details.html" aria-label="blog details" title="blog details">Read
-                                       More<i class="fa-solid fa-circle-arrow-right"></i></a>
-                                 </div>
-                              </div>
-                              <img src="assets/images/blog/spade.png" alt="Image" class="spade-two">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-4">
-                        <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                           data-aos-delay="600">
-                           <div class="blog__single van-tilt">
-                              <div class="blog__single-thumb">
-                                 <a href="blog-details.html">
-                                    <img src="assets/images/blog/three.png" alt="Image">
-                                 </a>
-                              </div>
-                              <div class="blog__single-inner">
-                                 <div class="blog__single-content">
-                                    <h5><a href="blog-details.html">IT Service Case Studies Accelerate
-                                          Business Fly Success Tech</a>
-                                    </h5>
-                                 </div>
-                                 <div class="blog__single-cta">
-                                    <a href="blog-details.html" aria-label="blog details" title="blog details">Read
-                                       More<i class="fa-solid fa-circle-arrow-right"></i></a>
-                                 </div>
-                              </div>
-                              <img src="assets/images/blog/spade.png" alt="Image" class="spade-two">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-4">
-                        <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
-                           <div class="blog__single van-tilt">
-                              <div class="blog__single-thumb">
-                                 <a href="blog-details.html">
-                                    <img src="assets/images/blog/one.png" alt="Image">
-                                 </a>
-
-                              </div>
-                              <div class="blog__single-inner">
-                                 <div class="blog__single-content">
-                                    <h5><a href="blog-details.html">IT Service Case Studies Accelerate
-                                          Business Fly Success Tech</a>
-                                    </h5>
-                                 </div>
-                                 <div class="blog__single-cta">
-                                    <a href="blog-details.html" aria-label="blog details" title="blog details">Read
-                                       More<i class="fa-solid fa-circle-arrow-right"></i></a>
-                                 </div>
-                              </div>
-                              <img src="assets/images/blog/spade.png" alt="Image" class="spade-two">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-4">
-                        <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                           data-aos-delay="300">
-                           <div class="blog__single van-tilt">
-                              <div class="blog__single-thumb">
-                                 <a href="blog-details.html">
-                                    <img src="assets/images/blog/two.png" alt="Image">
-                                 </a>
-                              </div>
-                              <div class="blog__single-inner">
-                                 <div class="blog__single-content">
-                                    <h5><a href="blog-details.html">IT Service Case Studies Accelerate
-                                          Business Fly Success Tech</a>
-                                    </h5>
-                                 </div>
-                                 <div class="blog__single-cta">
-                                    <a href="blog-details.html" aria-label="blog details" title="blog details">Read
-                                       More<i class="fa-solid fa-circle-arrow-right"></i></a>
-                                 </div>
-                              </div>
-                              <img src="assets/images/blog/spade.png" alt="Image" class="spade-two">
-                           </div>
-                        </div>
-                     </div>
+                        <?php endwhile; ?>
+                     <?php endif; ?>
+                     
                   </div>
                   <div class="row">
                      <div class="col-12">
-                        <div class="pagination-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                        <?php custom_paging_nav(); ?>
+                        <!-- <div class="pagination-wrapper" data-aos="fade-up" data-aos-duration="1000">
                            <ul class="pagination main-pagination">
                               <li>
                                  <button>
@@ -254,7 +94,7 @@ get_header(); ?>
                                  </button>
                               </li>
                            </ul>
-                        </div>
+                        </div> -->
                      </div>
                   </div>
                </div>

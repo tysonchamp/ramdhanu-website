@@ -56,10 +56,9 @@
 <body>
    <div class="page-wrapper">
       <!-- ==== preloader start ==== -->
-      <div class="preloader">
+      <!-- <div class="preloader">
          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png">
-         <!-- <p>RAMDHANU</p> -->
-      </div>
+      </div> -->
       <!-- ==== / preloader end ==== -->
       <!-- ==== topbar start ==== -->
       <div class="topbar d-none d-lg-block">
@@ -69,13 +68,13 @@
                   <div class="topbar__list-wrapper">
                      <ul class="topbar__list">
                         <li>
-                           <a href="mailto:support@example.com">
-                              <i class="fa-regular fa-envelope"></i>support@example.com
+                           <a href="mailto:<?php echo get_field('email_address','option'); ?>">
+                              <i class="fa-regular fa-envelope"></i><?php echo get_field('email_address','option'); ?>
                            </a>
                         </li>
                         <li>
-                           <a href="tel:2305-587-3407">
-                              <i class="fa-solid fa-phone"></i>+2(305) 587-3407
+                           <a href="tel:<?php echo get_field('phone_no_1','option'); ?>">
+                              <i class="fa-solid fa-phone"></i><?php echo get_field('phone_no_1','option'); ?>
                            </a>
                         </li>
                      </ul>
@@ -84,20 +83,13 @@
                <div class="col-12 col-lg-6">
                   <div class="topbar__items justify-content-end">
                      <div class="social">
-                        <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook"
-                           title="facebook">
-                           <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                        <a href="https://vimeo.com/" target="_blank" aria-label="share us on vimeo" title="vimeo">
-                           <i class="fa-brands fa-vimeo-v"></i>
-                        </a>
-                        <a href="https://x.com/" target="_blank" aria-label="share us on twitter" title="twitter">
-                           <i class="fa-brands fa-twitter"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/" target="_blank" aria-label="share us on linkedin"
-                           title="linkedin">
-                           <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
+                        <?php if(have_rows('social_media_icons','option')): ?>
+                           <?php while(have_rows('social_media_icons','option')): the_row(); ?>
+                              <a href="<?php echo get_sub_field('social_url','option'); ?>" target="_blank">
+                                 <?php echo get_sub_field('social_icon','option'); ?>
+                              </a>
+                           <?php endwhile; ?>
+                        <?php endif; ?>
                      </div>
                   </div>
                </div>
@@ -137,7 +129,9 @@
                                  </div>
                                  <div class="contact-content">
                                     <p>Call Us Now</p>
-                                    <a href="tel:01-793-7938">(+01)-793-7938 </a>
+                                    <a href="tel:<?php echo get_field('phone_number','option'); ?>">
+                                       <?php echo get_field('phone_number','option'); ?> 
+                                    </a>
                                  </div>
                               </div>
                               <a href="donate-us.html" class="btn--primary d-none d-md-flex">Donate Now <i
@@ -176,18 +170,13 @@
                      class="icon-circle-arrow"></i></a>
             </div>
             <div class="mobile-menu__social social nav-fade">
-               <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook" title="facebook">
-                  <i class="fa-brands fa-facebook-f"></i>
-               </a>
-               <a href="https://vimeo.com/" target="_blank" aria-label="share us on vimeo" title="vimeo">
-                  <i class="fa-brands fa-vimeo-v"></i>
-               </a>
-               <a href="https://x.com/" target="_blank" aria-label="share us on twitter" title="twitter">
-                  <i class="fa-brands fa-twitter"></i>
-               </a>
-               <a href="https://www.linkedin.com/" target="_blank" aria-label="share us on linkedin" title="linkedin">
-                  <i class="fa-brands fa-linkedin-in"></i>
-               </a>
+               <?php if(have_rows('social_media_icons','option')): ?>
+                  <?php while(have_rows('social_media_icons','option')): the_row(); ?>
+                     <a href="<?php echo get_sub_field('social_url','option'); ?>" target="_blank">
+                        <?php echo get_sub_field('social_icon','option'); ?>
+                     </a>
+                  <?php endwhile; ?>
+               <?php endif; ?>
             </div>
          </nav>
       </div>
