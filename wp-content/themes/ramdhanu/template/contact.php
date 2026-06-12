@@ -7,21 +7,22 @@ get_header();
 
 ?>
     <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
-<!-- ==== banner section start ==== -->
+      
+      <!-- ==== banner section start ==== -->
       <section class="common-banner">
          <div class="container">
             <div class="row">
                <div class="common-banner__content text-center">
-                  <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span>
-                  <h2 class="title-animation">Contact Us</h2>
+                  <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                  <h2 class="title-animation"><?php the_title(); ?></h2>
                </div>
             </div>
          </div>
          <div class="banner-bg">
-            <img src="assets/images/banner/banner-bg.png" alt="Image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-bg.png" alt="Image">
          </div>
          <div class="shape">
-            <img src="assets/images/shape.png" alt="Image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shape.png" alt="Image">
          </div>
       </section>
       <!-- ==== / banner section end ==== -->
@@ -32,11 +33,9 @@ get_header();
                <div class="col-12 col-xl-6">
                   <div class="contact__content">
                      <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
-                        <span class="sub-title"><i class="icon-donation"></i> Get In Touch</span>
-                        <h2 class="title-animation">Contact Us</h2>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                           doloremque laudantium, totam rem aperiam, eaque inventore
-                        </p>
+                        <!-- <span class="sub-title"><i class="icon-donation"></i> Get In Touch</span> -->
+                        <h2 class="title-animation"><?php the_title(); ?></h2>
+                        <?php the_content(); ?>
                      </div>
                      <div class="contact-main__inner cta">
                         <div class="contact-main__single">
@@ -44,11 +43,20 @@ get_header();
                               <i class="fa-solid fa-location-dot"></i>
                            </div>
                            <div class="content">
-                              <h6>Location</h6>
-                              <p><a href="https://maps.app.goo.gl/Gr9pTNqz5FRNrjQw8" target="_blank">
-                                    55 Main street, 2nd block,
-                                    Melbourne, Australia
-                                 </a>
+                              <h6>Registered Address</h6>
+                              <p> 
+                                 <?php echo get_field('registered_office','option'); ?>
+                              </p>
+                           </div>
+                        </div>
+                        <div class="contact-main__single">
+                           <div class="thumb">
+                              <i class="fa-solid fa-location-dot"></i>
+                           </div>
+                           <div class="content">
+                              <h6>project Address</h6>
+                              <p> 
+                                 <?php echo get_field('project_office','option'); ?>
                               </p>
                            </div>
                         </div>
@@ -58,8 +66,7 @@ get_header();
                            </div>
                            <div class="content">
                               <h6>Phone</h6>
-                              <p><a href="tel:2305-587-3407">+1 (368) 567 89 54 </a></p>
-                              <p><a href="tel:2305-587-3407">+236 (456) 896 22</a></p>
+                              <p><a href="tel:<?php echo get_field('phone_no_1','option'); ?>"><?php echo get_field('phone_no_1','option'); ?></a></p>
                            </div>
                         </div>
                         <div class="contact-main__single">
@@ -68,8 +75,8 @@ get_header();
                            </div>
                            <div class="content">
                               <h6>Email</h6>
-                              <p><a href="mailto:support@example.com">example@email.com</a></p>
-                              <p><a href="mailto:support@example.com">charifund@email.com</a></p>
+                              <p><a href="mailto:<?php echo get_field('email_address','option'); ?>">
+                                 <?php echo get_field('email_address','option'); ?></a></p>
                            </div>
                         </div>
                         <div class="contact-main__single">
@@ -79,28 +86,20 @@ get_header();
                            <div class="content">
                               <h6>Social</h6>
                               <div class="social">
-                                 <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook"
-                                    title="facebook">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                 </a>
-                                 <a href="https://vimeo.com/" target="_blank" aria-label="share us on vimeo"
-                                    title="vimeo">
-                                    <i class="fa-brands fa-vimeo-v"></i>
-                                 </a>
-                                 <a href="https://x.com/" target="_blank" aria-label="share us on twitter"
-                                    title="twitter">
-                                    <i class="fa-brands fa-twitter"></i>
-                                 </a>
-                                 <a href="https://www.linkedin.com/" target="_blank" aria-label="share us on linkedin"
-                                    title="linkedin">
-                                    <i class="fa-brands fa-linkedin-in"></i>
-                                 </a>
+                                 <?php if(have_rows('social_media_icons','option')): ?>
+                                    <?php while(have_rows('social_media_icons','option')): the_row(); ?>
+                                       <a href="<?php echo get_sub_field('social_url','option'); ?>" target="_blank">
+                                          <?php echo get_sub_field('social_icon','option'); ?>
+                                       </a>
+                                    <?php endwhile; ?>
+                                 <?php endif; ?>
                               </div>
                            </div>
                         </div>
                      </div>
                      <div class="contact-main__thumb cta">
-                        <img src="assets/images/contact-thumb.png" alt="Image">
+                        <!-- <img src="assets/images/contact-thumb.png" alt="Image"> -->
+                         <?php echo get_field('google_map_iframe'); ?>
                      </div>
                   </div>
                </div>

@@ -8,35 +8,53 @@ get_header();
 ?>
     <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
 
-    <section class="fluid-block inner-banner text-center">
-        <div class="container">
-            <h1 class="fw-bold"><?php the_title(); ?></h1>
-        </div>
-    </section>
-    <section class="fluid-block gallery">
-        <div class="container">
-            <div class="gallery-grid">
-                <?php $gallery_images = get_field('gallery_images'); ?>
-                <?php if( $gallery_images ): ?>
-                    <?php foreach( $gallery_images as $image ): ?>
-                        <!-- Repeat these figures for each product image -->
-                        <figure class="product" data-index="0">
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                            <figcaption><?php echo $image['alt']; ?></figcaption>
-                        </figure>
+      <!-- ==== banner section start ==== -->
+      <section class="common-banner">
+         <div class="container">
+            <div class="row">
+               <div class="common-banner__content text-center">
+                  <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                  <h2 class="title-animation"><?php the_title(); ?></h2>
+               </div>
+            </div>
+         </div>
+         <div class="banner-bg">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-bg.png" alt="Image">
+         </div>
+         <div class="shape">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shape.png" alt="Image">
+         </div>
+      </section>
+      <!-- ==== / banner section end ==== -->
+       <!-- ==== blog details section start ==== -->
+      <section class="blog-main cm-details">
+         <div class="container">
+            <div class="row gutter-60">
+               <div class="col-12 col-xl-12">
+                  <div class="cm-details__content">
+                     <div class="cm-group cta">
+                        <h3 class="title-animation"><?php the_title(); ?></h3>
+                        <?php the_content(); ?>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+                <?php $images = get_field('gallery'); ?>
+                <?php if(!empty($images)): ?>
+                    <?php foreach( $images as $image ): ?>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="single-gallery-box">
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="image">
+                                <a href="<?php echo esc_url($image['url']); ?>" class="gallery-btn" data-imagelightbox="popup-btn">
+                                    <i class="flaticon-search"></i>
+                                </a>
+                            </div>
+                        </div>
                     <?php endforeach; ?>
-                <?php endif; ?>
+                <?php endif;?>
             </div>
-
-            <!-- Lightbox -->
-            <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
-                <button class="lb-close" aria-label="Close">&times;</button>
-                <button class="lb-prev" aria-label="Previous">&lsaquo;</button>
-                <img class="lb-image" src="" alt="">
-                <button class="lb-next" aria-label="Next">&rsaquo;</button>
-                <div class="lb-caption"></div>
-            </div>
-        </div>
-    </section>
-
+         </div>
+      </section>
+      <!-- ==== / blog details section end ==== -->
 <?php get_footer(); ?>
