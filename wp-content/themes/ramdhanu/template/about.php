@@ -13,16 +13,16 @@ get_header(); ?>
          <div class="container">
             <div class="row">
                <div class="common-banner__content text-center">
-                  <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span>
-                  <h2 class="title-animation">About Us</h2>
+                  <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                  <h2 class="title-animation"><?php the_title(); ?></h2>
                </div>
             </div>
          </div>
          <div class="banner-bg">
-            <img src="assets/images/banner/banner-bg.png" alt="Image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-bg.png" alt="Image">
          </div>
          <div class="shape">
-            <img src="assets/images/shape.png" alt="Image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shape.png" alt="Image">
          </div>
       </section>
       <!-- ==== / banner section end ==== -->
@@ -34,35 +34,29 @@ get_header(); ?>
                   <div class="difference-two__thumb-wrapper">
                      <div class="difference-two__thumb">
                         <div class="thumb-lg" data-aos="fade-right" data-aos-duration="1000">
-                           <img src="assets/images/difference/thumb-sm.png" alt="Image">
+                           <img src="<?php echo get_field('featured_image_1'); ?>" alt="Image">
                            <div class="grid-line">
-                              <img src="assets/images/help/grid.png" alt="Image" class="base-img">
+                              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/help/grid.png" alt="Image" class="base-img">
                            </div>
                            <div class="video-btn-wrapper">
-                              <a href="https://www.youtube.com/watch?v=RvreULjnzFo" target="_blank" title="video Player"
+                              <a href="<?php echo get_field('video_url'); ?>" target="_blank" title="video Player"
                                  class="open-video-popup">
                                  <i class="icon-play"></i>
                               </a>
                            </div>
                         </div>
                         <div class="thumb-sm" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                           <img src="assets/images/difference/thumb-lg.png" alt="Image">
+                           <img src="<?php echo get_field('featured_image_2'); ?>" alt="Image">
                         </div>
                      </div>
                   </div>
                </div>
                <div class="col-12 col-lg-8 col-xxl-7">
                   <div class="difference-two__content" data-aos="fade-up" data-aos-duration="1000">
-                     <span class="sub-title"><i class="icon-donation"></i>Start donating poor
-                        people</span>
-                     <h2 class="title-animation">Donate <span>Support</span> to Make
-                        Difference way
-                     </h2>
-                     <p>Charity is the voluntary act of giving help,
-                        typically in the form of money, time, or resources, to those in need. Charitable
-                        organizations aim to solve social, environmental, and economic challenges by addressing
-                        issues like poverty,
-                     </p>
+                     <span class="sub-title"><i class="icon-donation"></i><?php echo get_field('about_subtitle'); ?></span>
+                     <h2 class="title-animation"><?php echo get_field('about_title'); ?></h2>
+                     <?php echo get_field('about_us_texts'); ?>
+
                      <div class="difference-two__inner cta">
                         <div class="difference-two__inner-content">
                            <div class="difference-two__tab">
@@ -74,26 +68,10 @@ get_header(); ?>
                               </div>
                               <div class="difference-two__tab-content">
                                  <div class="difference-two__content-single" id="mission">
-                                    <ul>
-                                       <li><i class="fa-solid fa-check"></i>We help companies develop
-                                          powerful corporate social
-                                       </li>
-                                       <li><i class="fa-solid fa-check"></i>Helped fund 3,265 Project
-                                          powerful corporate poor
-                                       </li>
-                                       <li><i class="fa-solid fa-check"></i>Dedicated Tech Services</li>
-                                    </ul>
+                                    <?php echo get_field('mission'); ?>
                                  </div>
                                  <div class="difference-two__content-single" id="vision">
-                                    <ul>
-                                       <li><i class="fa-solid fa-check"></i>We help companies develop
-                                          powerful corporate social
-                                       </li>
-                                       <li><i class="fa-solid fa-check"></i>Helped fund 3,265 Project
-                                          powerful corporate poor
-                                       </li>
-                                       <li><i class="fa-solid fa-check"></i>Dedicated Tech Services</li>
-                                    </ul>
+                                    <?php echo get_field('vision'); ?>
                                  </div>
                               </div>
                            </div>
