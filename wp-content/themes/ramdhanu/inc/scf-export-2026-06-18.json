@@ -321,6 +321,27 @@
                 "preview_size": "medium"
             },
             {
+                "key": "field_6a33987e5e1c2",
+                "label": "About Video Url",
+                "name": "about_video_url",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
                 "key": "field_6a13e6280d9b3",
                 "label": "About Section Title",
                 "name": "about_section_title",
@@ -1039,8 +1060,8 @@
                     },
                     {
                         "key": "field_6a13eac163e83",
-                        "label": "Member Designation",
-                        "name": "member_designation",
+                        "label": "Member Descriptions",
+                        "name": "member_descriptions",
                         "aria-label": "",
                         "type": "textarea",
                         "instructions": "",
@@ -1163,6 +1184,54 @@
                     "param": "page_template",
                     "operator": "==",
                     "value": "template\/newsletter.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a33cdc88d90d",
+        "title": "Project Page",
+        "fields": [
+            {
+                "key": "field_6a33cdc8c1e87",
+                "label": "",
+                "name": "",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "template\/project-page.php"
                 }
             ]
         ],
@@ -1557,9 +1626,7 @@
                             "id": ""
                         },
                         "icon_sets": [
-                            "solid",
-                            "regular",
-                            "brands"
+                            "all"
                         ],
                         "custom_icon_set": "",
                         "default_label": "",

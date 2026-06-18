@@ -7,24 +7,24 @@ get_header();
 
 ?>
 
-        <!-- ==== banner section start ==== -->
-        <section class="common-banner">
-            <div class="container">
-                <div class="row">
-                    <div class="common-banner__content text-center">
-                        <span class="sub-title"><i class="icon-donation"></i>Project Details</span>
-                        <h2 class="title-animation">Shiksha Setu</h2>
-                    </div>
-                </div>
+      <!-- ==== banner section start ==== -->
+      <section class="common-banner">
+         <div class="container">
+            <div class="row">
+               <div class="common-banner__content text-center">
+                  <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                  <h2 class="title-animation"><?php the_title(); ?></h2>
+               </div>
             </div>
-            <div class="banner-bg">
-                <img src="assets/images/banner/banner-bg.png" alt="Image">
-            </div>
-            <div class="shape">
-                <img src="assets/images/shape.png" alt="Image">
-            </div>
-        </section>
-        <!-- ==== / banner section end ==== -->
+         </div>
+         <div class="banner-bg">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-bg.png" alt="Image">
+         </div>
+         <div class="shape">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shape.png" alt="Image">
+         </div>
+      </section>
+      <!-- ==== / banner section end ==== -->
         <!-- ============================================================
            SECTION 2: THE ISSUE — Problem Overview
            ============================================================ -->
@@ -71,8 +71,7 @@ get_header();
                     </div>
                     <div class="col-12 col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                         <div class="pdetail-issue__thumb position-relative">
-                            <img src="assets/images/cause/cause-seven-thumb2.jpg"
-                                alt="Children in rural school — the education gap">
+                            <img src="assets/images/cause/cause-seven-thumb2.jpg" alt="">
                             <a href="https://www.youtube.com/watch?v=RvreULjnzFo" class="pdetail-video-play video-popup"
                                 title="Watch Project Video">
                                 <i class="fa-solid fa-play"></i>
