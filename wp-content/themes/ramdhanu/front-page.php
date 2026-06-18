@@ -20,7 +20,7 @@ get_header();
             </video>
          </div>
          <div class="bottom-shape">
-            <img src="assets/images/banner/banner-one-shape.png" alt="Image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-one-shape.png" alt="Image">
          </div>
       </section>
       <!-- ==== / banner end ==== -->
@@ -32,15 +32,15 @@ get_header();
                   <div class="help-two__thumb d-none d-lg-block">
                      <div class="help-two__thumb-inner">
                         <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000">
-                           <img src="assets/images/help/three.png" alt="Image">
+                           <img src="<?php echo get_field('about_image_1'); ?>" alt="Image">
                         </div>
                         <div class="thumb-sm" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
-                           <img src="assets/images/help/two.png" alt="Image">
+                           <img src="<?php echo get_field('about_image_2'); ?>" alt="Image">
                         </div>
                         <div class="thumb-md" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                           <img src="assets/images/help/one.png" alt="Image">
+                           <img src="<?php echo get_field('about_image_3'); ?>" alt="Image">
                         </div>
-                        <a href="#" class="help-two__thumb-content">
+                        <a href="<?php echo get_field('about_video_url'); ?>" class="help-two__thumb-content">
                            <div class="thumb">
                               <i class="fa-solid fa-play"></i>
                            </div>
@@ -52,12 +52,10 @@ get_header();
                   <div class="help-two__content">
                      <div class="section__content">
                         <span class="sub-title"><i class="icon-donation"></i>About Ramdhanu</span>
-                        <h2 class="title-animation">Helping each other can
-                           make <span>world</span> better
+                        <h2 class="title-animation">
+                           <?php echo get_field('about_us_title'); ?>
                         </h2>
-                        <p>Volunteering offers opportunities to develop new skills and gain valuable
-                           experience. This can include leadership, communication, project
-                        </p>
+                        <?php echo get_field('about_us_texts'); ?>
                      </div>
                      <div class="help-two__inner cta">
                         <div class="help-two__inner-content">
@@ -68,9 +66,7 @@ get_header();
                                  </div>
                                  <div class="content">
                                     <h6>Our Mission</h6>
-                                    <p>Volunteering offers opportunities to develop new skills and gain valuable
-                                       experience. This can include leadership, communication, project
-                                    </p>
+                                    <?php echo get_field('mission_texts'); ?>
                                  </div>
                               </div>
                               <hr>
@@ -80,9 +76,7 @@ get_header();
                                  </div>
                                  <div class="content">
                                     <h6>Our Vission</h6>
-                                    <p>Volunteering offers opportunities to develop new skills and gain valuable
-                                       experience. This can include leadership, communication, project
-                                    </p>
+                                    <?php echo get_field('vision_texts'); ?>
                                  </div>
                               </div>
                            </div>
@@ -100,9 +94,9 @@ get_header();
             <div class="row justify-content-center">
                <div class="col-12 col-md-8 col-xl-7">
                   <div class="section__header text-center">
-                     <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span>
-                     <h2 class="title-animation">Be the reason of someone
-                        <span>smiles</span> Causes
+                     <span class="sub-title"><i class="icon-donation"></i><?php echo get_field('project_title_small'); ?></span>
+                     <h2 class="title-animation">
+                        <?php echo get_field('project_title'); ?>
                      </h2>
                   </div>
                </div>
@@ -115,158 +109,27 @@ get_header();
                      <div class="cause__slider-wrapper">
                         <div class="cause__slider swiper">
                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                 <div class="cause__slider-inner">
-                                    <div class="cause__slider-single">
-                                       <div class="thumb">
-                                          <a href="cause-details.html">
-                                             <img src="assets/images/cause/one.png" alt="Image">
-                                          </a>
-                                       </div>
-                                       <div class="content">
-                                          <h6><a href="cause-details.html">Children we work with</a></h6>
-                                          <p>Lorem ipsum dolor sit amet, consete
-                                             sadipscing elitr, sed diam nonum
-                                          </p>
-                                          <a href="donate-us.html" aria-label="donate now" title="donate now"
-                                             class="btn--secondary mt-3">Donate Now</a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="swiper-slide">
-                                 <div class="cause__slider-inner">
-                                    <div class="cause__slider-single">
-                                       <div class="thumb">
-                                          <a href="cause-details.html">
-                                             <img src="assets/images/cause/two.png" alt="Image">
-                                          </a>
-                                       </div>
-                                       <div class="content">
-                                          <h6><a href="cause-details.html">Help For Education</a></h6>
-                                          <p>Lorem ipsum dolor sit amet, consete
-                                             sadipscing elitr, sed diam nonum
-                                          </p>
-                                          <a href="donate-us.html" aria-label="donate now" title="donate now"
-                                             class="btn--secondary mt-3">Donate Now</a>
+                              <?php if(have_rows('all_projects')): ?>
+                                 <?php while(have_rows('all_projects')): the_row(); ?>
+                                    <div class="swiper-slide">
+                                       <div class="cause__slider-inner">
+                                          <div class="cause__slider-single">
+                                             <div class="thumb">
+                                                <a href="<?php echo get_sub_field('project_page_url'); ?>">
+                                                   <img src="<?php echo get_sub_field('project_image'); ?>" alt="Image">
+                                                </a>
+                                             </div>
+                                             <div class="content">
+                                                <h6><a href="<?php echo get_sub_field('project_page_url'); ?>"><?php echo get_sub_field('project_title'); ?></a></h6>
+                                                <p><?php echo get_sub_field('project_texts'); ?></p>
+                                                <a href="<?php echo get_sub_field('project_page_url'); ?>" aria-label="donate now" title="donate now"
+                                                   class="btn--secondary mt-3">Learn More</a>
+                                             </div>
+                                          </div>
                                        </div>
                                     </div>
-                                 </div>
-                              </div>
-                              <div class="swiper-slide">
-                                 <div class="cause__slider-inner">
-                                    <div class="cause__slider-single">
-                                       <div class="thumb">
-                                          <a href="cause-details.html">
-                                             <img src="assets/images/cause/three.png" alt="Image">
-                                          </a>
-                                       </div>
-                                       <div class="content">
-                                          <h6><a href="cause-details.html">Help For Food</a></h6>
-                                          <p>Lorem ipsum dolor sit amet, consete
-                                             sadipscing elitr, sed diam nonum
-                                          </p>
-                                          <a href="donate-us.html" aria-label="donate now" title="donate now"
-                                             class="btn--secondary mt-3">Donate Now</a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="swiper-slide">
-                                 <div class="cause__slider-inner">
-                                    <div class="cause__slider-single">
-                                       <div class="thumb">
-                                          <a href="cause-details.html">
-                                             <img src="assets/images/cause/four.png" alt="Image">
-                                          </a>
-                                       </div>
-                                       <div class="content">
-                                          <h6><a href="cause-details.html">Give health support</a></h6>
-                                          <p>Lorem ipsum dolor sit amet, consete
-                                             sadipscing elitr, sed diam nonum
-                                          </p>
-                                          <a href="donate-us.html" aria-label="donate now" title="donate now"
-                                             class="btn--secondary mt-3">Donate Now</a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="swiper-slide">
-                                 <div class="cause__slider-inner">
-                                    <div class="cause__slider-single">
-                                       <div class="thumb">
-                                          <a href="cause-details.html">
-                                             <img src="assets/images/cause/one.png" alt="Image">
-                                          </a>
-                                       </div>
-                                       <div class="content">
-                                          <h6><a href="cause-details.html">Children we work with</a></h6>
-                                          <p>Lorem ipsum dolor sit amet, consete
-                                             sadipscing elitr, sed diam nonum
-                                          </p>
-                                          <a href="donate-us.html" aria-label="donate now" title="donate now"
-                                             class="btn--secondary mt-3">Donate Now</a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="swiper-slide">
-                                 <div class="cause__slider-inner">
-                                    <div class="cause__slider-single">
-                                       <div class="thumb">
-                                          <a href="cause-details.html">
-                                             <img src="assets/images/cause/two.png" alt="Image">
-                                          </a>
-                                       </div>
-                                       <div class="content">
-                                          <h6><a href="cause-details.html">Help For Education</a></h6>
-                                          <p>Lorem ipsum dolor sit amet, consete
-                                             sadipscing elitr, sed diam nonum
-                                          </p>
-                                          <a href="donate-us.html" aria-label="donate now" title="donate now"
-                                             class="btn--secondary mt-3">Donate Now</a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="swiper-slide">
-                                 <div class="cause__slider-inner">
-                                    <div class="cause__slider-single">
-                                       <div class="thumb">
-                                          <a href="cause-details.html">
-                                             <img src="assets/images/cause/three.png" alt="Image">
-                                          </a>
-                                       </div>
-                                       <div class="content">
-                                          <h6><a href="cause-details.html">Help For Food</a></h6>
-                                          <p>Lorem ipsum dolor sit amet, consete
-                                             sadipscing elitr, sed diam nonum
-                                          </p>
-                                          <a href="donate-us.html" aria-label="donate now" title="donate now"
-                                             class="btn--secondary mt-3">Donate Now</a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="swiper-slide">
-                                 <div class="cause__slider-inner">
-                                    <div class="cause__slider-single">
-                                       <div class="thumb">
-                                          <a href="cause-details.html">
-                                             <img src="assets/images/cause/four.png" alt="Image">
-                                          </a>
-                                       </div>
-                                       <div class="content">
-                                          <h6><a href="cause-details.html">Give health support</a></h6>
-                                          <p>Lorem ipsum dolor sit amet, consete
-                                             sadipscing elitr, sed diam nonum
-                                          </p>
-                                          <a href="donate-us.html" aria-label="donate now" title="donate now"
-                                             class="btn--secondary mt-3">Donate Now</a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
+                                 <?php endwhile; ?>
+                              <?php endif; ?>
                            </div>
                         </div>
                      </div>
@@ -284,7 +147,7 @@ get_header();
             </div>
          </div>
          <div class="spade">
-            <img src="assets/images/help/spade.png" alt="Image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/help/spade.png" alt="Image">
          </div>
       </section>
       <!-- ==== / cause slider section end ==== -->
@@ -295,14 +158,11 @@ get_header();
                <div class="col-12 col-lg-7">
                   <div class="cta__section__content">
                      <div class="section__content text-center" data-aos="fade-up" data-aos-duration="1000">
-                        <span class="sub-title"><i class="icon-donation"></i>Start donating poor
-                           people</span>
-                        <h2 class="title-animation">children need your help
-                           by donating today
-                        </h2>
+                        <span class="sub-title"><i class="icon-donation"></i><?php echo get_field('cta_small_title'); ?></span>
+                        <h2 class="title-animation"><?php echo get_field('cta_title'); ?></h2>
                         <div class="banner__content-cta cta">
                            <a href="our-causes.html" aria-label="about us" title="about us"
-                              class="btn--tertiary">Discover More</a>
+                              class="btn--tertiary">Download Newsletter</a>
                            <a href="contact-us.html" aria-label="contact us" title="contact us"
                               class="btn--primary">Donate Now!</a>
                         </div>
@@ -312,13 +172,13 @@ get_header();
             </div>
          </div>
          <div class="cta-bg">
-            <img src="assets/images/cta/cta-bg.png" alt="Image" class="parallax-image">
+            <img src="<?php echo get_template_directory_uri(  ); ?>/assets/images/cta/cta-bg.png" alt="Image" class="parallax-image">
          </div>
          <div class="shape-left" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
-            <img src="assets/images/cta/shape-left.png" alt="Image">
+            <img src="<?php echo get_template_directory_uri(  ); ?>/assets/images/cta/shape-left.png" alt="Image">
          </div>
          <div class="shape">
-            <img src="assets/images/shape-two.png" alt="Image">
+            <img src="<?php echo get_template_directory_uri(  ); ?>/assets/images/shape-two.png" alt="Image">
          </div>
       </section>
       <!-- ==== / cta section end ==== -->
@@ -328,8 +188,8 @@ get_header();
             <div class="row justify-content-center">
                <div class="col-12 col-lg-10 col-xl-6">
                   <div class="section__header text-center" data-aos="fade-up" data-aos-duration="1000">
-                     <span class="sub-title"><i class="icon-donation"></i>Our video</span>
-                     <h2 class="title-animation">Our Videos</h2>
+                     <span class="sub-title"><i class="icon-donation"></i><?php echo get_field('video_section_title_small'); ?></span>
+                     <h2 class="title-animation"><?php echo get_field('video_section_main_title'); ?></h2>
                   </div>
                </div>
             </div>
@@ -337,165 +197,37 @@ get_header();
             <div class="cause__slider-wrapper">
                <div class="cause__slider swiper">
                   <div class="swiper-wrapper">
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="video-popup">
-                                          <img src="assets/images/team/one.png" alt="Image">
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="#">Lorem dolor</a></h6>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="300">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="video-popup">
-                                          <img src="assets/images/team/two.png" alt="Image">
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="#">Lorem dolor</a></h6>
+                     <?php if(have_rows('all_videos')): ?>
+                        <?php while(have_rows('all_videos')): the_row(); ?>
+                           <div class="swiper-slide">
+                              <div class="cause__slider-inner">
+                                 <div class="cause__slider-single">
+                                    <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                                       <div class="team__single van-tilt">
+                                          <div class="team__single-thumb">
+                                             <a href="<?php echo get_sub_field('video_url'); ?>" class="video-popup">
+                                                <img src="<?php echo get_sub_field('video_image'); ?>" alt="Image">
+                                             </a>
+                                          </div>
+                                          <div class="team__single-content">
+                                             <!-- <h6><a href="#">Lorem dolor</a></h6> -->
+                                          </div>
+                                       </div>
                                     </div>
                                  </div>
                               </div>
                            </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="600">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="video-popup">
-                                          <img src="assets/images/team/three.png" alt="Image">
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="#">Lorem dolor</a></h6>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="900">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="video-popup">
-                                          <img src="assets/images/team/four.png" alt="Image">
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="#">Lorem dolor</a></h6>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="900">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="video-popup">
-                                          <img src="assets/images/team/four.png" alt="Image">
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="#">Lorem dolor</a></h6>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="900">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="video-popup">
-                                          <img src="assets/images/team/four.png" alt="Image">
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="#">Lorem dolor</a></h6>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="900">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="video-popup">
-                                          <img src="assets/images/team/four.png" alt="Image">
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="#">Lorem dolor</a></h6>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="900">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="video-popup">
-                                          <img src="assets/images/team/four.png" alt="Image">
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="#">Lorem dolor</a></h6>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+                        <?php endwhile; ?>
+                     <?php endif; ?>
                   </div>
                   <div class="slider-navigation">
                      <button type="button" aria-label="prev slide" title="prev slide" class="prev-cause slider-btn">
                         <i class="fa-solid fa-arrow-left"></i>
                      </button>
                      <div class="section__cta cta text-center mt-0">
-                        <a href="our-team.html" aria-label="our team" title="our team" class="btn--primary">View All
-                           <i class="fa-solid fa-arrow-right"></i></a>
+                        <!-- <a href="our-team.html" aria-label="our team" title="our team" class="btn--primary">View All
+                           <i class="fa-solid fa-arrow-right"></i>
+                        </a> -->
                      </div>
                      <button type="button" aria-label="next slide" title="next slide"
                         class="next-cause slider-btn slider-btn-next">
@@ -539,7 +271,7 @@ get_header();
       </section>
       <!-- ==== / counter section end ==== -->
       <!-- ==== team section start ==== -->
-      <section class="team team-section" data-background="assets/images/bg-one.png">
+      <section class="team team-section" data-background="<?php echo get_template_directory_uri(  ); ?>/assets/images/bg-one.png">
          <div class="container">
             <div class="row justify-content-center">
                <div class="col-12 col-lg-10 col-xl-6">
@@ -553,197 +285,32 @@ get_header();
             <div class="cause__slider-wrapper">
                <div class="cause__slider swiper">
                   <div class="swiper-wrapper">
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="team-details.html">
-                                          <div class="team-thumb-info">
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                     <?php if(have_rows('team_members')): ?>
+                        <?php while(have_rows('team_members')): the_row(); ?>
+                           <div class="swiper-slide">
+                              <div class="cause__slider-inner">
+                                 <div class="cause__slider-single">
+                                    <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                                       <div class="team__single van-tilt">
+                                          <div class="team__single-thumb">
+                                             <a href="#">
+                                                <div class="team-thumb-info">
+                                                   <p><?php echo get_sub_field('member_descriptions'); ?></p>
+                                                </div>
+                                                <img src="<?php echo get_sub_field('member_photo'); ?>" alt="Image">
+                                             </a>
                                           </div>
-                                          <img src="assets/images/team/one.png" alt="Image">
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="team-details.html">Michel Fokluz</a></h6>
-                                       <p>Volunteer</p>
+                                          <div class="team__single-content">
+                                             <h6><a href="#"><?php echo get_sub_field('member_name'); ?></a></h6>
+                                             <p><?php echo get_sub_field('member_designation'); ?></p>
+                                          </div>
+                                       </div>
                                     </div>
                                  </div>
                               </div>
                            </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="300">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="team-details.html">
-                                          <div class="team-thumb-info">
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                                          </div>
-                                          <img src="assets/images/team/two.png" alt="Image">
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="team-details.html">Arian Drobloas</a></h6>
-                                       <p>Volunteer</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="600">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="team-details.html">
-                                          <div class="team-thumb-info">
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                                          </div>
-                                          <img src="assets/images/team/three.png" alt="Image">
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="team-details.html">Jara Klintof</a></h6>
-                                       <p>Volunteer</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="900">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="team-details.html">
-                                          <img src="assets/images/team/four.png" alt="Image">
-                                          <div class="team-thumb-info">
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                                          </div>
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="team-details.html">Aiden Markram</a></h6>
-                                       <p>Volunteer</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="900">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="team-details.html">
-                                          <img src="assets/images/team/four.png" alt="Image">
-                                          <div class="team-thumb-info">
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                                          </div>
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="team-details.html">Aiden Markram</a></h6>
-                                       <p>Volunteer</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="900">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="team-details.html">
-                                          <img src="assets/images/team/four.png" alt="Image">
-                                          <div class="team-thumb-info">
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                                          </div>
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="team-details.html">Aiden Markram</a></h6>
-                                       <p>Volunteer</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="900">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="team-details.html">
-                                          <img src="assets/images/team/four.png" alt="Image">
-                                          <div class="team-thumb-info">
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                                          </div>
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="team-details.html">Aiden Markram</a></h6>
-                                       <p>Volunteer</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="cause__slider-inner">
-                           <div class="cause__slider-single">
-                              <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="900">
-                                 <div class="team__single van-tilt">
-                                    <div class="team__single-thumb">
-                                       <a href="team-details.html">
-                                          <img src="assets/images/team/four.png" alt="Image">
-                                          <div class="team-thumb-info">
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                                          </div>
-                                       </a>
-                                    </div>
-                                    <div class="team__single-content">
-                                       <h6><a href="team-details.html">Aiden Markram</a></h6>
-                                       <p>Volunteer</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+                        <?php endwhile; ?>
+                     <?php endif; ?>
                   </div>
                   <div class="slider-navigation">
                      <button type="button" aria-label="prev slide" title="prev slide" class="prev-cause slider-btn">
@@ -781,96 +348,63 @@ get_header();
                </div>
             </div>
             <div class="row gutter-40">
-               <div class="col-12 col-lg-6 col-xl-4">
-                  <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
-                     <div class="blog__single van-tilt">
-                        <div class="blog__single-inner">
-                           <div class="blog__single-thumb">
-                              <a href="blog-details.html">
-                                 <img src="assets/images/blog/one.png" alt="Image">
-                              </a>
-                              <div class="tag">
-                                 <a href="blog-list.html"><i class="fa-solid fa-tags"></i>Health</a>
+               <?php
+                  $args = array(
+                     'post_type' => 'post',
+                     'posts_per_page' => 3,
+                     'orderby' => 'date',
+                     'order' => 'DESC',
+                     'status' => 'publish',
+                  );
+                  $query = new WP_Query($args);
+                  if ($query->have_posts()) :
+                     while ($query->have_posts()) : $query->the_post();
+               ?>
+                     <div class="col-12 col-lg-6 col-xl-4">
+                        <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                           <div class="blog__single van-tilt">
+                              <div class="blog__single-inner">
+                                 <div class="blog__single-thumb">
+                                    <a href="<?php the_permalink() ?>">
+                                       <?php if (has_post_thumbnail()) : ?>
+                                             <?php the_post_thumbnail('full', array('class' => '')); ?>
+                                       <?php else : ?>
+                                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/one.png" alt="Image">
+                                       <?php endif; ?>
+                                    </a>
+                                    <div class="tag">
+                                       <!-- <a href="blog-list.html"><i class="fa-solid fa-tags"></i>Health</a> -->
+                                    </div>
+                                 </div>
+                                 <div class="blog__single-content">
+                                    <h5><a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+                                    </h5>
+                                 </div>
+                                 <div class="blog__single-cta">
+                                    <a href="<?php the_permalink() ?>" aria-label="blog details" title="blog details">Read
+                                       More<i class="fa-solid fa-circle-arrow-right"></i></a>
+                                 </div>
                               </div>
-                           </div>
-                           <div class="blog__single-content">
-                              <h5><a href="blog-details.html">IT Service Case Studies Accelerate
-                                    Business Fly Success Tech</a>
-                              </h5>
-                           </div>
-                           <div class="blog__single-cta">
-                              <a href="blog-details.html" aria-label="blog details" title="blog details">Read
-                                 More<i class="fa-solid fa-circle-arrow-right"></i></a>
+                              <img src="<?php echo get_template_directory_uri(  ); ?>/assets/images/blog/spade.png" alt="Image" class="spade-two">
                            </div>
                         </div>
-                        <img src="assets/images/blog/spade.png" alt="Image" class="spade-two">
                      </div>
-                  </div>
-               </div>
-               <div class="col-12 col-lg-6 col-xl-4">
-                  <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                     <div class="blog__single van-tilt">
-                        <div class="blog__single-inner">
-                           <div class="blog__single-thumb">
-                              <a href="blog-details.html">
-                                 <img src="assets/images/blog/two.png" alt="Image">
-                              </a>
-                              <div class="tag">
-                                 <a href="blog-list.html"><i class="fa-solid fa-tags"></i>Education</a>
-                              </div>
-                           </div>
-                           <div class="blog__single-content">
-                              <h5><a href="blog-details.html">IT Service Case Studies Accelerate
-                                    Business Fly Success Tech</a>
-                              </h5>
-                           </div>
-                           <div class="blog__single-cta">
-                              <a href="blog-details.html" aria-label="blog details" title="blog details">Read
-                                 More<i class="fa-solid fa-circle-arrow-right"></i></a>
-                           </div>
-                        </div>
-                        <img src="assets/images/blog/spade.png" alt="Image" class="spade-two">
-                     </div>
-                  </div>
-               </div>
-               <div class="col-12 col-lg-6 col-xl-4">
-                  <div class="blog__single-wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-                     <div class="blog__single van-tilt">
-                        <div class="blog__single-inner">
-                           <div class="blog__single-thumb">
-                              <a href="blog-details.html">
-                                 <img src="assets/images/blog/three.png" alt="Image">
-                              </a>
-                              <div class="tag">
-                                 <a href="blog-list.html"><i class="fa-solid fa-tags"></i>Food</a>
-                              </div>
-                           </div>
-                           <div class="blog__single-content">
-                              <h5><a href="blog-details.html">IT Service Case Studies Accelerate
-                                    Business Fly Success Tech</a>
-                              </h5>
-                           </div>
-                           <div class="blog__single-cta">
-                              <a href="blog-details.html" aria-label="blog details" title="blog details">Read
-                                 More<i class="fa-solid fa-circle-arrow-right"></i></a>
-                           </div>
-                        </div>
-                        <img src="assets/images/blog/spade.png" alt="Image" class="spade-two">
-                     </div>
-                  </div>
-               </div>
+               <?php
+                     endwhile;
+                  endif;
+               ?>
             </div>
             <div class="row">
                <div class="col-12">
                   <div class="section__cta cta text-center">
-                     <a href="blog-grid.html" aria-label="our blog" title="our blog" class="btn--primary">View
+                     <a href="<?php echo get_page_link(58); ?>" aria-label="our blog" title="our blog" class="btn--primary">View
                         All <i class="fa-solid fa-arrow-right"></i></a>
                   </div>
                </div>
             </div>
          </div>
          <div class="spade">
-            <img src="assets/images/blog/spade-base.png" alt="Image" class="base-img">
+            <img src="<?php echo get_template_directory_uri(  ); ?>/assets/images/blog/spade-base.png" alt="Image" class="base-img">
          </div>
       </section>
       <!-- ==== / blog section end ==== -->
