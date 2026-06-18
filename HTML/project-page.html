@@ -265,14 +265,25 @@
             font-family: 'Nunito Sans', sans-serif;
             font-size: 17px;
             font-style: italic;
-            line-height: 1.8;
+            line-height: 1.8 !important;
             color: #1d2746;
+            text-transform: none !important;
+            display: flex;
+            align-items: flex-start;
         }
 
         .pdetail-issue__highlight i {
             color: var(--base-color);
             font-size: 24px;
-            margin-right: 10px;
+            margin-right: 14px;
+            margin-top: 4px;
+        }
+        
+        .pdetail-issue__highlight p, .pdetail-issue__highlight span, .pdetail-issue__highlight div {
+            margin: 0;
+            padding: 0;
+            line-height: 1.8 !important;
+            text-transform: none !important;
         }
 
         .pdetail-issue__stats-row {
@@ -291,6 +302,10 @@
             text-align: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .pdetail-issue__stat-box:hover {
@@ -303,14 +318,19 @@
             font-size: 34px;
             font-weight: 700;
             color: var(--base-color);
-            line-height: 1.1;
+            line-height: 1.2 !important;
+            margin-bottom: 8px;
+            display: block;
         }
 
         .pdetail-issue__stat-label {
             font-family: 'Nunito Sans', sans-serif;
-            font-size: 13px;
+            font-size: 14px;
             color: #6b7280;
-            margin-top: 6px;
+            margin-top: 0;
+            line-height: 1.5 !important;
+            text-transform: none !important;
+            display: block;
         }
 
         .pdetail-issue__thumb {
@@ -1200,8 +1220,10 @@
 
                             <div class="pdetail-issue__highlight">
                                 <i class="fa-solid fa-quote-left"></i>
-                                In the villages we surveyed, only 38% of children aged 10-14 could read a simple
-                                paragraph in their mother tongue. This is the crisis Shiksha Setu was born to address.
+                                <div>
+                                    In the villages we surveyed, only 38% of children aged 10-14 could read a simple
+                                    paragraph in their mother tongue. This is the crisis Shiksha Setu was born to address.
+                                </div>
                             </div>
                         </div>
                         <div class="pdetail-issue__stats-row">
