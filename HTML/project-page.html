@@ -1,1819 +1,1875 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <!-- required meta -->
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- #favicon -->
-   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-   <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
-   <!-- #title -->
-   <title>Ramdhanu | Shiksha Setu — Bridge to Education</title>
-   <!-- #keywords -->
-   <meta name="keywords" content="ramdhanu, NGO, education, project, shiksha setu, rural education, community">
-   <!-- #description -->
-   <meta name="description" content="Shiksha Setu by Ramdhanu — providing quality education to underprivileged children in rural India through community learning centres and digital classrooms.">
-   <!-- google fonts -->
-   <link rel="preconnect" href="../../../../fonts.googleapis.com/index.html">
-   <link rel="preconnect" href="../../../../fonts.gstatic.com/index.html" crossorigin>
-   <link href="../../../../fonts.googleapis.com/css233e6.css?family=Caveat:wght@400..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;family=Nunito:ital,wght@0,200..1000;1,200..1000&amp;family=Outfit:wght@100..900&amp;display=swap"
-      rel="stylesheet">
-   <!-- main css -->
-   <link rel="stylesheet" href="assets/css/main.css">
-   <!-- responsive css -->
-   <link rel="stylesheet" href="assets/css/responsive.css">
-   <!-- color themes -->
-   <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
-   <!-- want sticky header -->
-   <link rel="stylesheet" href="assets/css/sticky-header.css">
-   <!-- box layout css -->
-   <link rel="stylesheet" href="assets/css/box-layout.css">
-   <!-- dark mode css -->
-   <link rel="stylesheet" href="assets/css/dark-mode.css">
-   <!-- rtl css -->
-   <link rel="stylesheet" href="assets/css/rtl.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>Ramdhanu | Shiksha Setu — Bridge to Education</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="ramdhanu, NGO, education, project, shiksha setu, rural education, community">
+    <!-- #description -->
+    <meta name="description"
+        content="Shiksha Setu by Ramdhanu — providing quality education to underprivileged children in rural India through community learning centres and digital classrooms.">
+    <!-- google fonts -->
+    <link rel="preconnect" href="../../../../fonts.googleapis.com/index.html">
+    <link rel="preconnect" href="../../../../fonts.gstatic.com/index.html" crossorigin>
+    <link
+        href="../../../../fonts.googleapis.com/css233e6.css?family=Caveat:wght@400..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;family=Nunito:ital,wght@0,200..1000;1,200..1000&amp;family=Outfit:wght@100..900&amp;display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-   <!-- Project Details Page Styles -->
-   <style>
-      /* ===== Project Hero ===== */
-      .pdetail-hero {
-         position: relative;
-         padding: 100px 0 80px;
-         overflow: hidden;
-      }
-      .pdetail-hero__img-wrapper {
-         border-radius: 20px;
-         overflow: hidden;
-         position: relative;
-         box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-      }
-      .pdetail-hero__img-wrapper img {
-         width: 100%;
-         height: 420px;
-         object-fit: cover;
-      }
-      .pdetail-hero__play {
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         width: 84px;
-         height: 84px;
-         border-radius: 50%;
-         background: var(--base-color);
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         color: #fff;
-         font-size: 26px;
-         text-decoration: none;
-         z-index: 2;
-         transition: all 0.35s ease;
-      }
-      .pdetail-hero__play::before {
-         content: '';
-         position: absolute;
-         inset: -12px;
-         border-radius: 50%;
-         border: 2px solid rgba(255,255,255,0.35);
-         animation: hero-pulse 2s ease-out infinite;
-      }
-      .pdetail-hero__play::after {
-         content: '';
-         position: absolute;
-         inset: -24px;
-         border-radius: 50%;
-         border: 2px solid rgba(255,255,255,0.15);
-         animation: hero-pulse 2s ease-out 0.4s infinite;
-      }
-      @keyframes hero-pulse {
-         0% { transform: scale(1); opacity: 1; }
-         100% { transform: scale(1.4); opacity: 0; }
-      }
-      .pdetail-hero__play:hover {
-         background: #fff;
-         color: var(--base-color);
-         transform: translate(-50%, -50%) scale(1.1);
-      }
-      .pdetail-hero__meta-bar {
-         display: flex;
-         flex-wrap: wrap;
-         gap: 24px;
-         margin-top: 30px;
-      }
-      .pdetail-hero__meta-item {
-         display: flex;
-         align-items: center;
-         gap: 10px;
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 15px;
-         color: #4b5563;
-      }
-      .pdetail-hero__meta-icon {
-         width: 42px;
-         height: 42px;
-         border-radius: 50%;
-         background: rgba(255,96,21,0.1);
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         color: var(--base-color);
-         font-size: 16px;
-         flex-shrink: 0;
-      }
-      .pdetail-hero__meta-item strong {
-         display: block;
-         font-family: 'Outfit', sans-serif;
-         font-weight: 700;
-         color: #1d2746;
-         font-size: 14px;
-      }
-      .pdetail-hero__badge {
-         display: inline-flex;
-         align-items: center;
-         gap: 6px;
-         background: var(--base-color);
-         color: #fff;
-         padding: 7px 20px;
-         border-radius: 50px;
-         font-family: 'Outfit', sans-serif;
-         font-size: 13px;
-         font-weight: 600;
-         letter-spacing: 0.5px;
-         text-transform: uppercase;
-         position: absolute;
-         top: 20px;
-         left: 20px;
-         z-index: 2;
-      }
-      .pdetail-hero__status {
-         position: absolute;
-         top: 20px;
-         right: 20px;
-         padding: 7px 18px;
-         border-radius: 50px;
-         font-family: 'Outfit', sans-serif;
-         font-size: 12px;
-         font-weight: 700;
-         letter-spacing: 0.5px;
-         text-transform: uppercase;
-         z-index: 2;
-         background: #22c55e;
-         color: #fff;
-      }
+    <!-- Project Details Page Styles -->
+    <style>
+        /* ===== Project Hero ===== */
+        .pdetail-hero {
+            position: relative;
+            padding: 100px 0 80px;
+            overflow: hidden;
+        }
 
-      /* ===== Section Styling ===== */
-      .pdetail-section {
-         padding: 90px 0;
-      }
-      .pdetail-section--gray {
-         background: #f8f9fa;
-      }
-      .pdetail-section--dark {
-         background: linear-gradient(135deg, #1d2746 0%, #2d3a5c 100%);
-         color: #fff;
-         position: relative;
-         overflow: hidden;
-      }
-      .pdetail-section--dark::before {
-         content: '';
-         position: absolute;
-         width: 450px;
-         height: 450px;
-         background: var(--base-color);
-         border-radius: 50%;
-         opacity: 0.04;
-         top: -180px;
-         right: -80px;
-      }
-      .pdetail-section--dark::after {
-         content: '';
-         position: absolute;
-         width: 280px;
-         height: 280px;
-         background: var(--base-color);
-         border-radius: 50%;
-         opacity: 0.04;
-         bottom: -80px;
-         left: -40px;
-      }
-      .pdetail-section__header {
-         margin-bottom: 50px;
-      }
-      .pdetail-section__header p {
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 16px;
-         line-height: 1.8;
-         color: #6b7280;
-         max-width: 650px;
-      }
-      .pdetail-section__header--center p {
-         margin: 0 auto;
-      }
+        .pdetail-hero__img-wrapper {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
 
-      /* ===== Issue / Problem Section ===== */
-      .pdetail-issue__content p {
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 16px;
-         line-height: 1.85;
-         color: #4b5563;
-         margin-bottom: 18px;
-      }
-      .pdetail-issue__highlight {
-         background: linear-gradient(135deg, rgba(255,96,21,0.06), rgba(255,159,67,0.06));
-         border-left: 4px solid var(--base-color);
-         border-radius: 0 12px 12px 0;
-         padding: 28px 30px;
-         margin: 30px 0;
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 17px;
-         font-style: italic;
-         line-height: 1.8;
-         color: #1d2746;
-      }
-      .pdetail-issue__highlight i {
-         color: var(--base-color);
-         font-size: 24px;
-         margin-right: 10px;
-      }
-      .pdetail-issue__stats-row {
-         display: flex;
-         gap: 20px;
-         flex-wrap: wrap;
-         margin-top: 30px;
-      }
-      .pdetail-issue__stat-box {
-         flex: 1;
-         min-width: 140px;
-         background: #fff;
-         border-radius: 14px;
-         padding: 24px 20px;
-         text-align: center;
-         box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-         transition: all 0.3s ease;
-      }
-      .pdetail-issue__stat-box:hover {
-         transform: translateY(-4px);
-         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      }
-      .pdetail-issue__stat-number {
-         font-family: 'Outfit', sans-serif;
-         font-size: 34px;
-         font-weight: 700;
-         color: var(--base-color);
-         line-height: 1.1;
-      }
-      .pdetail-issue__stat-label {
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 13px;
-         color: #6b7280;
-         margin-top: 6px;
-      }
-      .pdetail-issue__thumb {
-         border-radius: 16px;
-         overflow: hidden;
-         box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-      }
-      .pdetail-issue__thumb img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-         min-height: 340px;
-      }
+        .pdetail-hero__img-wrapper img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+        }
 
-      /* ===== Our Work / Activities Section ===== */
-      .pdetail-work__card {
-         background: #fff;
-         border-radius: 16px;
-         padding: 36px 28px;
-         box-shadow: 0 6px 24px rgba(0,0,0,0.06);
-         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-         height: 100%;
-         position: relative;
-         overflow: hidden;
-      }
-      .pdetail-work__card::before {
-         content: '';
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 4px;
-         background: linear-gradient(90deg, var(--base-color), #ff9f43);
-         transform: scaleX(0);
-         transform-origin: left;
-         transition: transform 0.4s ease;
-      }
-      .pdetail-work__card:hover {
-         transform: translateY(-6px);
-         box-shadow: 0 16px 48px rgba(0,0,0,0.1);
-      }
-      .pdetail-work__card:hover::before {
-         transform: scaleX(1);
-      }
-      .pdetail-work__icon {
-         width: 64px;
-         height: 64px;
-         border-radius: 16px;
-         background: linear-gradient(135deg, rgba(255,96,21,0.1), rgba(255,159,67,0.1));
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         font-size: 28px;
-         color: var(--base-color);
-         margin-bottom: 22px;
-         transition: all 0.3s ease;
-      }
-      .pdetail-work__card:hover .pdetail-work__icon {
-         background: var(--base-color);
-         color: #fff;
-      }
-      .pdetail-work__card h5 {
-         font-family: 'Outfit', sans-serif;
-         font-size: 20px;
-         font-weight: 700;
-         color: #1d2746;
-         margin-bottom: 12px;
-      }
-      .pdetail-work__card p {
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 15px;
-         line-height: 1.7;
-         color: #6b7280;
-         margin: 0;
-      }
+        .pdetail-hero__play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            background: var(--base-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 26px;
+            text-decoration: none;
+            z-index: 2;
+            transition: all 0.35s ease;
+        }
 
-      /* ===== Image Gallery Section ===== */
-      .pdetail-gallery__grid {
-         display: grid;
-         grid-template-columns: repeat(3, 1fr);
-         grid-template-rows: auto auto;
-         gap: 16px;
-      }
-      .pdetail-gallery__item {
-         border-radius: 14px;
-         overflow: hidden;
-         position: relative;
-         cursor: pointer;
-      }
-      .pdetail-gallery__item:first-child {
-         grid-column: 1 / 3;
-         grid-row: 1 / 3;
-      }
-      .pdetail-gallery__item img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-         transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-         min-height: 200px;
-      }
-      .pdetail-gallery__item:first-child img {
-         min-height: 430px;
-      }
-      .pdetail-gallery__item:hover img {
-         transform: scale(1.06);
-      }
-      .pdetail-gallery__overlay {
-         position: absolute;
-         inset: 0;
-         background: rgba(29, 39, 70, 0.5);
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         opacity: 0;
-         transition: opacity 0.35s ease;
-      }
-      .pdetail-gallery__item:hover .pdetail-gallery__overlay {
-         opacity: 1;
-      }
-      .pdetail-gallery__overlay i {
-         width: 52px;
-         height: 52px;
-         border-radius: 50%;
-         background: var(--base-color);
-         color: #fff;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         font-size: 20px;
-         transform: scale(0.6);
-         transition: transform 0.35s ease;
-      }
-      .pdetail-gallery__item:hover .pdetail-gallery__overlay i {
-         transform: scale(1);
-      }
-      .pdetail-gallery__video-item .pdetail-gallery__overlay {
-         opacity: 1;
-         background: rgba(29, 39, 70, 0.35);
-      }
-      .pdetail-gallery__video-item .pdetail-gallery__overlay i {
-         transform: scale(1);
-         width: 60px;
-         height: 60px;
-         font-size: 22px;
-      }
-      .pdetail-gallery__video-item .pdetail-gallery__overlay i::before {
-         content: '';
-         position: absolute;
-         inset: -8px;
-         border-radius: 50%;
-         border: 2px solid rgba(255,255,255,0.3);
-         animation: hero-pulse 2s ease-out infinite;
-      }
-      @media (max-width: 767px) {
-         .pdetail-gallery__grid {
-            grid-template-columns: 1fr 1fr;
-         }
-         .pdetail-gallery__item:first-child {
-            grid-column: 1 / -1;
-            grid-row: auto;
-         }
-         .pdetail-gallery__item:first-child img {
-            min-height: 240px;
-         }
-      }
+        .pdetail-hero__play::before {
+            content: '';
+            position: absolute;
+            inset: -12px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            animation: hero-pulse 2s ease-out infinite;
+        }
 
-      /* ===== Impact Section ===== */
-      .pdetail-impact__card {
-         text-align: center;
-         padding: 40px 24px;
-         position: relative;
-         z-index: 1;
-      }
-      .pdetail-impact__icon {
-         width: 76px;
-         height: 76px;
-         border-radius: 50%;
-         background: rgba(255,255,255,0.1);
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         margin: 0 auto 20px;
-         font-size: 30px;
-         color: var(--base-color);
-         transition: all 0.3s ease;
-         border: 2px solid rgba(255,255,255,0.08);
-      }
-      .pdetail-impact__card:hover .pdetail-impact__icon {
-         background: var(--base-color);
-         color: #fff;
-         border-color: var(--base-color);
-         transform: scale(1.08);
-      }
-      .pdetail-impact__number {
-         font-family: 'Outfit', sans-serif;
-         font-size: 48px;
-         font-weight: 700;
-         color: #fff;
-         line-height: 1.1;
-      }
-      .pdetail-impact__number span {
-         color: var(--base-color);
-      }
-      .pdetail-impact__label {
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 15px;
-         color: rgba(255,255,255,0.6);
-         margin-top: 6px;
-      }
+        .pdetail-hero__play::after {
+            content: '';
+            position: absolute;
+            inset: -24px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            animation: hero-pulse 2s ease-out 0.4s infinite;
+        }
 
-      /* ===== Timeline Section ===== */
-      .pdetail-timeline {
-         position: relative;
-         padding-left: 40px;
-      }
-      .pdetail-timeline::before {
-         content: '';
-         position: absolute;
-         left: 14px;
-         top: 0;
-         bottom: 0;
-         width: 3px;
-         background: linear-gradient(180deg, var(--base-color), #ff9f43, transparent);
-         border-radius: 4px;
-      }
-      .pdetail-timeline__item {
-         position: relative;
-         padding-bottom: 40px;
-      }
-      .pdetail-timeline__item:last-child {
-         padding-bottom: 0;
-      }
-      .pdetail-timeline__dot {
-         position: absolute;
-         left: -33px;
-         top: 4px;
-         width: 22px;
-         height: 22px;
-         border-radius: 50%;
-         background: #fff;
-         border: 4px solid var(--base-color);
-         z-index: 1;
-         transition: all 0.3s ease;
-      }
-      .pdetail-timeline__item:hover .pdetail-timeline__dot {
-         background: var(--base-color);
-         transform: scale(1.2);
-      }
-      .pdetail-timeline__date {
-         font-family: 'Outfit', sans-serif;
-         font-size: 13px;
-         font-weight: 700;
-         color: var(--base-color);
-         text-transform: uppercase;
-         letter-spacing: 1px;
-         margin-bottom: 6px;
-      }
-      .pdetail-timeline__item h5 {
-         font-family: 'Outfit', sans-serif;
-         font-size: 19px;
-         font-weight: 700;
-         color: #1d2746;
-         margin-bottom: 8px;
-      }
-      .pdetail-timeline__item p {
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 15px;
-         line-height: 1.7;
-         color: #6b7280;
-         margin: 0;
-      }
+        @keyframes hero-pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
 
-      /* ===== Testimonial / Beneficiary Quote ===== */
-      .pdetail-quote {
-         background: #fff;
-         border-radius: 20px;
-         padding: 44px 40px;
-         box-shadow: 0 8px 30px rgba(0,0,0,0.07);
-         position: relative;
-      }
-      .pdetail-quote__icon {
-         position: absolute;
-         top: -18px;
-         left: 40px;
-         width: 46px;
-         height: 46px;
-         border-radius: 50%;
-         background: var(--base-color);
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         color: #fff;
-         font-size: 20px;
-      }
-      .pdetail-quote p {
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 17px;
-         line-height: 1.8;
-         color: #4b5563;
-         font-style: italic;
-         margin-bottom: 22px;
-      }
-      .pdetail-quote__author {
-         display: flex;
-         align-items: center;
-         gap: 14px;
-      }
-      .pdetail-quote__author img {
-         width: 52px;
-         height: 52px;
-         border-radius: 50%;
-         object-fit: cover;
-         border: 3px solid rgba(255,96,21,0.2);
-      }
-      .pdetail-quote__author-info h6 {
-         font-family: 'Outfit', sans-serif;
-         font-size: 16px;
-         font-weight: 700;
-         color: #1d2746;
-         margin: 0;
-      }
-      .pdetail-quote__author-info span {
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 13px;
-         color: #6b7280;
-      }
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
 
-      /* ===== CTA / Support Section ===== */
-      .pdetail-cta {
-         background: linear-gradient(135deg, var(--base-color) 0%, #ff9f43 100%);
-         padding: 80px 0;
-         text-align: center;
-         position: relative;
-         overflow: hidden;
-      }
-      .pdetail-cta::before {
-         content: '';
-         position: absolute;
-         width: 400px;
-         height: 400px;
-         border-radius: 50%;
-         background: rgba(255,255,255,0.08);
-         top: -180px;
-         right: -80px;
-      }
-      .pdetail-cta::after {
-         content: '';
-         position: absolute;
-         width: 250px;
-         height: 250px;
-         border-radius: 50%;
-         background: rgba(255,255,255,0.06);
-         bottom: -100px;
-         left: -50px;
-      }
-      .pdetail-cta h2 {
-         font-family: 'Outfit', sans-serif;
-         font-size: 40px;
-         font-weight: 700;
-         color: #fff;
-         margin-bottom: 16px;
-         position: relative;
-         z-index: 1;
-      }
-      .pdetail-cta p {
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 18px;
-         color: rgba(255,255,255,0.85);
-         margin-bottom: 32px;
-         max-width: 600px;
-         margin-left: auto;
-         margin-right: auto;
-         position: relative;
-         z-index: 1;
-      }
-      .pdetail-cta__actions {
-         display: flex;
-         justify-content: center;
-         gap: 16px;
-         flex-wrap: wrap;
-         position: relative;
-         z-index: 1;
-      }
-      .pdetail-cta__btn {
-         display: inline-flex;
-         align-items: center;
-         gap: 10px;
-         padding: 16px 36px;
-         border-radius: 50px;
-         font-family: 'Outfit', sans-serif;
-         font-size: 16px;
-         font-weight: 700;
-         text-decoration: none;
-         transition: all 0.35s ease;
-         border: none;
-         cursor: pointer;
-      }
-      .pdetail-cta__btn--primary {
-         background: #fff;
-         color: var(--base-color);
-      }
-      .pdetail-cta__btn--primary:hover {
-         background: #1d2746;
-         color: #fff;
-         transform: translateY(-3px);
-      }
-      .pdetail-cta__btn--outline {
-         background: transparent;
-         color: #fff;
-         border: 2px solid rgba(255,255,255,0.4);
-      }
-      .pdetail-cta__btn--outline:hover {
-         background: #fff;
-         color: var(--base-color);
-         border-color: #fff;
-         transform: translateY(-3px);
-      }
+        .pdetail-hero__play:hover {
+            background: #fff;
+            color: var(--base-color);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
 
-      /* ===== Progress Bar ===== */
-      .pdetail-progress {
-         margin-top: 30px;
-      }
-      .pdetail-progress__header {
-         display: flex;
-         justify-content: space-between;
-         font-family: 'Outfit', sans-serif;
-         font-size: 14px;
-         font-weight: 600;
-         color: #1d2746;
-         margin-bottom: 10px;
-      }
-      .pdetail-progress__bar {
-         width: 100%;
-         height: 10px;
-         background: #eee;
-         border-radius: 10px;
-         overflow: hidden;
-      }
-      .pdetail-progress__fill {
-         height: 100%;
-         background: linear-gradient(90deg, var(--base-color), #ff9f43);
-         border-radius: 10px;
-         position: relative;
-         transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .pdetail-progress__fill::after {
-         content: '';
-         position: absolute;
-         top: 0;
-         right: 0;
-         width: 6px;
-         height: 100%;
-         background: #fff;
-         border-radius: 50%;
-      }
-      .pdetail-progress__amounts {
-         display: flex;
-         justify-content: space-between;
-         margin-top: 10px;
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 14px;
-         color: #6b7280;
-      }
-      .pdetail-progress__amounts strong {
-         color: #1d2746;
-         font-weight: 700;
-      }
+        .pdetail-hero__meta-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 30px;
+        }
 
-      /* ===== Sidebar Info Boxes ===== */
-      .pdetail-sidebar__box {
-         background: #fff;
-         border-radius: 16px;
-         padding: 28px 24px;
-         box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-         margin-bottom: 24px;
-      }
-      .pdetail-sidebar__box h5 {
-         font-family: 'Outfit', sans-serif;
-         font-size: 18px;
-         font-weight: 700;
-         color: #1d2746;
-         margin-bottom: 18px;
-         padding-bottom: 14px;
-         border-bottom: 2px solid #f0f0f0;
-         position: relative;
-      }
-      .pdetail-sidebar__box h5::after {
-         content: '';
-         position: absolute;
-         bottom: -2px;
-         left: 0;
-         width: 50px;
-         height: 2px;
-         background: var(--base-color);
-      }
-      .pdetail-sidebar__info-list {
-         list-style: none;
-         padding: 0;
-         margin: 0;
-      }
-      .pdetail-sidebar__info-list li {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         padding: 12px 0;
-         border-bottom: 1px solid #f5f5f5;
-         font-family: 'Nunito Sans', sans-serif;
-         font-size: 15px;
-      }
-      .pdetail-sidebar__info-list li:last-child {
-         border-bottom: none;
-      }
-      .pdetail-sidebar__info-list li span:first-child {
-         color: #6b7280;
-         display: flex;
-         align-items: center;
-         gap: 8px;
-      }
-      .pdetail-sidebar__info-list li span:first-child i {
-         color: var(--base-color);
-         width: 20px;
-         text-align: center;
-      }
-      .pdetail-sidebar__info-list li span:last-child {
-         font-weight: 700;
-         color: #1d2746;
-         font-family: 'Outfit', sans-serif;
-      }
-      .pdetail-sidebar__share {
-         display: flex;
-         gap: 10px;
-         margin-top: 10px;
-      }
-      .pdetail-sidebar__share a {
-         width: 42px;
-         height: 42px;
-         border-radius: 50%;
-         background: rgba(255,96,21,0.08);
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         color: var(--base-color);
-         font-size: 15px;
-         transition: all 0.3s ease;
-         text-decoration: none;
-      }
-      .pdetail-sidebar__share a:hover {
-         background: var(--base-color);
-         color: #fff;
-         transform: translateY(-3px);
-      }
+        .pdetail-hero__meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 15px;
+            color: #4b5563;
+        }
 
-      /* ===== Responsive ===== */
-      @media (max-width: 991px) {
-         .pdetail-hero__img-wrapper img { height: 320px; }
-         .pdetail-cta h2 { font-size: 30px; }
-         .pdetail-impact__number { font-size: 36px; }
-      }
-      @media (max-width: 767px) {
-         .pdetail-section { padding: 60px 0; }
-         .pdetail-hero { padding: 60px 0 40px; }
-         .pdetail-hero__img-wrapper img { height: 240px; }
-         .pdetail-cta { padding: 60px 0; }
-         .pdetail-cta h2 { font-size: 24px; }
-         .pdetail-quote { padding: 30px 24px; }
-      }
-   </style>
+        .pdetail-hero__meta-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 96, 21, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--base-color);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .pdetail-hero__meta-item strong {
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: #1d2746;
+            font-size: 14px;
+        }
+
+        .pdetail-hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--base-color);
+            color: #fff;
+            padding: 7px 20px;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+        }
+
+        .pdetail-hero__status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 7px 18px;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            z-index: 2;
+            background: #22c55e;
+            color: #fff;
+        }
+
+        /* ===== Section Styling ===== */
+        .pdetail-section {
+            padding: 90px 0;
+        }
+
+        .pdetail-section--gray {
+            background: #f8f9fa;
+        }
+
+        .pdetail-section--dark {
+            background: linear-gradient(135deg, #1d2746 0%, #2d3a5c 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pdetail-section--dark::before {
+            content: '';
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: var(--base-color);
+            border-radius: 50%;
+            opacity: 0.04;
+            top: -180px;
+            right: -80px;
+        }
+
+        .pdetail-section--dark::after {
+            content: '';
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            background: var(--base-color);
+            border-radius: 50%;
+            opacity: 0.04;
+            bottom: -80px;
+            left: -40px;
+        }
+
+        .pdetail-section__header {
+            margin-bottom: 50px;
+        }
+
+        .pdetail-section__header p {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #6b7280;
+            max-width: 650px;
+        }
+
+        .pdetail-section__header--center p {
+            margin: 0 auto;
+        }
+
+        /* ===== Issue / Problem Section ===== */
+        .pdetail-issue__content p {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.85;
+            color: #4b5563;
+            margin-bottom: 18px;
+        }
+
+        .pdetail-issue__highlight {
+            background: linear-gradient(135deg, rgba(255, 96, 21, 0.06), rgba(255, 159, 67, 0.06));
+            border-left: 4px solid var(--base-color);
+            border-radius: 0 12px 12px 0;
+            padding: 28px 30px;
+            margin: 30px 0;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 17px;
+            font-style: italic;
+            line-height: 1.8;
+            color: #1d2746;
+        }
+
+        .pdetail-issue__highlight i {
+            color: var(--base-color);
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .pdetail-issue__stats-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .pdetail-issue__stat-box {
+            flex: 1;
+            min-width: 140px;
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .pdetail-issue__stat-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdetail-issue__stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--base-color);
+            line-height: 1.1;
+        }
+
+        .pdetail-issue__stat-label {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 13px;
+            color: #6b7280;
+            margin-top: 6px;
+        }
+
+        .pdetail-issue__thumb {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdetail-issue__thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 340px;
+        }
+
+        /* ===== Our Work / Activities Section ===== */
+        .pdetail-work__card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 36px 28px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pdetail-work__card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--base-color), #ff9f43);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .pdetail-work__card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdetail-work__card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pdetail-work__icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(255, 96, 21, 0.1), rgba(255, 159, 67, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--base-color);
+            margin-bottom: 22px;
+            transition: all 0.3s ease;
+        }
+
+        .pdetail-work__card:hover .pdetail-work__icon {
+            background: var(--base-color);
+            color: #fff;
+        }
+
+        .pdetail-work__card h5 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1d2746;
+            margin-bottom: 12px;
+        }
+
+        .pdetail-work__card p {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        /* ===== Image Gallery Section ===== */
+        .pdetail-gallery__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 16px;
+        }
+
+        .pdetail-gallery__item {
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .pdetail-gallery__item:first-child {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .pdetail-gallery__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            min-height: 200px;
+        }
+
+        .pdetail-gallery__item:first-child img {
+            min-height: 430px;
+        }
+
+        .pdetail-gallery__item:hover img {
+            transform: scale(1.06);
+        }
+
+        .pdetail-gallery__overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(29, 39, 70, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .pdetail-gallery__item:hover .pdetail-gallery__overlay {
+            opacity: 1;
+        }
+
+        .pdetail-gallery__overlay i {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--base-color);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transform: scale(0.6);
+            transition: transform 0.35s ease;
+        }
+
+        .pdetail-gallery__item:hover .pdetail-gallery__overlay i {
+            transform: scale(1);
+        }
+
+        .pdetail-gallery__video-item .pdetail-gallery__overlay {
+            opacity: 1;
+            background: rgba(29, 39, 70, 0.35);
+        }
+
+        .pdetail-gallery__video-item .pdetail-gallery__overlay i {
+            transform: scale(1);
+            width: 60px;
+            height: 60px;
+            font-size: 22px;
+        }
+
+        .pdetail-gallery__video-item .pdetail-gallery__overlay i::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: hero-pulse 2s ease-out infinite;
+        }
+
+        @media (max-width: 767px) {
+            .pdetail-gallery__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .pdetail-gallery__item:first-child {
+                grid-column: 1 / -1;
+                grid-row: auto;
+            }
+
+            .pdetail-gallery__item:first-child img {
+                min-height: 240px;
+            }
+        }
+
+        /* ===== Impact Section ===== */
+        .pdetail-impact__card {
+            text-align: center;
+            padding: 40px 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pdetail-impact__icon {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            color: var(--base-color);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .pdetail-impact__card:hover .pdetail-impact__icon {
+            background: var(--base-color);
+            color: #fff;
+            border-color: var(--base-color);
+            transform: scale(1.08);
+        }
+
+        .pdetail-impact__number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.1;
+        }
+
+        .pdetail-impact__number span {
+            color: var(--base-color);
+        }
+
+        .pdetail-impact__label {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 6px;
+        }
+
+        /* ===== Timeline Section ===== */
+        .pdetail-timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .pdetail-timeline::before {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--base-color), #ff9f43, transparent);
+            border-radius: 4px;
+        }
+
+        .pdetail-timeline__item {
+            position: relative;
+            padding-bottom: 40px;
+        }
+
+        .pdetail-timeline__item:last-child {
+            padding-bottom: 0;
+        }
+
+        .pdetail-timeline__dot {
+            position: absolute;
+            left: -33px;
+            top: 4px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid var(--base-color);
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .pdetail-timeline__item:hover .pdetail-timeline__dot {
+            background: var(--base-color);
+            transform: scale(1.2);
+        }
+
+        .pdetail-timeline__date {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--base-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .pdetail-timeline__item h5 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 19px;
+            font-weight: 700;
+            color: #1d2746;
+            margin-bottom: 8px;
+        }
+
+        .pdetail-timeline__item p {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        /* ===== Testimonial / Beneficiary Quote ===== */
+        .pdetail-quote {
+            background: #fff;
+            border-radius: 20px;
+            padding: 44px 40px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+            position: relative;
+        }
+
+        .pdetail-quote__icon {
+            position: absolute;
+            top: -18px;
+            left: 40px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--base-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .pdetail-quote p {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #4b5563;
+            font-style: italic;
+            margin-bottom: 22px;
+        }
+
+        .pdetail-quote__author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .pdetail-quote__author img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 96, 21, 0.2);
+        }
+
+        .pdetail-quote__author-info h6 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1d2746;
+            margin: 0;
+        }
+
+        .pdetail-quote__author-info span {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        /* ===== CTA / Support Section ===== */
+        .pdetail-cta {
+            background: linear-gradient(135deg, var(--base-color) 0%, #ff9f43 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pdetail-cta::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            top: -180px;
+            right: -80px;
+        }
+
+        .pdetail-cta::after {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            bottom: -100px;
+            left: -50px;
+        }
+
+        .pdetail-cta h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pdetail-cta p {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pdetail-cta__actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pdetail-cta__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.35s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .pdetail-cta__btn--primary {
+            background: #fff;
+            color: var(--base-color);
+        }
+
+        .pdetail-cta__btn--primary:hover {
+            background: #1d2746;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .pdetail-cta__btn--outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .pdetail-cta__btn--outline:hover {
+            background: #fff;
+            color: var(--base-color);
+            border-color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* ===== Progress Bar ===== */
+        .pdetail-progress {
+            margin-top: 30px;
+        }
+
+        .pdetail-progress__header {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1d2746;
+            margin-bottom: 10px;
+        }
+
+        .pdetail-progress__bar {
+            width: 100%;
+            height: 10px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .pdetail-progress__fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--base-color), #ff9f43);
+            border-radius: 10px;
+            position: relative;
+            transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pdetail-progress__fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 6px;
+            height: 100%;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .pdetail-progress__amounts {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .pdetail-progress__amounts strong {
+            color: #1d2746;
+            font-weight: 700;
+        }
+
+        /* ===== Sidebar Info Boxes ===== */
+        .pdetail-sidebar__box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            margin-bottom: 24px;
+        }
+
+        .pdetail-sidebar__box h5 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1d2746;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid #f0f0f0;
+            position: relative;
+        }
+
+        .pdetail-sidebar__box h5::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--base-color);
+        }
+
+        .pdetail-sidebar__info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pdetail-sidebar__info-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f5f5f5;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 15px;
+        }
+
+        .pdetail-sidebar__info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .pdetail-sidebar__info-list li span:first-child {
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pdetail-sidebar__info-list li span:first-child i {
+            color: var(--base-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .pdetail-sidebar__info-list li span:last-child {
+            font-weight: 700;
+            color: #1d2746;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .pdetail-sidebar__share {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .pdetail-sidebar__share a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 96, 21, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--base-color);
+            font-size: 15px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .pdetail-sidebar__share a:hover {
+            background: var(--base-color);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 991px) {
+            .pdetail-hero__img-wrapper img {
+                height: 320px;
+            }
+
+            .pdetail-cta h2 {
+                font-size: 30px;
+            }
+
+            .pdetail-impact__number {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .pdetail-section {
+                padding: 60px 0;
+            }
+
+            .pdetail-hero {
+                padding: 60px 0 40px;
+            }
+
+            .pdetail-hero__img-wrapper img {
+                height: 240px;
+            }
+
+            .pdetail-cta {
+                padding: 60px 0;
+            }
+
+            .pdetail-cta h2 {
+                font-size: 24px;
+            }
+
+            .pdetail-quote {
+                padding: 30px 24px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-   <div class="page-wrapper">
-      <!-- ==== preloader start ==== -->
-      <div class="preloader">
-         <img src="assets/images/logo.png">
-      </div>
-      <!-- ==== / preloader end ==== -->
-      <!-- ==== topbar start ==== -->
-      <div class="topbar d-none d-lg-block">
-         <div class="container">
-            <div class="row align-items-center">
-               <div class="col-12 col-lg-6">
-                  <div class="topbar__list-wrapper">
-                     <ul class="topbar__list">
-                        <li><a href="mailto:support@example.com"><i
-                                 class="fa-regular fa-envelope"></i>support@example.com</a>
-                        </li>
-                        <li><a href="tel:2305-587-3407"><i class="fa-solid fa-phone"></i>+2(305)
-                              587-3407</a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-12 col-lg-6">
-                  <div class="topbar__items justify-content-end">
-                     <div class="social">
-                        <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook"
-                           title="facebook">
-                           <i class="fa-brands fa-facebook-f"></i>
+    <div class="page-wrapper">
+        <!-- ==== preloader start ==== -->
+        <div class="preloader">
+            <img src="assets/images/logo.png">
+        </div>
+        <!-- ==== / preloader end ==== -->
+        <!-- ==== topbar start ==== -->
+        <div class="topbar d-none d-lg-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <div class="topbar__list-wrapper">
+                            <ul class="topbar__list">
+                                <li><a href="mailto:support@example.com"><i
+                                            class="fa-regular fa-envelope"></i>support@example.com</a>
+                                </li>
+                                <li><a href="tel:2305-587-3407"><i class="fa-solid fa-phone"></i>+2(305)
+                                        587-3407</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="topbar__items justify-content-end">
+                            <div class="social">
+                                <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook"
+                                    title="facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="https://vimeo.com/" target="_blank" aria-label="share us on vimeo"
+                                    title="vimeo">
+                                    <i class="fa-brands fa-vimeo-v"></i>
+                                </a>
+                                <a href="https://x.com/" target="_blank" aria-label="share us on twitter"
+                                    title="twitter">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/" target="_blank" aria-label="share us on linkedin"
+                                    title="linkedin">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ==== / topbar end ==== -->
+        <!-- ==== header start ==== -->
+        <header class="header header-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="main-header__menu-box">
+                            <nav class="navbar p-0">
+                                <div class="navbar-logo">
+                                    <a href="index.html">
+                                        <img src="assets/images/logo.png" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="navbar__menu d-none d-xl-block">
+                                    <ul class="navbar__list">
+                                        <li class="navbar__item nav-fade">
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li class="navbar__item nav-fade">
+                                            <a href="about-us.html">About Us</a>
+                                        </li>
+                                        <li class="navbar__item navbar__item--has-children nav-fade">
+                                            <a href="#" aria-label="dropdown menu"
+                                                class="navbar__dropdown-label dropdown-label-alter">Causes</a>
+                                            <ul class="navbar__sub-menu">
+                                                <li>
+                                                    <a href="our-causes.html">Our Causes</a>
+                                                </li>
+                                                <li>
+                                                    <a href="cause-details.html">Cause Details</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="navbar__item navbar__item--has-children nav-fade">
+                                            <a href="#" aria-label="dropdown menu"
+                                                class="navbar__dropdown-label dropdown-label-alter">Pages</a>
+                                            <ul class="navbar__sub-menu">
+                                                <li>
+                                                    <a href="faq.html">FAQ</a>
+                                                </li>
+                                                <li>
+                                                    <a href="donate-us.html">Donate Us</a>
+                                                </li>
+                                                <li class="navbar__item navbar__item--has-children">
+                                                    <a aria-label="dropdown menu"
+                                                        class="navbar__dropdown-label navbar__dropdown-label-sub">Events</a>
+                                                    <ul class="navbar__sub-menu navbar__sub-menu__nested">
+                                                        <li>
+                                                            <a href="events.html">Events</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="event-details.html">Event Details</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="navbar__item navbar__item--has-children">
+                                                    <a aria-label="dropdown menu"
+                                                        class="navbar__dropdown-label navbar__dropdown-label-sub">Shop</a>
+                                                    <ul class="navbar__sub-menu navbar__sub-menu__nested">
+                                                        <li>
+                                                            <a href="shop.html">Our Shop</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="product-details.html">Product Details</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="cart.html">View Cart</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="checkout.html">Checkout</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="navbar__item navbar__item--has-children">
+                                                    <a aria-label="dropdown menu"
+                                                        class="navbar__dropdown-label navbar__dropdown-label-sub">Team</a>
+                                                    <ul class="navbar__sub-menu navbar__sub-menu__nested">
+                                                        <li>
+                                                            <a href="our-team.html">Our Teams</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="team-details.html">Team Details</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="project-page.html">Our Projects</a>
+                                                </li>
+                                                <li>
+                                                    <a href="coming-soon.html">Coming Soon</a>
+                                                </li>
+                                                <li>
+                                                    <a href="404.html">Error</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="navbar__item navbar__item--has-children nav-fade">
+                                            <a href="#" aria-label="dropdown menu"
+                                                class="navbar__dropdown-label dropdown-label-alter">News</a>
+                                            <ul class="navbar__sub-menu">
+                                                <li>
+                                                    <a href="blog-list.html">News List View</a>
+                                                </li>
+                                                <li>
+                                                    <a href="blog-grid.html">News Grid View</a>
+                                                </li>
+                                                <li>
+                                                    <a href="blog-details.html">News Details</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="navbar__item nav-fade">
+                                            <a href="contact-us.html">Contact Us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="navbar__options">
+                                    <div class="navbar__mobile-options ">
+                                        <div class="contact-btn d-none d-xxl-flex">
+                                            <div class="contact-icon">
+                                                <i class="fa-solid fa-phone-volume"></i>
+                                            </div>
+                                            <div class="contact-content">
+                                                <p>Call Us Now</p>
+                                                <a href="tel:01-793-7938">(+01)-793-7938 </a>
+                                            </div>
+                                        </div>
+                                        <a href="donate-us.html" class="btn--primary d-none d-md-flex">Donate Now <i
+                                                class="icon-circle-arrow"></i></a>
+                                    </div>
+                                    <button class="open-offcanvas-nav d-flex d-xl-none" aria-label="toggle mobile menu"
+                                        title="open offcanvas menu">
+                                        <span class="icon-bar top-bar"></span>
+                                        <span class="icon-bar middle-bar"></span>
+                                        <span class="icon-bar bottom-bar"></span>
+                                    </button>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ==== / header end ==== -->
+        <!-- ==== mobile menu start ==== -->
+        <div class="mobile-menu d-block d-xl-none">
+            <nav class="mobile-menu__wrapper">
+                <div class="mobile-menu__header nav-fade">
+                    <div class="logo">
+                        <a href="index.html" aria-label="home page" title="logo">
+                            <img src="assets/images/logo.png" alt="Image">
                         </a>
-                        <a href="https://vimeo.com/" target="_blank" aria-label="share us on vimeo" title="vimeo">
-                           <i class="fa-brands fa-vimeo-v"></i>
-                        </a>
-                        <a href="https://x.com/" target="_blank" aria-label="share us on twitter" title="twitter">
-                           <i class="fa-brands fa-twitter"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/" target="_blank" aria-label="share us on linkedin"
-                           title="linkedin">
-                           <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- ==== / topbar end ==== -->
-      <!-- ==== header start ==== -->
-      <header class="header header-primary">
-         <div class="container">
-            <div class="row">
-               <div class="col-12">
-                  <div class="main-header__menu-box">
-                     <nav class="navbar p-0">
-                        <div class="navbar-logo">
-                           <a href="index.html">
-                              <img src="assets/images/logo.png" alt="Image">
-                           </a>
-                        </div>
-                        <div class="navbar__menu d-none d-xl-block">
-                           <ul class="navbar__list">
-                              <li class="navbar__item nav-fade">
-                                 <a href="index.html">Home</a>
-                              </li>
-                              <li class="navbar__item nav-fade">
-                                 <a href="about-us.html">About Us</a>
-                              </li>
-                              <li class="navbar__item navbar__item--has-children nav-fade">
-                                 <a href="#" aria-label="dropdown menu"
-                                    class="navbar__dropdown-label dropdown-label-alter">Causes</a>
-                                 <ul class="navbar__sub-menu">
-                                    <li>
-                                       <a href="our-causes.html">Our Causes</a>
-                                    </li>
-                                    <li>
-                                       <a href="cause-details.html">Cause Details</a>
-                                    </li>
-                                 </ul>
-                              </li>
-                              <li class="navbar__item navbar__item--has-children nav-fade">
-                                 <a href="#" aria-label="dropdown menu"
-                                    class="navbar__dropdown-label dropdown-label-alter">Pages</a>
-                                 <ul class="navbar__sub-menu">
-                                    <li>
-                                       <a href="faq.html">FAQ</a>
-                                    </li>
-                                    <li>
-                                       <a href="donate-us.html">Donate Us</a>
-                                    </li>
-                                    <li class="navbar__item navbar__item--has-children">
-                                       <a aria-label="dropdown menu"
-                                          class="navbar__dropdown-label navbar__dropdown-label-sub">Events</a>
-                                       <ul class="navbar__sub-menu navbar__sub-menu__nested">
-                                          <li>
-                                             <a href="events.html">Events</a>
-                                          </li>
-                                          <li>
-                                             <a href="event-details.html">Event Details</a>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                    <li class="navbar__item navbar__item--has-children">
-                                       <a aria-label="dropdown menu"
-                                          class="navbar__dropdown-label navbar__dropdown-label-sub">Shop</a>
-                                       <ul class="navbar__sub-menu navbar__sub-menu__nested">
-                                          <li>
-                                             <a href="shop.html">Our Shop</a>
-                                          </li>
-                                          <li>
-                                             <a href="product-details.html">Product Details</a>
-                                          </li>
-                                          <li>
-                                             <a href="cart.html">View Cart</a>
-                                          </li>
-                                          <li>
-                                             <a href="checkout.html">Checkout</a>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                    <li class="navbar__item navbar__item--has-children">
-                                       <a aria-label="dropdown menu"
-                                          class="navbar__dropdown-label navbar__dropdown-label-sub">Team</a>
-                                       <ul class="navbar__sub-menu navbar__sub-menu__nested">
-                                          <li>
-                                             <a href="our-team.html">Our Teams</a>
-                                          </li>
-                                          <li>
-                                             <a href="team-details.html">Team Details</a>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                    <li>
-                                       <a href="project-page.html">Our Projects</a>
-                                    </li>
-                                    <li>
-                                       <a href="coming-soon.html">Coming Soon</a>
-                                    </li>
-                                    <li>
-                                       <a href="404.html">Error</a>
-                                    </li>
-                                 </ul>
-                              </li>
-                              <li class="navbar__item navbar__item--has-children nav-fade">
-                                 <a href="#" aria-label="dropdown menu"
-                                    class="navbar__dropdown-label dropdown-label-alter">News</a>
-                                 <ul class="navbar__sub-menu">
-                                    <li>
-                                       <a href="blog-list.html">News List View</a>
-                                    </li>
-                                    <li>
-                                       <a href="blog-grid.html">News Grid View</a>
-                                    </li>
-                                    <li>
-                                       <a href="blog-details.html">News Details</a>
-                                    </li>
-                                 </ul>
-                              </li>
-                              <li class="navbar__item nav-fade">
-                                 <a href="contact-us.html">Contact Us</a>
-                              </li>
-                           </ul>
-                        </div>
-                        <div class="navbar__options">
-                           <div class="navbar__mobile-options ">
-                              <div class="contact-btn d-none d-xxl-flex">
-                                 <div class="contact-icon">
-                                    <i class="fa-solid fa-phone-volume"></i>
-                                 </div>
-                                 <div class="contact-content">
-                                    <p>Call Us Now</p>
-                                    <a href="tel:01-793-7938">(+01)-793-7938 </a>
-                                 </div>
-                              </div>
-                              <a href="donate-us.html" class="btn--primary d-none d-md-flex">Donate Now <i
-                                    class="icon-circle-arrow"></i></a>
-                           </div>
-                           <button class="open-offcanvas-nav d-flex d-xl-none" aria-label="toggle mobile menu"
-                              title="open offcanvas menu">
-                              <span class="icon-bar top-bar"></span>
-                              <span class="icon-bar middle-bar"></span>
-                              <span class="icon-bar bottom-bar"></span>
-                           </button>
-                        </div>
-                     </nav>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </header>
-      <!-- ==== / header end ==== -->
-      <!-- ==== mobile menu start ==== -->
-      <div class="mobile-menu d-block d-xl-none">
-         <nav class="mobile-menu__wrapper">
-            <div class="mobile-menu__header nav-fade">
-               <div class="logo">
-                  <a href="index.html" aria-label="home page" title="logo">
-                     <img src="assets/images/logo.png" alt="Image">
-                  </a>
-               </div>
-               <button aria-label="close mobile menu" class="close-mobile-menu">
-                  <i class="fa-solid fa-xmark"></i>
-               </button>
-            </div>
-            <div class="mobile-menu__list"></div>
-            <div class="mobile-menu__cta nav-fade d-block d-md-none">
-               <a href="donate-us.html" class="btn--primary btn--primary-alt">Donate Now <i
-                     class="icon-circle-arrow"></i></a>
-            </div>
-            <div class="mobile-menu__social social nav-fade">
-               <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook" title="facebook">
-                  <i class="fa-brands fa-facebook-f"></i>
-               </a>
-               <a href="https://vimeo.com/" target="_blank" aria-label="share us on vimeo" title="vimeo">
-                  <i class="fa-brands fa-vimeo-v"></i>
-               </a>
-               <a href="https://x.com/" target="_blank" aria-label="share us on twitter" title="twitter">
-                  <i class="fa-brands fa-twitter"></i>
-               </a>
-               <a href="https://www.linkedin.com/" target="_blank" aria-label="share us on linkedin" title="linkedin">
-                  <i class="fa-brands fa-linkedin-in"></i>
-               </a>
-            </div>
-         </nav>
-      </div>
-      <div class="mobile-menu__backdrop"></div>
-      <!-- ==== / mobile menu end ==== -->
+                    </div>
+                    <button aria-label="close mobile menu" class="close-mobile-menu">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="mobile-menu__list"></div>
+                <div class="mobile-menu__cta nav-fade d-block d-md-none">
+                    <a href="donate-us.html" class="btn--primary btn--primary-alt">Donate Now <i
+                            class="icon-circle-arrow"></i></a>
+                </div>
+                <div class="mobile-menu__social social nav-fade">
+                    <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook"
+                        title="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://vimeo.com/" target="_blank" aria-label="share us on vimeo" title="vimeo">
+                        <i class="fa-brands fa-vimeo-v"></i>
+                    </a>
+                    <a href="https://x.com/" target="_blank" aria-label="share us on twitter" title="twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" aria-label="share us on linkedin"
+                        title="linkedin">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <div class="mobile-menu__backdrop"></div>
+        <!-- ==== / mobile menu end ==== -->
 
-      <!-- ==== banner section start ==== -->
-      <section class="common-banner">
-         <div class="container">
-            <div class="row">
-               <div class="common-banner__content text-center">
-                  <span class="sub-title"><i class="icon-donation"></i>Project Details</span>
-                  <h2 class="title-animation">Shiksha Setu</h2>
-               </div>
+        <!-- ==== banner section start ==== -->
+        <section class="common-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="common-banner__content text-center">
+                        <span class="sub-title"><i class="icon-donation"></i>Project Details</span>
+                        <h2 class="title-animation">Shiksha Setu</h2>
+                    </div>
+                </div>
             </div>
-         </div>
-         <div class="banner-bg">
-            <img src="assets/images/banner/banner-bg.png" alt="Image">
-         </div>
-         <div class="shape">
-            <img src="assets/images/shape.png" alt="Image">
-         </div>
-      </section>
-      <!-- ==== / banner section end ==== -->
-
-      <!-- ============================================================
-           SECTION 1: PROJECT HERO — Featured Image + Video + Meta
-           ============================================================ -->
-      <section class="pdetail-hero">
-         <div class="container">
-            <div class="row">
-               <div class="col-12 col-lg-8">
-                  <div class="pdetail-hero__img-wrapper" data-aos="fade-up" data-aos-duration="1000">
-                     <span class="pdetail-hero__badge"><i class="fa-solid fa-book-open"></i> Education</span>
-                     <span class="pdetail-hero__status">Active</span>
-                     <img src="assets/images/cause/cause-seven-thumb1.jpg" alt="Shiksha Setu — Bridge to Education">
-                     <a href="https://www.youtube.com/watch?v=RvreULjnzFo" class="pdetail-hero__play video-popup" title="Watch Project Video">
-                        <i class="fa-solid fa-play"></i>
-                     </a>
-                  </div>
-                  <!-- Meta bar -->
-                  <div class="pdetail-hero__meta-bar" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                     <div class="pdetail-hero__meta-item">
-                        <div class="pdetail-hero__meta-icon"><i class="fa-regular fa-calendar"></i></div>
-                        <div>
-                           <strong>Started</strong>
-                           January 2024
-                        </div>
-                     </div>
-                     <div class="pdetail-hero__meta-item">
-                        <div class="pdetail-hero__meta-icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <div>
-                           <strong>Location</strong>
-                           Rural West Bengal, India
-                        </div>
-                     </div>
-                     <div class="pdetail-hero__meta-item">
-                        <div class="pdetail-hero__meta-icon"><i class="fa-solid fa-users"></i></div>
-                        <div>
-                           <strong>Beneficiaries</strong>
-                           2,500+ Children
-                        </div>
-                     </div>
-                     <div class="pdetail-hero__meta-item">
-                        <div class="pdetail-hero__meta-icon"><i class="fa-solid fa-clock"></i></div>
-                        <div>
-                           <strong>Duration</strong>
-                           3 Years
-                        </div>
-                     </div>
-                  </div>
-               </div>
-
-               <!-- Sidebar -->
-               <div class="col-12 col-lg-4 mt-4 mt-lg-0">
-                  <!-- Project Info Box -->
-                  <div class="pdetail-sidebar__box" data-aos="fade-left" data-aos-duration="1000">
-                     <h5>Project Information</h5>
-                     <ul class="pdetail-sidebar__info-list">
-                        <li>
-                           <span><i class="fa-solid fa-tag"></i> Category</span>
-                           <span>Education</span>
-                        </li>
-                        <li>
-                           <span><i class="fa-solid fa-signal"></i> Status</span>
-                           <span style="color: #22c55e;">Active</span>
-                        </li>
-                        <li>
-                           <span><i class="fa-solid fa-user-group"></i> Team Size</span>
-                           <span>24 Members</span>
-                        </li>
-                        <li>
-                           <span><i class="fa-solid fa-hand-holding-heart"></i> Volunteers</span>
-                           <span>85+</span>
-                        </li>
-                        <li>
-                           <span><i class="fa-solid fa-map-pin"></i> Villages</span>
-                           <span>18 Villages</span>
-                        </li>
-                     </ul>
-                  </div>
-                  <!-- Funding Progress -->
-                  <div class="pdetail-sidebar__box" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                     <h5>Funding Progress</h5>
-                     <div class="pdetail-progress">
-                        <div class="pdetail-progress__header">
-                           <span>Raised</span>
-                           <span>75%</span>
-                        </div>
-                        <div class="pdetail-progress__bar">
-                           <div class="pdetail-progress__fill" data-width="75" style="width: 0;"></div>
-                        </div>
-                        <div class="pdetail-progress__amounts">
-                           <span>Raised: <strong>₹18,75,000</strong></span>
-                           <span>Goal: <strong>₹25,00,000</strong></span>
-                        </div>
-                     </div>
-                     <div class="mt-4">
-                        <a href="donate-us.html" class="btn--primary w-100 justify-content-center">Donate Now <i class="icon-circle-arrow"></i></a>
-                     </div>
-                  </div>
-                  <!-- Share -->
-                  <div class="pdetail-sidebar__box" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-                     <h5>Share This Project</h5>
-                     <div class="pdetail-sidebar__share">
-                        <a href="https://www.facebook.com/" target="_blank" title="Share on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://x.com/" target="_blank" title="Share on Twitter"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank" title="Share on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://wa.me/" target="_blank" title="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="mailto:?subject=Check out this project" title="Share via Email"><i class="fa-regular fa-envelope"></i></a>
-                     </div>
-                  </div>
-               </div>
+            <div class="banner-bg">
+                <img src="assets/images/banner/banner-bg.png" alt="Image">
             </div>
-         </div>
-      </section>
+            <div class="shape">
+                <img src="assets/images/shape.png" alt="Image">
+            </div>
+        </section>
+        <!-- ==== / banner section end ==== -->
 
-      <!-- ============================================================
+        <!-- ============================================================
            SECTION 2: THE ISSUE — Problem Overview
            ============================================================ -->
-      <section class="pdetail-section pdetail-section--gray">
-         <div class="container">
-            <div class="row align-items-center gutter-40">
-               <div class="col-12 col-lg-6" data-aos="fade-right" data-aos-duration="1000">
-                  <div class="pdetail-section__header">
-                     <span class="sub-title"><i class="icon-donation"></i>The Challenge</span>
-                     <h2 class="title-animation">Understanding the <span>Issue</span></h2>
-                  </div>
-                  <div class="pdetail-issue__content">
-                     <p>In rural West Bengal, thousands of children between the ages of 6 and 14 are either out of school or attend overcrowded government schools with minimal resources. The student-to-teacher ratio often exceeds 60:1, making quality education impossible.</p>
+        <section class="pdetail-section pdetail-section--gray">
+            <div class="container">
+                <div class="row align-items-center gutter-40">
+                    <div class="col-12 col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="pdetail-section__header">
+                            <span class="sub-title"><i class="icon-donation"></i>The Challenge</span>
+                            <h2 class="title-animation">Understanding the <span>Issue</span></h2>
+                        </div>
+                        <div class="pdetail-issue__content">
+                            <p>In rural West Bengal, thousands of children between the ages of 6 and 14 are either out
+                                of school or attend overcrowded government schools with minimal resources. The
+                                student-to-teacher ratio often exceeds 60:1, making quality education impossible.</p>
 
-                     <p>Many families depend on daily-wage labour, and children — especially girls — are often pulled out of school to help with household duties or agricultural work. Without intervention, these children lose their chance at a better future.</p>
+                            <p>Many families depend on daily-wage labour, and children — especially girls — are often
+                                pulled out of school to help with household duties or agricultural work. Without
+                                intervention, these children lose their chance at a better future.</p>
 
-                     <div class="pdetail-issue__highlight">
-                        <i class="fa-solid fa-quote-left"></i>
-                        In the villages we surveyed, only 38% of children aged 10-14 could read a simple paragraph in their mother tongue. This is the crisis Shiksha Setu was born to address.
-                     </div>
-                  </div>
-                  <div class="pdetail-issue__stats-row">
-                     <div class="pdetail-issue__stat-box">
-                        <div class="pdetail-issue__stat-number">62%</div>
-                        <div class="pdetail-issue__stat-label">Children below reading level</div>
-                     </div>
-                     <div class="pdetail-issue__stat-box">
-                        <div class="pdetail-issue__stat-number">60:1</div>
-                        <div class="pdetail-issue__stat-label">Student-teacher ratio</div>
-                     </div>
-                     <div class="pdetail-issue__stat-box">
-                        <div class="pdetail-issue__stat-number">45%</div>
-                        <div class="pdetail-issue__stat-label">Girls drop out by Class 8</div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-12 col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                  <div class="pdetail-issue__thumb">
-                     <img src="assets/images/cause/cause-seven-thumb2.jpg" alt="Children in rural school — the education gap">
-                  </div>
-               </div>
+                            <div class="pdetail-issue__highlight">
+                                <i class="fa-solid fa-quote-left"></i>
+                                In the villages we surveyed, only 38% of children aged 10-14 could read a simple
+                                paragraph in their mother tongue. This is the crisis Shiksha Setu was born to address.
+                            </div>
+                        </div>
+                        <div class="pdetail-issue__stats-row">
+                            <div class="pdetail-issue__stat-box">
+                                <div class="pdetail-issue__stat-number">62%</div>
+                                <div class="pdetail-issue__stat-label">Children below reading level</div>
+                            </div>
+                            <div class="pdetail-issue__stat-box">
+                                <div class="pdetail-issue__stat-number">60:1</div>
+                                <div class="pdetail-issue__stat-label">Student-teacher ratio</div>
+                            </div>
+                            <div class="pdetail-issue__stat-box">
+                                <div class="pdetail-issue__stat-number">45%</div>
+                                <div class="pdetail-issue__stat-label">Girls drop out by Class 8</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="pdetail-issue__thumb">
+                            <img src="assets/images/cause/cause-seven-thumb2.jpg"
+                                alt="Children in rural school — the education gap">
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </section>
+        </section>
 
-      <!-- ============================================================
+        <!-- ============================================================
            SECTION 3: OUR WORK — What We Are Doing
            ============================================================ -->
-      <section class="pdetail-section">
-         <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-12 col-lg-8">
-                  <div class="pdetail-section__header pdetail-section__header--center text-center">
-                     <span class="sub-title"><i class="icon-donation"></i>What We Do</span>
-                     <h2 class="title-animation">Our Work & <span>Activities</span></h2>
-                     <p>Shiksha Setu takes a holistic approach — combining physical learning centres, digital tools, teacher training, and community engagement to create lasting educational change.</p>
-                  </div>
-               </div>
+        <section class="pdetail-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="pdetail-section__header pdetail-section__header--center text-center">
+                            <span class="sub-title"><i class="icon-donation"></i>What We Do</span>
+                            <h2 class="title-animation">Our Work & <span>Activities</span></h2>
+                            <p>Shiksha Setu takes a holistic approach — combining physical learning centres, digital
+                                tools, teacher training, and community engagement to create lasting educational change.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="pdetail-work__card">
+                            <div class="pdetail-work__icon"><i class="fa-solid fa-school"></i></div>
+                            <h5>Community Learning Centres</h5>
+                            <p>We have established 12 community-run learning centres in remote villages, each equipped
+                                with books, stationery, and basic furniture. These centres serve as after-school hubs
+                                where children receive remedial education and homework support.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-delay="150">
+                        <div class="pdetail-work__card">
+                            <div class="pdetail-work__icon"><i class="fa-solid fa-tablet-screen-button"></i></div>
+                            <h5>Digital Classrooms</h5>
+                            <p>Tablet-based smart classrooms with pre-loaded educational content in Bengali and English.
+                                Interactive lessons in maths, science, and language make learning engaging. Solar panels
+                                ensure these work even without grid electricity.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-delay="300">
+                        <div class="pdetail-work__card">
+                            <div class="pdetail-work__icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                            <h5>Teacher Training Programmes</h5>
+                            <p>Quarterly workshops for local teachers on modern pedagogical methods, activity-based
+                                learning, and inclusive education practices. We have trained 45 teachers across 18
+                                villages so far.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="pdetail-work__card">
+                            <div class="pdetail-work__icon"><i class="fa-solid fa-children"></i></div>
+                            <h5>Girl Child Enrollment Drives</h5>
+                            <p>Door-to-door campaigns and community meetings to bring out-of-school girls back to
+                                education. We provide free uniforms, books, and menstrual hygiene kits to remove
+                                barriers.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-delay="150">
+                        <div class="pdetail-work__card">
+                            <div class="pdetail-work__icon"><i class="fa-solid fa-bowl-food"></i></div>
+                            <h5>Mid-Day Meal Support</h5>
+                            <p>Nutritious mid-day meals at every learning centre, ensuring children don't have to choose
+                                between food and education. Our meals are designed by nutritionists for growing
+                                children.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-delay="300">
+                        <div class="pdetail-work__card">
+                            <div class="pdetail-work__icon"><i class="fa-solid fa-people-group"></i></div>
+                            <h5>Parent & Community Engagement</h5>
+                            <p>Monthly parent-teacher meetings and community awareness programmes on the value of
+                                education. We work with village panchayats to build local ownership of the programme.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row g-4">
-               <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000">
-                  <div class="pdetail-work__card">
-                     <div class="pdetail-work__icon"><i class="fa-solid fa-school"></i></div>
-                     <h5>Community Learning Centres</h5>
-                     <p>We have established 12 community-run learning centres in remote villages, each equipped with books, stationery, and basic furniture. These centres serve as after-school hubs where children receive remedial education and homework support.</p>
-                  </div>
-               </div>
-               <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
-                  <div class="pdetail-work__card">
-                     <div class="pdetail-work__icon"><i class="fa-solid fa-tablet-screen-button"></i></div>
-                     <h5>Digital Classrooms</h5>
-                     <p>Tablet-based smart classrooms with pre-loaded educational content in Bengali and English. Interactive lessons in maths, science, and language make learning engaging. Solar panels ensure these work even without grid electricity.</p>
-                  </div>
-               </div>
-               <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                  <div class="pdetail-work__card">
-                     <div class="pdetail-work__icon"><i class="fa-solid fa-chalkboard-user"></i></div>
-                     <h5>Teacher Training Programmes</h5>
-                     <p>Quarterly workshops for local teachers on modern pedagogical methods, activity-based learning, and inclusive education practices. We have trained 45 teachers across 18 villages so far.</p>
-                  </div>
-               </div>
-               <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000">
-                  <div class="pdetail-work__card">
-                     <div class="pdetail-work__icon"><i class="fa-solid fa-children"></i></div>
-                     <h5>Girl Child Enrollment Drives</h5>
-                     <p>Door-to-door campaigns and community meetings to bring out-of-school girls back to education. We provide free uniforms, books, and menstrual hygiene kits to remove barriers.</p>
-                  </div>
-               </div>
-               <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
-                  <div class="pdetail-work__card">
-                     <div class="pdetail-work__icon"><i class="fa-solid fa-bowl-food"></i></div>
-                     <h5>Mid-Day Meal Support</h5>
-                     <p>Nutritious mid-day meals at every learning centre, ensuring children don't have to choose between food and education. Our meals are designed by nutritionists for growing children.</p>
-                  </div>
-               </div>
-               <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                  <div class="pdetail-work__card">
-                     <div class="pdetail-work__icon"><i class="fa-solid fa-people-group"></i></div>
-                     <h5>Parent & Community Engagement</h5>
-                     <p>Monthly parent-teacher meetings and community awareness programmes on the value of education. We work with village panchayats to build local ownership of the programme.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
+        </section>
 
-      <!-- ============================================================
+        <!-- ============================================================
            SECTION 4: IMAGE GALLERY + VIDEO
            ============================================================ -->
-      <section class="pdetail-section pdetail-section--gray">
-         <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-12 col-lg-8">
-                  <div class="pdetail-section__header pdetail-section__header--center text-center">
-                     <span class="sub-title"><i class="icon-donation"></i>See Our Work</span>
-                     <h2 class="title-animation">Project <span>Gallery</span></h2>
-                  </div>
-               </div>
+        <section class="pdetail-section pdetail-section--gray">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="pdetail-section__header pdetail-section__header--center text-center">
+                            <span class="sub-title"><i class="icon-donation"></i>See Our Work</span>
+                            <h2 class="title-animation">Project <span>Gallery</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pdetail-gallery__grid" data-aos="fade-up" data-aos-duration="1000">
+                    <!-- Large main image with video play -->
+                    <div class="pdetail-gallery__item pdetail-gallery__video-item">
+                        <img src="assets/images/cause/cause-seven-thumb1.jpg"
+                            alt="Children learning in digital classroom">
+                        <a href="https://www.youtube.com/watch?v=RvreULjnzFo"
+                            class="pdetail-gallery__overlay video-popup" title="Watch Project Documentary">
+                            <i class="fa-solid fa-play"></i>
+                        </a>
+                    </div>
+                    <!-- Small images -->
+                    <div class="pdetail-gallery__item">
+                        <a href="assets/images/cause/cause-seven-thumb2.jpg" class="image-popup"
+                            title="Community learning centre">
+                            <img src="assets/images/cause/cause-seven-thumb2.jpg" alt="Community learning centre">
+                            <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="pdetail-gallery__item">
+                        <a href="assets/images/gallery/one.png" class="image-popup" title="Teacher training workshop">
+                            <img src="assets/images/gallery/one.png" alt="Teacher training workshop">
+                            <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="pdetail-gallery__item">
+                        <a href="assets/images/gallery/two.png" class="image-popup"
+                            title="Girl child enrollment campaign">
+                            <img src="assets/images/gallery/two.png" alt="Girl child enrollment campaign">
+                            <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="pdetail-gallery__item">
+                        <a href="assets/images/gallery/three.png" class="image-popup" title="Mid-day meal programme">
+                            <img src="assets/images/gallery/three.png" alt="Mid-day meal programme">
+                            <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="pdetail-gallery__grid" data-aos="fade-up" data-aos-duration="1000">
-               <!-- Large main image with video play -->
-               <div class="pdetail-gallery__item pdetail-gallery__video-item">
-                  <img src="assets/images/cause/cause-seven-thumb1.jpg" alt="Children learning in digital classroom">
-                  <a href="https://www.youtube.com/watch?v=RvreULjnzFo" class="pdetail-gallery__overlay video-popup" title="Watch Project Documentary">
-                     <i class="fa-solid fa-play"></i>
-                  </a>
-               </div>
-               <!-- Small images -->
-               <div class="pdetail-gallery__item">
-                  <a href="assets/images/cause/cause-seven-thumb2.jpg" class="image-popup" title="Community learning centre">
-                     <img src="assets/images/cause/cause-seven-thumb2.jpg" alt="Community learning centre">
-                     <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
-                  </a>
-               </div>
-               <div class="pdetail-gallery__item">
-                  <a href="assets/images/gallery/one.png" class="image-popup" title="Teacher training workshop">
-                     <img src="assets/images/gallery/one.png" alt="Teacher training workshop">
-                     <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
-                  </a>
-               </div>
-               <div class="pdetail-gallery__item">
-                  <a href="assets/images/gallery/two.png" class="image-popup" title="Girl child enrollment campaign">
-                     <img src="assets/images/gallery/two.png" alt="Girl child enrollment campaign">
-                     <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
-                  </a>
-               </div>
-               <div class="pdetail-gallery__item">
-                  <a href="assets/images/gallery/three.png" class="image-popup" title="Mid-day meal programme">
-                     <img src="assets/images/gallery/three.png" alt="Mid-day meal programme">
-                     <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
-                  </a>
-               </div>
-            </div>
-         </div>
-      </section>
+        </section>
 
-      <!-- ============================================================
+        <!-- ============================================================
            SECTION 5: IMPACT — Numbers & Results
            ============================================================ -->
-      <section class="pdetail-section pdetail-section--dark">
-         <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-12 col-lg-8">
-                  <div class="pdetail-section__header pdetail-section__header--center text-center" data-aos="fade-up" data-aos-duration="1000">
-                     <span class="sub-title" style="color:rgba(255,255,255,0.7);"><i class="icon-donation"></i>Results & Outcomes</span>
-                     <h2 class="title-animation" style="color:#fff;">The Impact We've <span>Created</span></h2>
-                  </div>
-               </div>
+        <section class="pdetail-section pdetail-section--dark">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="pdetail-section__header pdetail-section__header--center text-center"
+                            data-aos="fade-up" data-aos-duration="1000">
+                            <span class="sub-title" style="color:rgba(255,255,255,0.7);"><i
+                                    class="icon-donation"></i>Results & Outcomes</span>
+                            <h2 class="title-animation" style="color:#fff;">The Impact We've <span>Created</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="pdetail-impact__card">
+                            <div class="pdetail-impact__icon"><i class="fa-solid fa-user-graduate"></i></div>
+                            <div class="pdetail-impact__number"><span class="counter" data-target="2500">0</span>+</div>
+                            <p class="pdetail-impact__label">Children Enrolled</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
+                        <div class="pdetail-impact__card">
+                            <div class="pdetail-impact__icon"><i class="fa-solid fa-school"></i></div>
+                            <div class="pdetail-impact__number"><span class="counter" data-target="12">0</span></div>
+                            <p class="pdetail-impact__label">Learning Centres Built</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="pdetail-impact__card">
+                            <div class="pdetail-impact__icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                            <div class="pdetail-impact__number"><span class="counter" data-target="45">0</span></div>
+                            <p class="pdetail-impact__label">Teachers Trained</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="450">
+                        <div class="pdetail-impact__card">
+                            <div class="pdetail-impact__icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                            <div class="pdetail-impact__number"><span class="counter"
+                                    data-target="89">0</span><span>%</span></div>
+                            <p class="pdetail-impact__label">Improvement in Literacy</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row g-4">
-               <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1000">
-                  <div class="pdetail-impact__card">
-                     <div class="pdetail-impact__icon"><i class="fa-solid fa-user-graduate"></i></div>
-                     <div class="pdetail-impact__number"><span class="counter" data-target="2500">0</span>+</div>
-                     <p class="pdetail-impact__label">Children Enrolled</p>
-                  </div>
-               </div>
-               <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
-                  <div class="pdetail-impact__card">
-                     <div class="pdetail-impact__icon"><i class="fa-solid fa-school"></i></div>
-                     <div class="pdetail-impact__number"><span class="counter" data-target="12">0</span></div>
-                     <p class="pdetail-impact__label">Learning Centres Built</p>
-                  </div>
-               </div>
-               <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                  <div class="pdetail-impact__card">
-                     <div class="pdetail-impact__icon"><i class="fa-solid fa-chalkboard-user"></i></div>
-                     <div class="pdetail-impact__number"><span class="counter" data-target="45">0</span></div>
-                     <p class="pdetail-impact__label">Teachers Trained</p>
-                  </div>
-               </div>
-               <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="450">
-                  <div class="pdetail-impact__card">
-                     <div class="pdetail-impact__icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                     <div class="pdetail-impact__number"><span class="counter" data-target="89">0</span><span>%</span></div>
-                     <p class="pdetail-impact__label">Improvement in Literacy</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
+        </section>
 
-      <!-- ============================================================
+        <!-- ============================================================
            SECTION 6: JOURNEY TIMELINE + TESTIMONIAL
            ============================================================ -->
-      <section class="pdetail-section">
-         <div class="container">
-            <div class="row gutter-40">
-               <div class="col-12 col-lg-7">
-                  <div class="pdetail-section__header">
-                     <span class="sub-title"><i class="icon-donation"></i>Our Journey</span>
-                     <h2 class="title-animation">Project <span>Timeline</span></h2>
-                  </div>
-                  <div class="pdetail-timeline" data-aos="fade-up" data-aos-duration="1000">
-                     <div class="pdetail-timeline__item">
-                        <div class="pdetail-timeline__dot"></div>
-                        <div class="pdetail-timeline__date">January 2024</div>
-                        <h5>Project Launch & Survey</h5>
-                        <p>Conducted baseline surveys across 18 villages in Bankura and Purulia districts. Identified 3,200 out-of-school children and mapped community infrastructure.</p>
-                     </div>
-                     <div class="pdetail-timeline__item">
-                        <div class="pdetail-timeline__dot"></div>
-                        <div class="pdetail-timeline__date">March 2024</div>
-                        <h5>First 6 Learning Centres Opened</h5>
-                        <p>Launched the first batch of community learning centres with the help of local panchayats. Recruited and trained 20 community educators.</p>
-                     </div>
-                     <div class="pdetail-timeline__item">
-                        <div class="pdetail-timeline__dot"></div>
-                        <div class="pdetail-timeline__date">July 2024</div>
-                        <h5>Digital Classrooms Deployed</h5>
-                        <p>Installed solar-powered digital learning stations with tablets in 8 centres. Partnership with EdTech providers for localised content in Bengali.</p>
-                     </div>
-                     <div class="pdetail-timeline__item">
-                        <div class="pdetail-timeline__dot"></div>
-                        <div class="pdetail-timeline__date">November 2024</div>
-                        <h5>Girl Child Enrollment Campaign</h5>
-                        <p>Launched "Meye Porbe" (Girls Will Study) campaign. Successfully enrolled 480 girls who had dropped out. Distributed 1,200 uniform and book kits.</p>
-                     </div>
-                     <div class="pdetail-timeline__item">
-                        <div class="pdetail-timeline__dot"></div>
-                        <div class="pdetail-timeline__date">March 2025</div>
-                        <h5>Mid-Year Assessment — 89% Literacy Improvement</h5>
-                        <p>Independent evaluation showed 89% of enrolled children improved their reading levels by at least 2 grades. Community engagement at an all-time high.</p>
-                     </div>
-                     <div class="pdetail-timeline__item">
-                        <div class="pdetail-timeline__dot"></div>
-                        <div class="pdetail-timeline__date">2025–2026 (Ongoing)</div>
-                        <h5>Expansion to 6 More Villages</h5>
-                        <p>Planning underway to expand the programme, establish 6 more centres, and introduce vocational skills training for older students.</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-12 col-lg-5">
-                  <div class="pdetail-section__header">
-                     <span class="sub-title"><i class="icon-donation"></i>Voices from the Ground</span>
-                     <h2 class="title-animation">What People <span>Say</span></h2>
-                  </div>
-                  <!-- Testimonial 1 -->
-                  <div class="pdetail-quote mb-4" data-aos="fade-up" data-aos-duration="1000">
-                     <div class="pdetail-quote__icon"><i class="fa-solid fa-quote-left"></i></div>
-                     <p>Before Shiksha Setu, my daughter Rina used to help me in the paddy fields all day. Now she goes to the learning centre every morning and evening. Last month she read a full story to me from her textbook — I cried tears of joy.</p>
-                     <div class="pdetail-quote__author">
-                        <img src="assets/images/testimonial/one.png" alt="Malati Devi">
-                        <div class="pdetail-quote__author-info">
-                           <h6>Malati Devi</h6>
-                           <span>Mother from Jhilimili Village</span>
+        <section class="pdetail-section">
+            <div class="container">
+                <div class="row gutter-40">
+                    <div class="col-12 col-lg-7">
+                        <div class="pdetail-section__header">
+                            <span class="sub-title"><i class="icon-donation"></i>Our Journey</span>
+                            <h2 class="title-animation">Project <span>Timeline</span></h2>
                         </div>
-                     </div>
-                  </div>
-                  <!-- Testimonial 2 -->
-                  <div class="pdetail-quote mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                     <div class="pdetail-quote__icon"><i class="fa-solid fa-quote-left"></i></div>
-                     <p>The teacher training workshops completely changed how I approach my classroom. Activity-based learning keeps children engaged. The tablet lessons are something they look forward to every day.</p>
-                     <div class="pdetail-quote__author">
-                        <img src="assets/images/testimonial/two.png" alt="Sourav Mondal">
-                        <div class="pdetail-quote__author-info">
-                           <h6>Sourav Mondal</h6>
-                           <span>Community Educator, Bankura</span>
+                        <div class="pdetail-timeline" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="pdetail-timeline__item">
+                                <div class="pdetail-timeline__dot"></div>
+                                <div class="pdetail-timeline__date">January 2024</div>
+                                <h5>Project Launch & Survey</h5>
+                                <p>Conducted baseline surveys across 18 villages in Bankura and Purulia districts.
+                                    Identified 3,200 out-of-school children and mapped community infrastructure.</p>
+                            </div>
+                            <div class="pdetail-timeline__item">
+                                <div class="pdetail-timeline__dot"></div>
+                                <div class="pdetail-timeline__date">March 2024</div>
+                                <h5>First 6 Learning Centres Opened</h5>
+                                <p>Launched the first batch of community learning centres with the help of local
+                                    panchayats. Recruited and trained 20 community educators.</p>
+                            </div>
+                            <div class="pdetail-timeline__item">
+                                <div class="pdetail-timeline__dot"></div>
+                                <div class="pdetail-timeline__date">July 2024</div>
+                                <h5>Digital Classrooms Deployed</h5>
+                                <p>Installed solar-powered digital learning stations with tablets in 8 centres.
+                                    Partnership with EdTech providers for localised content in Bengali.</p>
+                            </div>
+                            <div class="pdetail-timeline__item">
+                                <div class="pdetail-timeline__dot"></div>
+                                <div class="pdetail-timeline__date">November 2024</div>
+                                <h5>Girl Child Enrollment Campaign</h5>
+                                <p>Launched "Meye Porbe" (Girls Will Study) campaign. Successfully enrolled 480 girls
+                                    who had dropped out. Distributed 1,200 uniform and book kits.</p>
+                            </div>
+                            <div class="pdetail-timeline__item">
+                                <div class="pdetail-timeline__dot"></div>
+                                <div class="pdetail-timeline__date">March 2025</div>
+                                <h5>Mid-Year Assessment — 89% Literacy Improvement</h5>
+                                <p>Independent evaluation showed 89% of enrolled children improved their reading levels
+                                    by at least 2 grades. Community engagement at an all-time high.</p>
+                            </div>
+                            <div class="pdetail-timeline__item">
+                                <div class="pdetail-timeline__dot"></div>
+                                <div class="pdetail-timeline__date">2025–2026 (Ongoing)</div>
+                                <h5>Expansion to 6 More Villages</h5>
+                                <p>Planning underway to expand the programme, establish 6 more centres, and introduce
+                                    vocational skills training for older students.</p>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-                  <!-- Video Testimonial Card -->
-                  <div class="pdetail-sidebar__box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" style="position:relative; overflow:hidden; border-radius:16px; padding:0;">
-                     <div style="position:relative;">
-                        <img src="assets/images/cause/cause-seven-thumb3.jpg" alt="Watch Beneficiary Video" style="width:100%; height:220px; object-fit:cover;">
-                        <a href="https://www.youtube.com/watch?v=RvreULjnzFo" class="video-popup" title="Watch Beneficiary Stories" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:64px; height:64px; border-radius:50%; background:var(--base-color); color:#fff; display:flex; align-items:center; justify-content:center; font-size:20px; text-decoration:none;">
-                           <i class="fa-solid fa-play"></i>
-                        </a>
-                     </div>
-                     <div style="padding: 20px 24px;">
-                        <h5 style="font-family:'Outfit',sans-serif; font-size:16px; font-weight:700; color:#1d2746; margin:0;">
-                           <i class="fa-solid fa-video" style="color:var(--base-color); margin-right:8px;"></i>
-                           Watch Beneficiary Stories
-                        </h5>
-                        <p style="font-family:'Nunito Sans',sans-serif; font-size:14px; color:#6b7280; margin:8px 0 0;">Hear directly from the families whose lives have changed.</p>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <div class="pdetail-section__header">
+                            <span class="sub-title"><i class="icon-donation"></i>Voices from the Ground</span>
+                            <h2 class="title-animation">What People <span>Say</span></h2>
+                        </div>
+                        <!-- Testimonial 1 -->
+                        <div class="pdetail-quote mb-4" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="pdetail-quote__icon"><i class="fa-solid fa-quote-left"></i></div>
+                            <p>Before Shiksha Setu, my daughter Rina used to help me in the paddy fields all day. Now
+                                she goes to the learning centre every morning and evening. Last month she read a full
+                                story to me from her textbook — I cried tears of joy.</p>
+                            <div class="pdetail-quote__author">
+                                <img src="assets/images/testimonial/one.png" alt="Malati Devi">
+                                <div class="pdetail-quote__author-info">
+                                    <h6>Malati Devi</h6>
+                                    <span>Mother from Jhilimili Village</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="pdetail-quote mb-4" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="200">
+                            <div class="pdetail-quote__icon"><i class="fa-solid fa-quote-left"></i></div>
+                            <p>The teacher training workshops completely changed how I approach my classroom.
+                                Activity-based learning keeps children engaged. The tablet lessons are something they
+                                look forward to every day.</p>
+                            <div class="pdetail-quote__author">
+                                <img src="assets/images/testimonial/two.png" alt="Sourav Mondal">
+                                <div class="pdetail-quote__author-info">
+                                    <h6>Sourav Mondal</h6>
+                                    <span>Community Educator, Bankura</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </section>
+        </section>
 
-      <!-- ============================================================
+        <!-- ============================================================
            SECTION 7: CTA — Support This Project
            ============================================================ -->
-      <section class="pdetail-cta">
-         <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-12 col-lg-8">
-                  <h2 data-aos="fade-up" data-aos-duration="1000">Help Us Reach Every Child</h2>
-                  <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Your contribution can give a child the gift of education. ₹500 sponsors one child's learning materials for a month. ₹5,000 powers a digital classroom for a term.</p>
-                  <div class="pdetail-cta__actions" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                     <a href="donate-us.html" class="pdetail-cta__btn pdetail-cta__btn--primary">
-                        <i class="fa-solid fa-heart"></i> Donate Now
-                     </a>
-                     <a href="contact-us.html" class="pdetail-cta__btn pdetail-cta__btn--outline">
-                        <i class="fa-solid fa-handshake"></i> Become a Volunteer
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-
-      <!-- ==== footer start ==== -->
-      <footer class="footer">
-         <div class="footer__inner">
+        <section class="pdetail-cta">
             <div class="container">
-               <div class="row">
-                  <div class="col-12">
-                     <div class="footer__intro">
-                        <div class="row align-items-center justify-content-center gutter-30">
-                           <div class="col-12 col-sm-8 col-lg-5 col-xl-6">
-                              <div class="footer__content">
-                                 <h3 class="title-animation">children need your help
-                                    start <span>donating</span> today
-                                 </h3>
-                              </div>
-                           </div>
-                           <div class="col-12 col-lg-7 col-xl-6">
-                              <div class="footer__support" data-aos="fade-up" data-aos-duration="1000"
-                                 data-aos-delay="300">
-                                 <a href="contact-us.html">
-                                    Donate Now <i class="fa-solid fa-arrow-right"></i>
-                                 </a>
-                              </div>
-                           </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <h2 data-aos="fade-up" data-aos-duration="1000">Help Us Reach Every Child</h2>
+                        <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Your contribution can give a
+                            child the gift of education. ₹500 sponsors one child's learning materials for a month.
+                            ₹5,000 powers a digital classroom for a term.</p>
+                        <div class="pdetail-cta__actions" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="400">
+                            <a href="donate-us.html" class="pdetail-cta__btn pdetail-cta__btn--primary">
+                                <i class="fa-solid fa-heart"></i> Donate Now
+                            </a>
+                            <a href="contact-us.html" class="pdetail-cta__btn pdetail-cta__btn--outline">
+                                <i class="fa-solid fa-handshake"></i> Become a Volunteer
+                            </a>
                         </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="row gutter-60">
-                  <div class="col-12 col-xl-6">
-                     <div class="footer__newsletter" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="footer__newsletter-info">
-                           <h4 class="title-animation">Subscribe Newsletter</h4>
-                           <p>We understand that every challenge is an opportunity </p>
-                        </div>
-                        <div class="footer__newsletter-form">
-                           <form action="#" method="post">
-                              <div class="input-icon">
-                                 <input type="email" required name="subscribe-email" id="subscribeEmail"
-                                    placeholder="Enter Email">
-                                 <i class="fa-regular fa-envelope"></i>
-                              </div>
-                              <button type="submit" aria-label="subscribe to our newsletter"
-                                 title="subscribe to our newsletter" class="btn--primary">Subscribe <i
-                                    class="fa-solid fa-paper-plane"></i>
-                              </button>
-                           </form>
-                        </div>
-                        <div class="footer__newsletter-check">
-                           <div class="form-group">
-                              <input type="checkbox" id="acceptPolicy">
-                              <label for="acceptPolicy">By subscribing, you're accepting our <a
-                                    href="contact-us.html">Privacy Policy</a></label>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-12 col-md-6 col-xl-2 offset-xl-1">
-                     <div class="footer__list" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                        <div class="footer__list-intro">
-                           <h5 class="title-animation">Services</h5>
-                        </div>
-                        <div class="footer__list-items">
-                           <ul>
-                              <li><a href="about-us.html"><i class="fa-solid fa-angles-right"></i>About Us</a>
-                              </li>
-                              <li><a href="our-causes.html"><i class="fa-solid fa-angles-right"></i>Our
-                                    Causes</a>
-                              </li>
-                              <li><a href="our-team.html"><i class="fa-solid fa-angles-right"></i>Our
-                                    Teams</a>
-                              </li>
-                              <li><a href="blog-list.html"><i class="fa-solid fa-angles-right"></i>Our
-                                    Blog</a>
-                              </li>
-                              <li><a href="faq.html"><i class="fa-solid fa-angles-right"></i>FAQ</a></li>
-                              <li><a href="contact-us.html"><i class="fa-solid fa-angles-right"></i>Get A
-                                    Quote</a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-12 col-md-6 col-xl-3">
-                     <div class="footer__list" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-                        <div class="footer__list-group">
-                           <div class="footer__list-intro">
-                              <h5 class="title-animation">Locations</h5>
-                           </div>
-                           <div class="content">
-                              <p>
-                                 <a href="https://maps.app.goo.gl/Gr9pTNqz5FRNrjQw8" target="_blank">55 Main
-                                    Street, 2nd block
-                                    Malborne, Australia</a>
-                              </p>
-                           </div>
-                        </div>
-                        <div class="footer__list-group">
-                           <div class="footer__list-intro">
-                              <h5 class="title-animation">Contact</h5>
-                           </div>
-                           <div class="content">
-                              <p>
-                                 <a href="mailto:support@example.com">support@example.com</a>
-                              </p>
-                              <p><a href="tel:2305-587-3407">+2(305)
-                                    587-3407</a>
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="footer__copyright">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-12">
-                           <div class="footer__copyright-inner">
-                              <div class="row align-items-center gutter-24">
-                                 <div class="col-12 col-xl-3">
-                                    <div class="footer__copyright-logo text-center text-xl-start">
-                                       <a href="index.html">
-                                          <img src="assets/images/logo.png" alt="Image">
-                                       </a>
-                                    </div>
-                                 </div>
-                                 <div class="col-12 col-xl-6">
-                                    <div class="footer__bottom-right text-center">
-                                       <p>Copyright &copy; <span id="copyrightYear"></span> <a href="index.html"
-                                             target="_blank">Ramdhanu</a>. All rights
-                                          reserved.
-                                       </p>
-                                    </div>
-                                 </div>
-                                 <div class="col-12 col-xl-3">
-                                    <div class="footer__bottom-left">
-                                       <ul class="footer__bottom-list justify-content-center justify-content-xl-end">
-                                          <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                                          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </footer>
-      <!-- ==== / footer end ==== -->
-      <!-- ==== custom cursor start ==== -->
-      <div class="mouseCursor cursor-outer"></div>
-      <div class="mouseCursor cursor-inner"></div>
-      <!-- ==== / custom cursor end ==== -->
-      <!-- ==== scroll to top start ==== -->
-      <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
-         <span></span>
-         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-         </svg>
-      </button>
-      <!-- ==== / scroll to top end ==== -->
-   </div>
-   <!-- ==== js dependencies start ==== -->
-   <!-- jquery -->
-   <script src="assets/js/jquery-3.7.1.min.js"></script>
-   <!-- bootstrap five js -->
-   <script src="assets/js/bootstrap.bundle.min.js"></script>
-   <!-- nice select js -->
-   <script src="assets/js/jquery.nice-select.min.js"></script>
-   <!-- magnific popup js -->
-   <script src="assets/js/jquery.magnific-popup.min.js"></script>
-   <!-- swiper slider js -->
-   <script src="assets/js/swiper-bundle.min.js"></script>
-   <!-- viewport js -->
-   <script src="assets/js/viewport.jquery.js"></script>
-   <!-- odometer js -->
-   <script src="assets/js/odometer.min.js"></script>
-   <!-- vanilla tilt js -->
-   <script src="assets/js/vanilla-tilt.min.js"></script>
-   <!-- aos js -->
-   <script src="assets/js/aos.js"></script>
-   <!-- splittext js -->
-   <script src="assets/js/SplitText.min.js"></script>
-   <!-- scrollto js -->
-   <script src="assets/js/ScrollToPlugin.min.js"></script>
-   <!-- scrolltrigger js -->
-   <script src="assets/js/ScrollTrigger.min.js"></script>
-   <!-- gsap js -->
-   <script src="assets/js/gsap.min.js"></script>
-   <!-- ==== / js dependencies end ==== -->
-   <!-- template settings js -->
-   <script src="assets/js/template-settings.js"></script>
-   <!-- main js -->
-   <script src="assets/js/custom.js"></script>
+        </section>
 
-   <!-- Project Details Page Script -->
-   <script>
-      (function($) {
-         'use strict';
+        <!-- ==== footer start ==== -->
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="footer__intro">
+                                <div class="row align-items-center justify-content-center gutter-30">
+                                    <div class="col-12 col-sm-8 col-lg-5 col-xl-6">
+                                        <div class="footer__content">
+                                            <h3 class="title-animation">children need your help
+                                                start <span>donating</span> today
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-7 col-xl-6">
+                                        <div class="footer__support" data-aos="fade-up" data-aos-duration="1000"
+                                            data-aos-delay="300">
+                                            <a href="contact-us.html">
+                                                Donate Now <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gutter-60">
+                        <div class="col-12 col-xl-6">
+                            <div class="footer__newsletter" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="footer__newsletter-info">
+                                    <h4 class="title-animation">Subscribe Newsletter</h4>
+                                    <p>We understand that every challenge is an opportunity </p>
+                                </div>
+                                <div class="footer__newsletter-form">
+                                    <form action="#" method="post">
+                                        <div class="input-icon">
+                                            <input type="email" required name="subscribe-email" id="subscribeEmail"
+                                                placeholder="Enter Email">
+                                            <i class="fa-regular fa-envelope"></i>
+                                        </div>
+                                        <button type="submit" aria-label="subscribe to our newsletter"
+                                            title="subscribe to our newsletter" class="btn--primary">Subscribe <i
+                                                class="fa-solid fa-paper-plane"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="footer__newsletter-check">
+                                    <div class="form-group">
+                                        <input type="checkbox" id="acceptPolicy">
+                                        <label for="acceptPolicy">By subscribing, you're accepting our <a
+                                                href="contact-us.html">Privacy Policy</a></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-2 offset-xl-1">
+                            <div class="footer__list" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                                <div class="footer__list-intro">
+                                    <h5 class="title-animation">Services</h5>
+                                </div>
+                                <div class="footer__list-items">
+                                    <ul>
+                                        <li><a href="about-us.html"><i class="fa-solid fa-angles-right"></i>About Us</a>
+                                        </li>
+                                        <li><a href="our-causes.html"><i class="fa-solid fa-angles-right"></i>Our
+                                                Causes</a>
+                                        </li>
+                                        <li><a href="our-team.html"><i class="fa-solid fa-angles-right"></i>Our
+                                                Teams</a>
+                                        </li>
+                                        <li><a href="blog-list.html"><i class="fa-solid fa-angles-right"></i>Our
+                                                Blog</a>
+                                        </li>
+                                        <li><a href="faq.html"><i class="fa-solid fa-angles-right"></i>FAQ</a></li>
+                                        <li><a href="contact-us.html"><i class="fa-solid fa-angles-right"></i>Get A
+                                                Quote</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3">
+                            <div class="footer__list" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                                <div class="footer__list-group">
+                                    <div class="footer__list-intro">
+                                        <h5 class="title-animation">Locations</h5>
+                                    </div>
+                                    <div class="content">
+                                        <p>
+                                            <a href="https://maps.app.goo.gl/Gr9pTNqz5FRNrjQw8" target="_blank">55 Main
+                                                Street, 2nd block
+                                                Malborne, Australia</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="footer__list-group">
+                                    <div class="footer__list-intro">
+                                        <h5 class="title-animation">Contact</h5>
+                                    </div>
+                                    <div class="content">
+                                        <p>
+                                            <a href="mailto:support@example.com">support@example.com</a>
+                                        </p>
+                                        <p><a href="tel:2305-587-3407">+2(305)
+                                                587-3407</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="footer__copyright-inner">
+                                        <div class="row align-items-center gutter-24">
+                                            <div class="col-12 col-xl-3">
+                                                <div class="footer__copyright-logo text-center text-xl-start">
+                                                    <a href="index.html">
+                                                        <img src="assets/images/logo.png" alt="Image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-6">
+                                                <div class="footer__bottom-right text-center">
+                                                    <p>Copyright &copy; <span id="copyrightYear"></span> <a
+                                                            href="index.html" target="_blank">Ramdhanu</a>. All rights
+                                                        reserved.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-3">
+                                                <div class="footer__bottom-left">
+                                                    <ul
+                                                        class="footer__bottom-list justify-content-center justify-content-xl-end">
+                                                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                                                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- ==== / footer end ==== -->
+        <!-- ==== custom cursor start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+        <!-- ==== / custom cursor end ==== -->
+        <!-- ==== scroll to top start ==== -->
+        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+            <span></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </button>
+        <!-- ==== / scroll to top end ==== -->
+    </div>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
 
-         $(function() {
+    <!-- Project Details Page Script -->
+    <script>
+        (function ($) {
+            'use strict';
 
-            // ===== Video Popup (Magnific Popup - iframe) =====
-            if ($('.video-popup').length > 0) {
-               $('.video-popup').magnificPopup({
-                  type: 'iframe',
-                  mainClass: 'mfp-fade',
-                  removalDelay: 160,
-                  preloader: false,
-                  fixedContentPos: false
-               });
-            }
+            $(function () {
 
-            // ===== Image Gallery Popup (Magnific Popup - image) =====
-            if ($('.image-popup').length > 0) {
-               $('.image-popup').magnificPopup({
-                  type: 'image',
-                  mainClass: 'mfp-fade',
-                  removalDelay: 160,
-                  gallery: {
-                     enabled: true,
-                     navigateByImgClick: true,
-                     preload: [0, 1]
-                  },
-                  image: {
-                     tError: '<a href="%url%">The image</a> could not be loaded.'
-                  }
-               });
-            }
+                // ===== Video Popup (Magnific Popup - iframe) =====
+                if ($('.video-popup').length > 0) {
+                    $('.video-popup').magnificPopup({
+                        type: 'iframe',
+                        mainClass: 'mfp-fade',
+                        removalDelay: 160,
+                        preloader: false,
+                        fixedContentPos: false
+                    });
+                }
 
-            // ===== Funding Progress Bar Animation =====
-            function animateProgressBar() {
-               var $bars = $('.pdetail-progress__fill');
-               $bars.each(function() {
-                  var $bar = $(this);
-                  var width = $bar.data('width');
-                  if (width && !$bar.hasClass('animated')) {
-                     var windowTop = $(window).scrollTop();
-                     var windowBottom = windowTop + $(window).height();
-                     var barTop = $bar.offset().top;
-                     if (barTop < windowBottom - 50) {
-                        $bar.css('width', width + '%');
-                        $bar.addClass('animated');
-                     }
-                  }
-               });
-            }
-            $(window).on('scroll', animateProgressBar);
-            setTimeout(animateProgressBar, 500);
-
-            // ===== Counter Animation =====
-            var counterDone = false;
-            function animateCounters() {
-               if (counterDone) return;
-               var $counters = $('.counter');
-               if ($counters.length === 0) return;
-
-               var windowBottom = $(window).scrollTop() + $(window).height();
-               var firstTop = $counters.first().offset().top;
-
-               if (firstTop < windowBottom - 80) {
-                  $counters.each(function() {
-                     var $el = $(this);
-                     var target = parseInt($el.data('target'));
-                     var duration = 2200;
-                     var startTime = null;
-
-                     function step(timestamp) {
-                        if (!startTime) startTime = timestamp;
-                        var progress = Math.min((timestamp - startTime) / duration, 1);
-                        var eased = 1 - Math.pow(1 - progress, 3);
-                        $el.text(Math.floor(eased * target).toLocaleString());
-                        if (progress < 1) {
-                           requestAnimationFrame(step);
-                        } else {
-                           $el.text(target.toLocaleString());
+                // ===== Image Gallery Popup (Magnific Popup - image) =====
+                if ($('.image-popup').length > 0) {
+                    $('.image-popup').magnificPopup({
+                        type: 'image',
+                        mainClass: 'mfp-fade',
+                        removalDelay: 160,
+                        gallery: {
+                            enabled: true,
+                            navigateByImgClick: true,
+                            preload: [0, 1]
+                        },
+                        image: {
+                            tError: '<a href="%url%">The image</a> could not be loaded.'
                         }
-                     }
-                     requestAnimationFrame(step);
-                  });
-                  counterDone = true;
-               }
-            }
-            $(window).on('scroll', animateCounters);
-            animateCounters();
+                    });
+                }
 
-         });
-      })(jQuery);
-   </script>
+                // ===== Funding Progress Bar Animation =====
+                function animateProgressBar() {
+                    var $bars = $('.pdetail-progress__fill');
+                    $bars.each(function () {
+                        var $bar = $(this);
+                        var width = $bar.data('width');
+                        if (width && !$bar.hasClass('animated')) {
+                            var windowTop = $(window).scrollTop();
+                            var windowBottom = windowTop + $(window).height();
+                            var barTop = $bar.offset().top;
+                            if (barTop < windowBottom - 50) {
+                                $bar.css('width', width + '%');
+                                $bar.addClass('animated');
+                            }
+                        }
+                    });
+                }
+                $(window).on('scroll', animateProgressBar);
+                setTimeout(animateProgressBar, 500);
+
+                // ===== Counter Animation =====
+                var counterDone = false;
+                function animateCounters() {
+                    if (counterDone) return;
+                    var $counters = $('.counter');
+                    if ($counters.length === 0) return;
+
+                    var windowBottom = $(window).scrollTop() + $(window).height();
+                    var firstTop = $counters.first().offset().top;
+
+                    if (firstTop < windowBottom - 80) {
+                        $counters.each(function () {
+                            var $el = $(this);
+                            var target = parseInt($el.data('target'));
+                            var duration = 2200;
+                            var startTime = null;
+
+                            function step(timestamp) {
+                                if (!startTime) startTime = timestamp;
+                                var progress = Math.min((timestamp - startTime) / duration, 1);
+                                var eased = 1 - Math.pow(1 - progress, 3);
+                                $el.text(Math.floor(eased * target).toLocaleString());
+                                if (progress < 1) {
+                                    requestAnimationFrame(step);
+                                } else {
+                                    $el.text(target.toLocaleString());
+                                }
+                            }
+                            requestAnimationFrame(step);
+                        });
+                        counterDone = true;
+                    }
+                }
+                $(window).on('scroll', animateCounters);
+                animateCounters();
+
+            });
+        })(jQuery);
+    </script>
 </body>
+
 </html>
