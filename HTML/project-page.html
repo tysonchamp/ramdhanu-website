@@ -317,6 +317,7 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .pdetail-issue__thumb img {
@@ -396,11 +397,8 @@
         }
 
         /* ===== Image Gallery Section ===== */
-        .pdetail-gallery__grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto auto;
-            gap: 16px;
+        .pdetail-gallery-slider {
+            padding-bottom: 40px;
         }
 
         .pdetail-gallery__item {
@@ -408,23 +406,14 @@
             overflow: hidden;
             position: relative;
             cursor: pointer;
-        }
-
-        .pdetail-gallery__item:first-child {
-            grid-column: 1 / 3;
-            grid-row: 1 / 3;
+            display: block;
         }
 
         .pdetail-gallery__item img {
             width: 100%;
-            height: 100%;
+            height: 300px;
             object-fit: cover;
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            min-height: 200px;
-        }
-
-        .pdetail-gallery__item:first-child img {
-            min-height: 430px;
         }
 
         .pdetail-gallery__item:hover img {
@@ -462,42 +451,6 @@
 
         .pdetail-gallery__item:hover .pdetail-gallery__overlay i {
             transform: scale(1);
-        }
-
-        .pdetail-gallery__video-item .pdetail-gallery__overlay {
-            opacity: 1;
-            background: rgba(29, 39, 70, 0.35);
-        }
-
-        .pdetail-gallery__video-item .pdetail-gallery__overlay i {
-            transform: scale(1);
-            width: 60px;
-            height: 60px;
-            font-size: 22px;
-        }
-
-        .pdetail-gallery__video-item .pdetail-gallery__overlay i::before {
-            content: '';
-            position: absolute;
-            inset: -8px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            animation: hero-pulse 2s ease-out infinite;
-        }
-
-        @media (max-width: 767px) {
-            .pdetail-gallery__grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .pdetail-gallery__item:first-child {
-                grid-column: 1 / -1;
-                grid-row: auto;
-            }
-
-            .pdetail-gallery__item:first-child img {
-                min-height: 240px;
-            }
         }
 
         /* ===== Impact Section ===== */
@@ -1267,9 +1220,12 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                        <div class="pdetail-issue__thumb">
+                        <div class="pdetail-issue__thumb position-relative">
                             <img src="assets/images/cause/cause-seven-thumb2.jpg"
                                 alt="Children in rural school — the education gap">
+                            <a href="https://www.youtube.com/watch?v=RvreULjnzFo" class="pdetail-hero__play video-popup" title="Watch Project Video">
+                                <i class="fa-solid fa-play"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1368,43 +1324,45 @@
                         </div>
                     </div>
                 </div>
-                <div class="pdetail-gallery__grid" data-aos="fade-up" data-aos-duration="1000">
-                    <!-- Large main image with video play -->
-                    <div class="pdetail-gallery__item pdetail-gallery__video-item">
-                        <img src="assets/images/cause/cause-seven-thumb1.jpg"
-                            alt="Children learning in digital classroom">
-                        <a href="https://www.youtube.com/watch?v=RvreULjnzFo"
-                            class="pdetail-gallery__overlay video-popup" title="Watch Project Documentary">
-                            <i class="fa-solid fa-play"></i>
-                        </a>
+                <div class="swiper pdetail-gallery-slider" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <a href="assets/images/cause/cause-seven-thumb1.jpg" class="pdetail-gallery__item image-popup"
+                                title="Children learning in digital classroom">
+                                <img src="assets/images/cause/cause-seven-thumb1.jpg" alt="Children learning in digital classroom">
+                                <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="assets/images/cause/cause-seven-thumb2.jpg" class="pdetail-gallery__item image-popup"
+                                title="Community learning centre">
+                                <img src="assets/images/cause/cause-seven-thumb2.jpg" alt="Community learning centre">
+                                <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="assets/images/gallery/one.png" class="pdetail-gallery__item image-popup" title="Teacher training workshop">
+                                <img src="assets/images/gallery/one.png" alt="Teacher training workshop">
+                                <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="assets/images/gallery/two.png" class="pdetail-gallery__item image-popup"
+                                title="Girl child enrollment campaign">
+                                <img src="assets/images/gallery/two.png" alt="Girl child enrollment campaign">
+                                <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="assets/images/gallery/three.png" class="pdetail-gallery__item image-popup" title="Mid-day meal programme">
+                                <img src="assets/images/gallery/three.png" alt="Mid-day meal programme">
+                                <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
+                            </a>
+                        </div>
                     </div>
-                    <!-- Small images -->
-                    <div class="pdetail-gallery__item">
-                        <a href="assets/images/cause/cause-seven-thumb2.jpg" class="image-popup"
-                            title="Community learning centre">
-                            <img src="assets/images/cause/cause-seven-thumb2.jpg" alt="Community learning centre">
-                            <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
-                        </a>
-                    </div>
-                    <div class="pdetail-gallery__item">
-                        <a href="assets/images/gallery/one.png" class="image-popup" title="Teacher training workshop">
-                            <img src="assets/images/gallery/one.png" alt="Teacher training workshop">
-                            <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
-                        </a>
-                    </div>
-                    <div class="pdetail-gallery__item">
-                        <a href="assets/images/gallery/two.png" class="image-popup"
-                            title="Girl child enrollment campaign">
-                            <img src="assets/images/gallery/two.png" alt="Girl child enrollment campaign">
-                            <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
-                        </a>
-                    </div>
-                    <div class="pdetail-gallery__item">
-                        <a href="assets/images/gallery/three.png" class="image-popup" title="Mid-day meal programme">
-                            <img src="assets/images/gallery/three.png" alt="Mid-day meal programme">
-                            <div class="pdetail-gallery__overlay"><i class="fa-solid fa-expand"></i></div>
-                        </a>
-                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination mt-4 position-relative"></div>
                 </div>
             </div>
         </section>
@@ -1452,101 +1410,6 @@
                             <div class="pdetail-impact__number"><span class="counter"
                                     data-target="89">0</span><span>%</span></div>
                             <p class="pdetail-impact__label">Improvement in Literacy</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============================================================
-           SECTION 6: JOURNEY TIMELINE + TESTIMONIAL
-           ============================================================ -->
-        <section class="pdetail-section">
-            <div class="container">
-                <div class="row gutter-40">
-                    <div class="col-12 col-lg-7">
-                        <div class="pdetail-section__header">
-                            <span class="sub-title"><i class="icon-donation"></i>Our Journey</span>
-                            <h2 class="title-animation">Project <span>Timeline</span></h2>
-                        </div>
-                        <div class="pdetail-timeline" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="pdetail-timeline__item">
-                                <div class="pdetail-timeline__dot"></div>
-                                <div class="pdetail-timeline__date">January 2024</div>
-                                <h5>Project Launch & Survey</h5>
-                                <p>Conducted baseline surveys across 18 villages in Bankura and Purulia districts.
-                                    Identified 3,200 out-of-school children and mapped community infrastructure.</p>
-                            </div>
-                            <div class="pdetail-timeline__item">
-                                <div class="pdetail-timeline__dot"></div>
-                                <div class="pdetail-timeline__date">March 2024</div>
-                                <h5>First 6 Learning Centres Opened</h5>
-                                <p>Launched the first batch of community learning centres with the help of local
-                                    panchayats. Recruited and trained 20 community educators.</p>
-                            </div>
-                            <div class="pdetail-timeline__item">
-                                <div class="pdetail-timeline__dot"></div>
-                                <div class="pdetail-timeline__date">July 2024</div>
-                                <h5>Digital Classrooms Deployed</h5>
-                                <p>Installed solar-powered digital learning stations with tablets in 8 centres.
-                                    Partnership with EdTech providers for localised content in Bengali.</p>
-                            </div>
-                            <div class="pdetail-timeline__item">
-                                <div class="pdetail-timeline__dot"></div>
-                                <div class="pdetail-timeline__date">November 2024</div>
-                                <h5>Girl Child Enrollment Campaign</h5>
-                                <p>Launched "Meye Porbe" (Girls Will Study) campaign. Successfully enrolled 480 girls
-                                    who had dropped out. Distributed 1,200 uniform and book kits.</p>
-                            </div>
-                            <div class="pdetail-timeline__item">
-                                <div class="pdetail-timeline__dot"></div>
-                                <div class="pdetail-timeline__date">March 2025</div>
-                                <h5>Mid-Year Assessment — 89% Literacy Improvement</h5>
-                                <p>Independent evaluation showed 89% of enrolled children improved their reading levels
-                                    by at least 2 grades. Community engagement at an all-time high.</p>
-                            </div>
-                            <div class="pdetail-timeline__item">
-                                <div class="pdetail-timeline__dot"></div>
-                                <div class="pdetail-timeline__date">2025–2026 (Ongoing)</div>
-                                <h5>Expansion to 6 More Villages</h5>
-                                <p>Planning underway to expand the programme, establish 6 more centres, and introduce
-                                    vocational skills training for older students.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-5">
-                        <div class="pdetail-section__header">
-                            <span class="sub-title"><i class="icon-donation"></i>Voices from the Ground</span>
-                            <h2 class="title-animation">What People <span>Say</span></h2>
-                        </div>
-                        <!-- Testimonial 1 -->
-                        <div class="pdetail-quote mb-4" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="pdetail-quote__icon"><i class="fa-solid fa-quote-left"></i></div>
-                            <p>Before Shiksha Setu, my daughter Rina used to help me in the paddy fields all day. Now
-                                she goes to the learning centre every morning and evening. Last month she read a full
-                                story to me from her textbook — I cried tears of joy.</p>
-                            <div class="pdetail-quote__author">
-                                <img src="assets/images/testimonial/one.png" alt="Malati Devi">
-                                <div class="pdetail-quote__author-info">
-                                    <h6>Malati Devi</h6>
-                                    <span>Mother from Jhilimili Village</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Testimonial 2 -->
-                        <div class="pdetail-quote mb-4" data-aos="fade-up" data-aos-duration="1000"
-                            data-aos-delay="200">
-                            <div class="pdetail-quote__icon"><i class="fa-solid fa-quote-left"></i></div>
-                            <p>The teacher training workshops completely changed how I approach my classroom.
-                                Activity-based learning keeps children engaged. The tablet lessons are something they
-                                look forward to every day.</p>
-                            <div class="pdetail-quote__author">
-                                <img src="assets/images/testimonial/two.png" alt="Sourav Mondal">
-                                <div class="pdetail-quote__author-info">
-                                    <h6>Sourav Mondal</h6>
-                                    <span>Community Educator, Bankura</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1807,6 +1670,23 @@
                         },
                         image: {
                             tError: '<a href="%url%">The image</a> could not be loaded.'
+                        }
+                    });
+                }
+
+                // ===== Gallery Swiper =====
+                if ($('.pdetail-gallery-slider').length > 0) {
+                    new Swiper('.pdetail-gallery-slider', {
+                        slidesPerView: 1,
+                        spaceBetween: 24,
+                        loop: true,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        breakpoints: {
+                            576: { slidesPerView: 2 },
+                            992: { slidesPerView: 3 }
                         }
                     });
                 }
