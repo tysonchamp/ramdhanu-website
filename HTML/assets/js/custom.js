@@ -1,43 +1,43 @@
-        // Video lightbox for video slider
-        if ($('.video-popup').length > 0) {
-          $('.video-popup').magnificPopup({
-            type: 'iframe',
-            mainClass: 'mfp-fade',
-            removalDelay: 160,
-            preloader: false,
-            fixedContentPos: false
-          });
-        }
-    /**
-     * Team slider (custom)
-     */
-    var teamSlider = new Swiper(".team__slider", {
-      loop: true,
-      speed: 1000,
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 24,
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      navigation: {
-        nextEl: ".next-team",
-        prevEl: ".prev-team",
-      },
-      breakpoints: {
-        576: {
-          slidesPerView: 2,
-        },
-        992: {
-          slidesPerView: 3,
-        },
-        1400: {
-          slidesPerView: 4,
-        },
-      },
-    });
+// Video lightbox for video slider
+if ($('.video-popup').length > 0) {
+  $('.video-popup').magnificPopup({
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
+    fixedContentPos: false
+  });
+}
+/**
+ * Team slider (custom)
+ */
+var teamSlider = new Swiper(".team__slider", {
+  loop: true,
+  speed: 1000,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 24,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+  navigation: {
+    nextEl: ".next-team",
+    prevEl: ".prev-team",
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+    },
+    992: {
+      slidesPerView: 3,
+    },
+    1400: {
+      slidesPerView: 4,
+    },
+  },
+});
 /* ==============
  ========= js documentation ==========================
 
@@ -1550,130 +1550,130 @@
 
 
     // Home 6   Banner
-      var slider = new Swiper('.banner-six-slide-active', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        speed: 2500,
-        autoplay: true,
-        // pagination
-        pagination: {
-          el: ".banner-six-slide-dot",
-          clickable: true,
-        },
-      });
+    var slider = new Swiper('.banner-six-slide-active', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      speed: 2500,
+      autoplay: true,
+      // pagination
+      pagination: {
+        el: ".banner-six-slide-dot",
+        clickable: true,
+      },
+    });
 
 
 
     // Home 6   testimonial
-      var slider = new Swiper('.testimonial-six-active', {
-        slidesPerView: 1,
-        loop: true,
-        effect: "cards",
-        grabCursor: true,
-        speed: 2500,
-        autoplay: true,
-        // pagination
-        pagination: {
-          el: ".testimonial-six-dot",
-          clickable: true,
-        },
-      });
+    var slider = new Swiper('.testimonial-six-active', {
+      slidesPerView: 1,
+      loop: true,
+      effect: "cards",
+      grabCursor: true,
+      speed: 2500,
+      autoplay: true,
+      // pagination
+      pagination: {
+        el: ".testimonial-six-dot",
+        clickable: true,
+      },
+    });
 
 
     // Home 7   testimonial
-      var slider = new Swiper('.banner-seven-active', {
-        loop: true,
-        freemode: true,
-        slidesPerView: 1.4,
-        spaceBetween: 30,
-        centeredSlides: false,
-        allowTouchMove: false,
-        speed: 8000,
-        autoplay: {
-          delay: 1,
-          disableOnInteraction: true,
-        },
-      });
+    var slider = new Swiper('.banner-seven-active', {
+      loop: true,
+      freemode: true,
+      slidesPerView: 1.4,
+      spaceBetween: 30,
+      centeredSlides: false,
+      allowTouchMove: false,
+      speed: 8000,
+      autoplay: {
+        delay: 1,
+        disableOnInteraction: true,
+      },
+    });
 
-      // Home 7   testimonial
-      var causeSlider = new Swiper(".cause-seven-active", {
-        loop: true,
-        speed: 1000,
-        slidesPerView: 1,
-        centeredSlides: true,
-        spaceBetween: 24,
-  
-        autoplay: {
-          delay: 2000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
+    // Home 7   testimonial
+    var causeSlider = new Swiper(".cause-seven-active", {
+      loop: true,
+      speed: 1000,
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: 24,
+
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: ".next-cause",
+        prevEl: ".prev-cause",
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
         },
-        navigation: {
-          nextEl: ".next-cause",
-          prevEl: ".prev-cause",
+        992: {
+          slidesPerView: 2,
         },
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
+        1400: {
+          slidesPerView: 3,
+        },
+      },
+    });
+
+
+    // Project scroll gsap js
+    let pr = gsap.matchMedia();
+    pr.add("(min-width: 992px)", () => {
+
+      let tl = gsap.timeline();
+      let projectpanels = document.querySelectorAll('.project-panel')
+      projectpanels.forEach((section, index) => {
+        tl.to(section, {
+          scrollTrigger: {
+            trigger: section,
+            pin: section,
+            scrub: 1,
+            start: 'center center',
+            end: "bottom 100%",
+            endTrigger: '.project-panel-area',
+            pinSpacing: false,
+            markers: false,
           },
-          992: {
-            slidesPerView: 2,
-          },
-          1400: {
-            slidesPerView: 3,
-          },
-        },
-      });
-
-
-      // Project scroll gsap js
-      let pr = gsap.matchMedia();
-      pr.add("(min-width: 992px)", () => {
-
-        let tl = gsap.timeline();
-        let projectpanels = document.querySelectorAll('.project-panel')
-        projectpanels.forEach((section, index) => {
-          tl.to(section, {
-            scrollTrigger: {
-              trigger: section,
-              pin: section,
-              scrub: 1,
-              start: 'center center',
-              end: "bottom 100%",
-              endTrigger: '.project-panel-area',
-              pinSpacing: false,
-              markers: false,
-            },
-          })
         })
+      })
+    });
+
+
+
+    $('.hover-btn').on('mouseenter', function (e) {
+      var x = e.pageX - $(this).offset().left;
+      var y = e.pageY - $(this).offset().top;
+
+      $(this).find('.hover-btn-circle-dot').css({
+        top: y,
+        left: x
       });
+    });
 
+    $('.hover-btn').on('mouseout', function (e) {
+      var x = e.pageX - $(this).offset().left;
+      var y = e.pageY - $(this).offset().top;
 
-
-      $('.hover-btn').on('mouseenter', function (e) {
-          var x = e.pageX - $(this).offset().left;
-          var y = e.pageY - $(this).offset().top;
-
-          $(this).find('.hover-btn-circle-dot').css({
-              top: y,
-              left: x
-          });
+      $(this).find('.hover-btn-circle-dot').css({
+        top: y,
+        left: x
       });
-
-      $('.hover-btn').on('mouseout', function (e) {
-          var x = e.pageX - $(this).offset().left;
-          var y = e.pageY - $(this).offset().top;
-
-          $(this).find('.hover-btn-circle-dot').css({
-              top: y,
-              left: x
-          });
-      });
+    });
 
 
-      // Animation
-      if ($('.char-animation').length > 0) {
+    // Animation
+    if ($('.char-animation').length > 0) {
       let char_come = gsap.utils.toArray(".char-animation");
       char_come.forEach(splitTextLine => {
         const tl = gsap.timeline({
@@ -1702,7 +1702,7 @@
       });
     }
 
-	  //  Home 8  Maquee 
+    //  Home 8  Maquee 
     var slider = new Swiper('.maquee-eight-active', {
       slidesPerView: "auto",
       spaceBetween: 65,
@@ -1781,50 +1781,50 @@
       clickable: true,
     },
     scrollbar: {
-        el: ".swiper-scrollbar.one",
+      el: ".swiper-scrollbar.one",
     },
   });
 
   // Home 8 team js
   var slider = new Swiper('.ministrie-eight-active', {
-		slidesPerView: "auto",
-		spaceBetween: 30,
-		loop: true,
-		speed: 2500,
-		autoplay: true,
-		centeredSlides: true,
-		breakpoints: {
-			'1600': {
-				slidesPerView: 2.9,
-			},
-			'1400': {
-				slidesPerView: 2.3,
-			},
-			'1200': {
-				slidesPerView: 2.1,
-			},
-			'992': {
-				slidesPerView: 1.8,
-			},
-			'768': {
-				slidesPerView: 1.6,
-			},
-			'576': {
-				slidesPerView: 1.2,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
-		// pagination
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    loop: true,
+    speed: 2500,
+    autoplay: true,
+    centeredSlides: true,
+    breakpoints: {
+      '1600': {
+        slidesPerView: 2.9,
+      },
+      '1400': {
+        slidesPerView: 2.3,
+      },
+      '1200': {
+        slidesPerView: 2.1,
+      },
+      '992': {
+        slidesPerView: 1.8,
+      },
+      '768': {
+        slidesPerView: 1.6,
+      },
+      '576': {
+        slidesPerView: 1.2,
+      },
+      '0': {
+        slidesPerView: 1,
+      },
+    },
+    // pagination
     pagination: {
       el: ".ministrie-eight-dot",
       clickable: true,
     },
     scrollbar: {
-        el: ".swiper-scrollbar.two",
+      el: ".swiper-scrollbar.two",
     },
-	});
+  });
 
 
 
@@ -1832,11 +1832,121 @@
 
 
 
-	// Blog 8 active Js
-	$(".blog-eight-wrap").on("mouseenter", function () {
-		$(this).addClass("active").siblings().removeClass("active");
-	});
+  // Blog 8 active Js
+  $(".blog-eight-wrap").on("mouseenter", function () {
+    $(this).addClass("active").siblings().removeClass("active");
+  });
 
 
 
+})(jQuery);
+
+
+(function ($) {
+  'use strict';
+
+  $(function () {
+
+    // ===== Video Popup (Magnific Popup - iframe) =====
+    if ($('.video-popup').length > 0) {
+      $('.video-popup').magnificPopup({
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false
+      });
+    }
+
+    // ===== Image Gallery Popup (Magnific Popup - image) =====
+    if ($('.image-popup').length > 0) {
+      $('.image-popup').magnificPopup({
+        type: 'image',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1]
+        },
+        image: {
+          tError: '<a href="%url%">The image</a> could not be loaded.'
+        }
+      });
+    }
+
+    // ===== Gallery Swiper =====
+    if ($('.pdetail-gallery-slider').length > 0) {
+      new Swiper('.pdetail-gallery-slider', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          576: { slidesPerView: 2 },
+          992: { slidesPerView: 3 }
+        }
+      });
+    }
+
+    // ===== Funding Progress Bar Animation =====
+    function animateProgressBar() {
+      var $bars = $('.pdetail-progress__fill');
+      $bars.each(function () {
+        var $bar = $(this);
+        var width = $bar.data('width');
+        if (width && !$bar.hasClass('animated')) {
+          var windowTop = $(window).scrollTop();
+          var windowBottom = windowTop + $(window).height();
+          var barTop = $bar.offset().top;
+          if (barTop < windowBottom - 50) {
+            $bar.css('width', width + '%');
+            $bar.addClass('animated');
+          }
+        }
+      });
+    }
+    $(window).on('scroll', animateProgressBar);
+    setTimeout(animateProgressBar, 500);
+
+    // ===== Counter Animation =====
+    var counterDone = false;
+    function animateCounters() {
+      if (counterDone) return;
+      var $counters = $('.counter');
+      if ($counters.length === 0) return;
+
+      var windowBottom = $(window).scrollTop() + $(window).height();
+      var firstTop = $counters.first().offset().top;
+
+      if (firstTop < windowBottom - 80) {
+        $counters.each(function () {
+          var $el = $(this);
+          var target = parseInt($el.data('target'));
+          var duration = 2200;
+          var startTime = null;
+
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            $el.text(Math.floor(eased * target).toLocaleString());
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              $el.text(target.toLocaleString());
+            }
+          }
+          requestAnimationFrame(step);
+        });
+        counterDone = true;
+      }
+    }
+    $(window).on('scroll', animateCounters);
+    animateCounters();
+
+  });
 })(jQuery);
