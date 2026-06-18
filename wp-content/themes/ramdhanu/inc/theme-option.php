@@ -1242,27 +1242,60 @@ add_action( 'acf/include_fields', function() {
 	'key' => 'group_6a33cdc88d90d',
 	'title' => 'Project Page',
 	'fields' => array(
-		array(
-			'key' => 'field_6a33cdc8c1e87',
-			'label' => '',
-			'name' => '',
-			'aria-label' => '',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'maxlength' => '',
-			'allow_in_bindings' => 0,
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-		),
+		array('key' => 'field_pp_tab_banner', 'label' => 'Banner Section', 'name' => '', 'type' => 'tab'),
+		array('key' => 'field_pp_banner_bg', 'label' => 'Banner Background Image', 'name' => 'banner_background_image', 'type' => 'image', 'return_format' => 'array'),
+		
+		array('key' => 'field_pp_tab_issue', 'label' => 'The Issue Section', 'name' => '', 'type' => 'tab'),
+		array('key' => 'field_pp_issue_sub', 'label' => 'Sub Title', 'name' => 'issue_sub_title', 'type' => 'text'),
+		array('key' => 'field_pp_issue_title', 'label' => 'Title', 'name' => 'issue_title', 'type' => 'text'),
+		array('key' => 'field_pp_issue_content', 'label' => 'Content', 'name' => 'issue_content', 'type' => 'wysiwyg'),
+		array('key' => 'field_pp_issue_stats', 'label' => 'Stats', 'name' => 'issue_stats', 'type' => 'repeater', 'sub_fields' => array(
+			array('key' => 'field_pp_issue_stat_num', 'label' => 'Number', 'name' => 'number', 'type' => 'text'),
+			array('key' => 'field_pp_issue_stat_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text'),
+		)),
+		array('key' => 'field_pp_issue_image', 'label' => 'Image', 'name' => 'issue_image', 'type' => 'image', 'return_format' => 'array'),
+		array('key' => 'field_pp_issue_video', 'label' => 'Video URL', 'name' => 'issue_video_url', 'type' => 'text'),
+		
+		array('key' => 'field_pp_tab_work', 'label' => 'Our Work Section', 'name' => '', 'type' => 'tab'),
+		array('key' => 'field_pp_work_sub', 'label' => 'Sub Title', 'name' => 'work_sub_title', 'type' => 'text'),
+		array('key' => 'field_pp_work_title', 'label' => 'Title', 'name' => 'work_title', 'type' => 'text'),
+		array('key' => 'field_pp_work_desc', 'label' => 'Description', 'name' => 'work_description', 'type' => 'textarea'),
+		array('key' => 'field_pp_work_activities', 'label' => 'Activities', 'name' => 'work_activities', 'type' => 'repeater', 'sub_fields' => array(
+			array('key' => 'field_pp_wa_icon', 'label' => 'Icon Class', 'name' => 'icon_class', 'type' => 'text'),
+			array('key' => 'field_pp_wa_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text'),
+			array('key' => 'field_pp_wa_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea'),
+		)),
+		
+		array('key' => 'field_pp_tab_gallery', 'label' => 'Gallery Section', 'name' => '', 'type' => 'tab'),
+		array('key' => 'field_pp_gallery_sub', 'label' => 'Sub Title', 'name' => 'gallery_sub_title', 'type' => 'text'),
+		array('key' => 'field_pp_gallery_title', 'label' => 'Title', 'name' => 'gallery_title', 'type' => 'text'),
+		array('key' => 'field_pp_project_gallery', 'label' => 'Project Gallery', 'name' => 'project_gallery', 'type' => 'gallery', 'return_format' => 'array'),
+		
+		array('key' => 'field_pp_tab_impact', 'label' => 'Impact Section', 'name' => '', 'type' => 'tab'),
+		array('key' => 'field_pp_impact_sub', 'label' => 'Sub Title', 'name' => 'impact_sub_title', 'type' => 'text'),
+		array('key' => 'field_pp_impact_title', 'label' => 'Title', 'name' => 'impact_title', 'type' => 'text'),
+		array('key' => 'field_pp_impact_stats', 'label' => 'Impact Stats', 'name' => 'impact_stats', 'type' => 'repeater', 'sub_fields' => array(
+			array('key' => 'field_pp_is_icon', 'label' => 'Icon Class', 'name' => 'icon_class', 'type' => 'text'),
+			array('key' => 'field_pp_is_target', 'label' => 'Target Number', 'name' => 'target_number', 'type' => 'number'),
+			array('key' => 'field_pp_is_suffix', 'label' => 'Suffix', 'name' => 'suffix', 'type' => 'text'),
+			array('key' => 'field_pp_is_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text'),
+		)),
+		
+		array('key' => 'field_pp_tab_videos', 'label' => 'Videos Section', 'name' => '', 'type' => 'tab'),
+		array('key' => 'field_pp_videos_sub', 'label' => 'Sub Title', 'name' => 'videos_sub_title', 'type' => 'text'),
+		array('key' => 'field_pp_videos_title', 'label' => 'Title', 'name' => 'videos_title', 'type' => 'text'),
+		array('key' => 'field_pp_videos', 'label' => 'Project Videos', 'name' => 'project_videos', 'type' => 'repeater', 'sub_fields' => array(
+			array('key' => 'field_pp_pv_thumb', 'label' => 'Thumbnail', 'name' => 'thumbnail', 'type' => 'image', 'return_format' => 'array'),
+			array('key' => 'field_pp_pv_url', 'label' => 'Video URL', 'name' => 'video_url', 'type' => 'text'),
+			array('key' => 'field_pp_pv_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text'),
+		)),
+		array('key' => 'field_pp_videos_viewall', 'label' => 'View All Link', 'name' => 'videos_view_all_link', 'type' => 'link', 'return_format' => 'array'),
+		
+		array('key' => 'field_pp_tab_cta', 'label' => 'CTA Section', 'name' => '', 'type' => 'tab'),
+		array('key' => 'field_pp_cta_title', 'label' => 'Title', 'name' => 'cta_title', 'type' => 'text'),
+		array('key' => 'field_pp_cta_desc', 'label' => 'Description', 'name' => 'cta_description', 'type' => 'textarea'),
+		array('key' => 'field_pp_cta_primary', 'label' => 'Primary Button', 'name' => 'cta_primary_button', 'type' => 'link', 'return_format' => 'array'),
+		array('key' => 'field_pp_cta_secondary', 'label' => 'Secondary Button', 'name' => 'cta_secondary_button', 'type' => 'link', 'return_format' => 'array'),
 	),
 	'location' => array(
 		array(
