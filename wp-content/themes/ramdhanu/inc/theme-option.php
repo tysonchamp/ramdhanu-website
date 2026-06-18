@@ -1249,6 +1249,7 @@ add_action( 'acf/include_fields', function() {
 		array('key' => 'field_pp_issue_sub', 'label' => 'Sub Title', 'name' => 'issue_sub_title', 'type' => 'text'),
 		array('key' => 'field_pp_issue_title', 'label' => 'Title', 'name' => 'issue_title', 'type' => 'text'),
 		array('key' => 'field_pp_issue_content', 'label' => 'Content', 'name' => 'issue_content', 'type' => 'wysiwyg'),
+		array('key' => 'field_pp_issue_highlight', 'label' => 'Highlight (Quote)', 'name' => 'issue_highlight', 'type' => 'textarea'),
 		array('key' => 'field_pp_issue_stats', 'label' => 'Stats', 'name' => 'issue_stats', 'type' => 'repeater', 'sub_fields' => array(
 			array('key' => 'field_pp_issue_stat_num', 'label' => 'Number', 'name' => 'number', 'type' => 'text'),
 			array('key' => 'field_pp_issue_stat_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text'),
