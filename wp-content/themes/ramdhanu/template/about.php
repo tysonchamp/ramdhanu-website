@@ -68,10 +68,10 @@ get_header(); ?>
                               </div>
                               <div class="difference-two__tab-content">
                                  <div class="difference-two__content-single" id="mission">
-                                    <?php echo get_field('mission'); ?>
+                                    <p><?php echo get_field('mission_texts'); ?></p>
                                  </div>
                                  <div class="difference-two__content-single" id="vision">
-                                    <?php echo get_field('vision'); ?>
+                                    <p><?php echo get_field('vision_texts'); ?></p>
                                  </div>
                               </div>
                            </div>

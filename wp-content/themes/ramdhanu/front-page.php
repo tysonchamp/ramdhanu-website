@@ -55,7 +55,7 @@ get_header();
                         <h2 class="title-animation">
                            <?php echo get_field('about_us_title'); ?>
                         </h2>
-                        <?php echo get_field('about_us_texts'); ?>
+                        <p><?php echo get_field('about_us_texts'); ?></p>
                      </div>
                      <div class="help-two__inner cta">
                         <div class="help-two__inner-content">
@@ -66,7 +66,7 @@ get_header();
                                  </div>
                                  <div class="content">
                                     <h6>Our Mission</h6>
-                                    <?php echo get_field('mission_texts'); ?>
+                                    <p><?php echo get_field('mission_texts'); ?></p>
                                  </div>
                               </div>
                               <hr>
@@ -76,7 +76,7 @@ get_header();
                                  </div>
                                  <div class="content">
                                     <h6>Our Vission</h6>
-                                    <?php echo get_field('vision_texts'); ?>
+                                    <p><?php echo get_field('vision_texts'); ?></p>
                                  </div>
                               </div>
                            </div>
@@ -248,91 +248,93 @@ get_header();
             <div class="row text-center g-4">
                <div class="col-6 col-md-3">
                   <div class="counter-icon mb-4 text-primary py-3"><i class="fas fa-child fa-3x"></i></div>
-                  <div class="counter-number display-4 fw-bold text-white" data-target="5000">0</div>
-                  <p class="lead mt-4">Children Educated</p>
+                  <div class="counter-number display-4 fw-bold text-white" data-target="300">0</div><span>+</span>
+                  <p class="lead mt-4">Children Supported</p>
                </div>
                <div class="col-6 col-md-3">
                   <div class="counter-icon mb-4 text-primary py-3"><i class="fas fa-female fa-3x"></i></div>
-                  <div class="counter-number display-4 fw-bold text-white" data-target="1200">0</div>
+                  <div class="counter-number display-4 fw-bold text-white" data-target="20">0</div><span>+</span>
                   <p class="lead mt-4">Women Empowered</p>
                </div>
                <div class="col-6 col-md-3">
                   <div class="counter-icon mb-4 text-primary py-3"><i class="fas fa-hand-holding-heart fa-3x"></i></div>
-                  <div class="counter-number display-4 fw-bold text-white" data-target="350">0</div>
-                  <p class="lead mt-4">Volunteers</p>
+                  <div class="counter-number display-4 fw-bold text-white" data-target="6">0</div><span>+</span>
+                  <p class="lead mt-4">Years of Impact</p>
                </div>
                <div class="col-6 col-md-3">
                   <div class="counter-icon mb-4 text-primary py-3"><i class="fas fa-globe-asia fa-3x"></i></div>
-                  <div class="counter-number display-4 fw-bold text-white" data-target="25">0</div>
-                  <p class="lead mt-4">Villages Covered</p>
+                  <div class="counter-number display-4 fw-bold text-white" data-target="100">0</div><span>%</span>
+                  <p class="lead mt-4">School Admissions</p>
                </div>
             </div>
          </div>
       </section>
       <!-- ==== / counter section end ==== -->
-      <!-- ==== team section start ==== -->
-      <section class="team team-section" data-background="<?php echo get_template_directory_uri(  ); ?>/assets/images/bg-one.png">
-         <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-12 col-lg-10 col-xl-6">
-                  <div class="section__header text-center" data-aos="fade-up" data-aos-duration="1000">
-                     <span class="sub-title"><i class="icon-donation"></i>Our Team</span>
-                     <h2 class="title-animation">Meet Our Dedicated Team</h2>
+
+      <?php if(have_rows('team_members')): ?>
+         <!-- ==== team section start ==== -->
+         <section class="team team-section" data-background="<?php echo get_template_directory_uri(  ); ?>/assets/images/bg-one.png">
+            <div class="container">
+               <div class="row justify-content-center">
+                  <div class="col-12 col-lg-10 col-xl-6">
+                     <div class="section__header text-center" data-aos="fade-up" data-aos-duration="1000">
+                        <span class="sub-title"><i class="icon-donation"></i>Our Team</span>
+                        <h2 class="title-animation">Meet Our Dedicated Team</h2>
+                     </div>
                   </div>
                </div>
-            </div>
 
-            <div class="cause__slider-wrapper">
-               <div class="cause__slider swiper">
-                  <div class="swiper-wrapper">
-                     <?php if(have_rows('team_members')): ?>
-                        <?php while(have_rows('team_members')): the_row(); ?>
-                           <div class="swiper-slide">
-                              <div class="cause__slider-inner">
-                                 <div class="cause__slider-single">
-                                    <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
-                                       <div class="team__single van-tilt">
-                                          <div class="team__single-thumb">
-                                             <a href="#">
-                                                <div class="team-thumb-info">
-                                                   <p><?php echo get_sub_field('member_descriptions'); ?></p>
-                                                </div>
-                                                <img src="<?php echo get_sub_field('member_photo'); ?>" alt="Image">
-                                             </a>
-                                          </div>
-                                          <div class="team__single-content">
-                                             <h6><a href="#"><?php echo get_sub_field('member_name'); ?></a></h6>
-                                             <p><?php echo get_sub_field('member_designation'); ?></p>
+               <div class="cause__slider-wrapper">
+                  <div class="cause__slider swiper">
+                     <div class="swiper-wrapper">
+                           <?php while(have_rows('team_members')): the_row(); ?>
+                              <div class="swiper-slide">
+                                 <div class="cause__slider-inner">
+                                    <div class="cause__slider-single">
+                                       <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                                          <div class="team__single van-tilt">
+                                             <div class="team__single-thumb">
+                                                <a href="#">
+                                                   <div class="team-thumb-info">
+                                                      <p><?php echo get_sub_field('member_descriptions'); ?></p>
+                                                   </div>
+                                                   <img src="<?php echo get_sub_field('member_photo'); ?>" alt="Image">
+                                                </a>
+                                             </div>
+                                             <div class="team__single-content">
+                                                <h6><a href="#"><?php echo get_sub_field('member_name'); ?></a></h6>
+                                                <p><?php echo get_sub_field('member_designation'); ?></p>
+                                             </div>
                                           </div>
                                        </div>
                                     </div>
                                  </div>
                               </div>
-                           </div>
-                        <?php endwhile; ?>
-                     <?php endif; ?>
-                  </div>
-                  <div class="slider-navigation">
-                     <button type="button" aria-label="prev slide" title="prev slide" class="prev-cause slider-btn">
-                        <i class="fa-solid fa-arrow-left"></i>
-                     </button>
-                     <div class="section__cta cta text-center mt-0">
-                        <a href="our-team.html" aria-label="our team" title="our team" class="btn--primary">View All
-                           <i class="fa-solid fa-arrow-right"></i></a>
+                           <?php endwhile; ?>
                      </div>
-                     <button type="button" aria-label="next slide" title="next slide"
-                        class="next-cause slider-btn slider-btn-next">
-                        <i class="fa-solid fa-arrow-right"></i>
-                     </button>
+                     <div class="slider-navigation">
+                        <button type="button" aria-label="prev slide" title="prev slide" class="prev-cause slider-btn">
+                           <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <div class="section__cta cta text-center mt-0">
+                           <a href="our-team.html" aria-label="our team" title="our team" class="btn--primary">View All
+                              <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <button type="button" aria-label="next slide" title="next slide"
+                           class="next-cause slider-btn slider-btn-next">
+                           <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                     </div>
                   </div>
                </div>
             </div>
-         </div>
-         <!-- <div class="spade">
-            <img src="assets/images/sprade-green.png" alt="Image">
-         </div> -->
-      </section>
-      <!-- ==== / team section end ==== -->
+            <!-- <div class="spade">
+               <img src="assets/images/sprade-green.png" alt="Image">
+            </div> -->
+         </section>
+         <!-- ==== / team section end ==== -->
+      <?php endif; ?>
+
       <!-- ==== blog section start ==== -->
       <section class="blog blog-two" data-background="assets/images/bg-one.png">
          <div class="container">

@@ -119,6 +119,10 @@ get_header();
                 </div>
             </div>
         </section>
+        <?php
+            $images = get_field('project_gallery');
+            if( $images ): 
+        ?>
         <!-- ============================================================
            SECTION 4: IMAGE GALLERY + VIDEO
            ============================================================ -->
@@ -135,8 +139,6 @@ get_header();
                 <div class="swiper pdetail-gallery-slider" data-aos="fade-up" data-aos-duration="1000">
                     <div class="swiper-wrapper">
                         <?php 
-                        $images = get_field('project_gallery');
-                        if( $images ): 
                             foreach( $images as $image ): ?>
                             <div class="swiper-slide">
                                 <a href="<?php echo esc_url($image['url']); ?>"
@@ -148,119 +150,122 @@ get_header();
                                 </a>
                             </div>
                             <?php endforeach; ?>
-                        <?php endif; ?>
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination mt-4 position-relative"></div>
                 </div>
             </div>
         </section>
-        <!-- ============================================================
-           SECTION 5: IMPACT — Numbers & Results
-           ============================================================ -->
-        <section class="pdetail-section pdetail-section--dark">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-8">
-                        <div class="pdetail-section__header pdetail-section__header--center text-center"
-                            data-aos="fade-up" data-aos-duration="1000">
-                            <span class="sub-title" style="color:rgba(255,255,255,0.7);"><i
-                                    class="icon-donation"></i><?php echo get_field('impact_sub_title') ?: 'Results & Outcomes'; ?></span>
-                            <h2 class="title-animation" style="color:#fff;"><?php echo get_field('impact_title') ?: 'The Impact We\'ve <span>Created</span>'; ?></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-4">
-                    <?php if (have_rows('impact_stats')): ?>
-                        <?php $delay = 0; ?>
-                        <?php while (have_rows('impact_stats')): the_row(); ?>
-                        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1000" <?php echo $delay ? 'data-aos-delay="'.$delay.'"' : ''; ?>>
-                            <div class="pdetail-impact__card">
-                                <div class="pdetail-impact__icon"><i class="<?php the_sub_field('icon_class'); ?>"></i></div>
-                                <div class="pdetail-impact__number"><span class="counter" data-target="<?php the_sub_field('target_number'); ?>">0</span><?php if($suffix = get_sub_field('suffix')) echo '<span>'.$suffix.'</span>'; ?></div>
-                                <p class="pdetail-impact__label"><?php the_sub_field('label'); ?></p>
+        <?php endif; ?>
+        
+        <?php if (have_rows('impact_stats')): ?>
+            <!-- ============================================================
+            SECTION 5: IMPACT — Numbers & Results
+            ============================================================ -->
+            <section class="pdetail-section pdetail-section--dark">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-8">
+                            <div class="pdetail-section__header pdetail-section__header--center text-center"
+                                data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title" style="color:rgba(255,255,255,0.7);"><i
+                                        class="icon-donation"></i><?php echo get_field('impact_sub_title') ?: 'Results & Outcomes'; ?></span>
+                                <h2 class="title-animation" style="color:#fff;"><?php echo get_field('impact_title') ?: 'The Impact We\'ve <span>Created</span>'; ?></h2>
                             </div>
                         </div>
-                        <?php 
-                        $delay += 150; 
-                        endwhile; ?>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </section>
-        <!-- ==== video section start ==== -->
-        <section class="team video" data-background="<?php echo get_template_directory_uri(); ?>/assets/images/bg-one.png">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-10 col-xl-6">
-                        <div class="section__header text-center" data-aos="fade-up" data-aos-duration="1000">
-                            <span class="sub-title"><i class="icon-donation"></i><?php echo get_field('videos_sub_title') ?: 'Our video'; ?></span>
-                            <h2 class="title-animation"><?php echo get_field('videos_title') ?: 'Our Videos'; ?></h2>
-                        </div>
+                    </div>
+                    <div class="row g-4">
+                            <?php $delay = 0; ?>
+                            <?php while (have_rows('impact_stats')): the_row(); ?>
+                            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1000" <?php echo $delay ? 'data-aos-delay="'.$delay.'"' : ''; ?>>
+                                <div class="pdetail-impact__card">
+                                    <div class="pdetail-impact__icon"><i class="<?php the_sub_field('icon_class'); ?>"></i></div>
+                                    <div class="pdetail-impact__number"><span class="counter" data-target="<?php the_sub_field('target_number'); ?>">0</span><?php if($suffix = get_sub_field('suffix')) echo '<span>'.$suffix.'</span>'; ?></div>
+                                    <p class="pdetail-impact__label"><?php the_sub_field('label'); ?></p>
+                                </div>
+                            </div>
+                            <?php 
+                            $delay += 150; 
+                            endwhile; ?>
                     </div>
                 </div>
+            </section>
+        <?php endif; ?>
 
-                <div class="cause__slider-wrapper">
-                    <div class="cause__slider swiper">
-                        <div class="swiper-wrapper">
-                            <?php if (have_rows('project_videos')): ?>
-                                <?php $delay = 0; ?>
-                                <?php while (have_rows('project_videos')): the_row(); 
-                                    $video_image = get_sub_field('thumbnail');
-                                    $video_url = get_sub_field('video_url');
-                                    $video_title = get_sub_field('title');
-                                ?>
-                                <div class="swiper-slide">
-                                    <div class="cause__slider-inner">
-                                        <div class="cause__slider-single">
-                                            <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
-                                                <?php echo $delay ? 'data-aos-delay="'.$delay.'"' : ''; ?>>
-                                                <div class="team__single van-tilt">
-                                                    <div class="team__single-thumb">
-                                                        <a href="<?php echo esc_url($video_url); ?>"
-                                                            class="video-popup">
-                                                            <?php if($video_image): ?>
-                                                                <img src="<?php echo esc_url($video_image['url']); ?>" alt="<?php echo esc_attr($video_image['alt']); ?>">
-                                                            <?php else: ?>
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team/one.png" alt="Image">
-                                                            <?php endif; ?>
-                                                        </a>
-                                                    </div>
-                                                    <div class="team__single-content">
-                                                        <h6><a href="<?php echo esc_url($video_url); ?>" class="video-popup"><?php echo esc_html($video_title); ?></a></h6>
+        <?php if (have_rows('project_videos')): ?>
+            <!-- ==== video section start ==== -->
+            <section class="team video" data-background="<?php echo get_template_directory_uri(); ?>/assets/images/bg-one.png">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-10 col-xl-6">
+                            <div class="section__header text-center" data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title"><i class="icon-donation"></i><?php echo get_field('videos_sub_title') ?: 'Our video'; ?></span>
+                                <h2 class="title-animation"><?php echo get_field('videos_title') ?: 'Our Videos'; ?></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cause__slider-wrapper">
+                        <div class="cause__slider swiper">
+                            <div class="swiper-wrapper">
+                                
+                                    <?php $delay = 0; ?>
+                                    <?php while (have_rows('project_videos')): the_row(); 
+                                        $video_image = get_sub_field('thumbnail');
+                                        $video_url = get_sub_field('video_url');
+                                        $video_title = get_sub_field('title');
+                                    ?>
+                                    <div class="swiper-slide">
+                                        <div class="cause__slider-inner">
+                                            <div class="cause__slider-single">
+                                                <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000"
+                                                    <?php echo $delay ? 'data-aos-delay="'.$delay.'"' : ''; ?>>
+                                                    <div class="team__single van-tilt">
+                                                        <div class="team__single-thumb">
+                                                            <a href="<?php echo esc_url($video_url); ?>"
+                                                                class="video-popup">
+                                                                <?php if($video_image): ?>
+                                                                    <img src="<?php echo esc_url($video_image['url']); ?>" alt="<?php echo esc_attr($video_image['alt']); ?>">
+                                                                <?php else: ?>
+                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team/one.png" alt="Image">
+                                                                <?php endif; ?>
+                                                            </a>
+                                                        </div>
+                                                        <div class="team__single-content">
+                                                            <h6><a href="<?php echo esc_url($video_url); ?>" class="video-popup"><?php echo esc_html($video_title); ?></a></h6>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <?php 
-                                $delay += 300; 
-                                if($delay > 900) $delay = 900;
-                                endwhile; ?>
-                            <?php endif; ?>
-                        </div>
-                        <div class="slider-navigation">
-                            <button type="button" aria-label="prev slide" title="prev slide"
-                                class="prev-cause slider-btn">
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </button>
-                            <div class="section__cta cta text-center mt-0">
-                                <?php if($view_all_link = get_field('videos_view_all_link')): ?>
-                                <a href="<?php echo esc_url($view_all_link['url']); ?>" aria-label="<?php echo esc_attr($view_all_link['title']); ?>" title="<?php echo esc_attr($view_all_link['title']); ?>" class="btn--primary"><?php echo esc_html($view_all_link['title']); ?>
-                                    <i class="fa-solid fa-arrow-right"></i></a>
-                                <?php endif; ?>
+                                    <?php 
+                                    $delay += 300; 
+                                    if($delay > 900) $delay = 900;
+                                    endwhile; ?>
                             </div>
-                            <button type="button" aria-label="next slide" title="next slide"
-                                class="next-cause slider-btn slider-btn-next">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
+                            <div class="slider-navigation">
+                                <button type="button" aria-label="prev slide" title="prev slide"
+                                    class="prev-cause slider-btn">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </button>
+                                <div class="section__cta cta text-center mt-0">
+                                    <?php if($view_all_link = get_field('videos_view_all_link')): ?>
+                                    <a href="<?php echo esc_url($view_all_link['url']); ?>" aria-label="<?php echo esc_attr($view_all_link['title']); ?>" title="<?php echo esc_attr($view_all_link['title']); ?>" class="btn--primary"><?php echo esc_html($view_all_link['title']); ?>
+                                        <i class="fa-solid fa-arrow-right"></i></a>
+                                    <?php endif; ?>
+                                </div>
+                                <button type="button" aria-label="next slide" title="next slide"
+                                    class="next-cause slider-btn slider-btn-next">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- ==== / video section end ==== -->
+            </section>
+            <!-- ==== / video section end ==== -->
+        <?php endif; ?>
         <!-- ============================================================
            SECTION 7: CTA — Support This Project
            ============================================================ -->
