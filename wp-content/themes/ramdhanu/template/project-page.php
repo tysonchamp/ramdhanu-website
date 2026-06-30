@@ -106,7 +106,9 @@ get_header();
                         <?php while (have_rows('work_activities')): the_row(); ?>
                         <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" <?php echo $delay ? 'data-aos-delay="'.$delay.'"' : ''; ?>>
                             <div class="pdetail-work__card">
+                                <?php if (get_sub_field('icon_class')): ?>
                                 <div class="pdetail-work__icon"><i class="<?php the_sub_field('icon_class'); ?>"></i></div>
+                                <?php endif; ?>
                                 <h5><?php the_sub_field('title'); ?></h5>
                                 <p><?php the_sub_field('description'); ?></p>
                             </div>
@@ -179,7 +181,9 @@ get_header();
                             <?php while (have_rows('impact_stats')): the_row(); ?>
                             <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1000" <?php echo $delay ? 'data-aos-delay="'.$delay.'"' : ''; ?>>
                                 <div class="pdetail-impact__card">
+                                    <?php if (get_sub_field('icon_class')): ?>
                                     <div class="pdetail-impact__icon"><i class="<?php the_sub_field('icon_class'); ?>"></i></div>
+                                    <?php endif; ?>
                                     <div class="pdetail-impact__number"><span class="counter" data-target="<?php the_sub_field('target_number'); ?>">0</span><?php if($suffix = get_sub_field('suffix')) echo '<span>'.$suffix.'</span>'; ?></div>
                                     <p class="pdetail-impact__label"><?php the_sub_field('label'); ?></p>
                                 </div>
