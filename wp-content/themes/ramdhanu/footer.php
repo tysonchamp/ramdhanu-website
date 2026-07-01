@@ -17,7 +17,7 @@
                            <div class="col-12 col-lg-7 col-xl-6">
                               <div class="footer__support" data-aos="fade-up" data-aos-duration="1000"
                                  data-aos-delay="300">
-                                 <a href="contact-us.html">
+                                 <a href="<?php echo get_page_link(158) ?>">
                                     Donate Now <i class="fa-solid fa-arrow-right"></i>
                                  </a>
                               </div>
@@ -99,7 +99,7 @@
                            </div>
                            <div class="content">
                               <p>
-                                 <a href="https://maps.app.goo.gl/Gr9pTNqz5FRNrjQw8" target="_blank"><?php echo get_field('registered_office','option'); ?></a>
+                                 <a href="https://maps.app.goo.gl/Bufa8gjYhWCfU7Ay6" target="_blank"><?php echo get_field('registered_office','option'); ?></a>
                               </p>
                            </div>
                         </div>
@@ -124,14 +124,14 @@
                         <div class="col-12">
                            <div class="footer__copyright-inner">
                               <div class="row align-items-center gutter-24">
-                                 <div class="col-12 col-xl-3">
+                                 <div class="col-12 col-xl-2">
                                     <div class="footer__copyright-logo text-center text-xl-start">
                                        <a href="index.html">
                                           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Image">
                                        </a>
                                     </div>
                                  </div>
-                                 <div class="col-12 col-xl-6">
+                                 <div class="col-12 col-xl-4">
                                     <div class="footer__bottom-right text-center">
                                        <p>Copyright &copy; <span id="copyrightYear"></span> <a href="index.html"
                                              target="_blank">Ramdhanu</a>. All rights
@@ -139,11 +139,12 @@
                                        </p>
                                     </div>
                                  </div>
-                                 <div class="col-12 col-xl-3">
+                                 <div class="col-12 col-xl-6">
                                     <div class="footer__bottom-left">
                                        <ul class="footer__bottom-list justify-content-center justify-content-xl-end">
-                                          <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                                          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                          <li><a href="<?php echo get_page_link(154); ?>">Terms & Conditions</a></li>
+                                          <li><a href="<?php echo get_page_link(3); ?>">Privacy Policy</a></li>
+                                          <li><a href="<?php echo get_page_link(156); ?>">Refund Policy</a></li>
                                        </ul>
                                     </div>
                                  </div>

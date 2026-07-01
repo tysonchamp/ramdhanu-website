@@ -12,12 +12,12 @@ get_header();
       <!-- ==== banner start ==== -->
       <section class="banner">
          <div class="banner-bg">
-            <!-- <img src="assets/images/banner/banner-one-bg.png" alt="Image" class="parallax-image"> -->
-            <video class="video-background"
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-one-bg.webp" alt="Image" class="parallax-image">
+            <!-- <video class="video-background"
                poster="https://images.unsplash.com/photo-1587587448844-c1036562fec1?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyNzg5Mjk2MA&ixlib=rb-1.2.1&q=85"
                autoplay muted loop>
                <source src="assets/images/banner-video.mp4" type="video/mp4">
-            </video>
+            </video> -->
          </div>
          <div class="bottom-shape">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-one-shape.png" alt="Image">
@@ -40,11 +40,14 @@ get_header();
                         <div class="thumb-md" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                            <img src="<?php echo get_field('about_image_3'); ?>" alt="Image">
                         </div>
-                        <a href="<?php echo get_field('about_video_url'); ?>" class="help-two__thumb-content">
-                           <div class="thumb">
-                              <i class="fa-solid fa-play"></i>
-                           </div>
-                        </a>
+                        <?php $about_video_url = get_field('about_video_url'); ?>
+                        <?php if(!empty($about_video_url)): ?>
+                           <a href="<?php echo $about_video_url; ?>" class="help-two__thumb-content">
+                              <div class="thumb">
+                                 <i class="fa-solid fa-play"></i>
+                              </div>
+                           </a>
+                        <?php endif; ?>
                      </div>
                   </div>
                </div>
@@ -161,9 +164,9 @@ get_header();
                         <span class="sub-title"><i class="icon-donation"></i><?php echo get_field('cta_small_title'); ?></span>
                         <h2 class="title-animation"><?php echo get_field('cta_title'); ?></h2>
                         <div class="banner__content-cta cta">
-                           <a href="our-causes.html" aria-label="about us" title="about us"
+                           <a href="<?php echo get_page_link(774) ?>" aria-label="about us" title="about us"
                               class="btn--tertiary">Download Newsletter</a>
-                           <a href="contact-us.html" aria-label="contact us" title="contact us"
+                           <a href="<?php echo get_page_link(158) ?>" aria-label="contact us" title="contact us"
                               class="btn--primary">Donate Now!</a>
                         </div>
                      </div>

@@ -23,7 +23,7 @@ get_header();
             if($banner_bg): ?>
                 <img src="<?php echo esc_url($banner_bg['url']); ?>" alt="<?php echo esc_attr($banner_bg['alt'] ?: 'Image'); ?>">
             <?php else: ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-bg.png" alt="Image">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-bg.webp" alt="Image">
             <?php endif; ?>
          </div>
          <div class="shape">

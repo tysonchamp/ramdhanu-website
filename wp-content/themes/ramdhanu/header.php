@@ -105,7 +105,7 @@
                   <div class="main-header__menu-box">
                      <nav class="navbar p-0">
                         <div class="navbar-logo">
-                           <a href="index.html">
+                           <a href="<?php echo site_url(); ?>">
                               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Image">
                            </a>
                         </div>
@@ -129,12 +129,12 @@
                                  </div>
                                  <div class="contact-content">
                                     <p>Call Us Now</p>
-                                    <a href="tel:<?php echo get_field('phone_number','option'); ?>">
-                                       <?php echo get_field('phone_number','option'); ?> 
+                                    <a href="tel:<?php echo get_field('phone_no_1','option'); ?>">
+                                       <?php echo get_field('phone_no_1','option'); ?> 
                                     </a>
                                  </div>
                               </div>
-                              <a href="donate-us.html" class="btn--primary d-none d-md-flex">Donate Now <i
+                              <a href="<?php echo get_page_link(158) ?>" class="btn--primary d-none d-md-flex">Donate Now <i
                                     class="icon-circle-arrow"></i></a>
                            </div>
                            <button class="open-offcanvas-nav d-flex d-xl-none" aria-label="toggle mobile menu"
@@ -156,7 +156,7 @@
          <nav class="mobile-menu__wrapper">
             <div class="mobile-menu__header nav-fade">
                <div class="logo">
-                  <a href="index.html" aria-label="home page" title="logo">
+                  <a href="<?php echo site_url(); ?>" aria-label="home page" title="logo">
                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.jpg" alt="Image">
                   </a>
                </div>
@@ -166,7 +166,7 @@
             </div>
             <div class="mobile-menu__list"></div>
             <div class="mobile-menu__cta nav-fade d-block d-md-none">
-               <a href="donate-us.html" class="btn--primary btn--primary-alt">Donate Now <i
+               <a href="<?php echo get_page_link(158) ?>" class="btn--primary btn--primary-alt">Donate Now <i
                      class="icon-circle-arrow"></i></a>
             </div>
             <div class="mobile-menu__social social nav-fade">

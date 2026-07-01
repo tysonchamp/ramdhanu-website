@@ -19,7 +19,7 @@ get_header();
             </div>
          </div>
          <div class="banner-bg">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-bg.png" alt="Image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-bg.webp" alt="Image">
          </div>
          <div class="shape">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shape.png" alt="Image">

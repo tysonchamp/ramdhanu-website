@@ -24078,6 +24078,12 @@ div {
   display: inline !important;
   overflow: visible !important;
   position: static !important;
+  font-size: 35px;
+  font-weight: 600;
+}
+.pdetail-impact__number span {
+  font-size: 32px;
+  font-weight: 600;
 }
 
 .pdetail-impact__label {
