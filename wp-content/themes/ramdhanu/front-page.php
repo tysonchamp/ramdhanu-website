@@ -12,12 +12,12 @@ get_header();
       <!-- ==== banner start ==== -->
       <section class="banner">
          <div class="banner-bg">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-one-bg.webp" alt="Image" class="parallax-image">
-            <!-- <video class="video-background"
-               poster="https://images.unsplash.com/photo-1587587448844-c1036562fec1?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyNzg5Mjk2MA&ixlib=rb-1.2.1&q=85"
+            <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-one-bg.webp" alt="Image" class="parallax-image"> -->
+            <video class="video-background"
+               poster="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-one-bg.webp"
                autoplay muted loop>
-               <source src="assets/images/banner-video.mp4" type="video/mp4">
-            </video> -->
+               <source src="<?php echo get_template_directory_uri(); ?>/assets/images/video.mp4" type="video/mp4">
+            </video>
          </div>
          <div class="bottom-shape">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner/banner-one-shape.png" alt="Image">

@@ -45,9 +45,9 @@ get_header(); ?>
                      <div class="card-body p-5">
                         <?php if(have_rows('newsletter')): ?>
                            <?php while(have_rows('newsletter')): the_row(); ?>
-                              <div class="download-item d-flex align-items-center justify-content-between">
-                                 <div class="text"><h6><?php echo get_sub_field('newsletter_title'); ?></h6></div>
-                                 <a href="<?php echo get_sub_field('newsletter_file'); ?>" target="_blank" class="btn btn-primary rounded-5">Download</a>
+                              <div class="download-item d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom">
+                                 <div class="text"><h6 class="mb-0 text-muted"><?php echo get_sub_field('newsletter_title'); ?></h6></div>
+                                 <a href="<?php echo get_sub_field('newsletter_file'); ?>" target="_blank" class="btn btn-primary rounded-5 btn-sm px-4">Download</a>
                               </div>
                            <?php endwhile; ?>
                         <?php endif; ?>
