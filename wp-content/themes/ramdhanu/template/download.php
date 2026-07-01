@@ -33,7 +33,7 @@ get_header(); ?>
                <div class="col-12 col-xl-12">
                   <div class="cm-details__content">
                      <div class="cm-group cta">
-                        <h3 class="title-animation"><?php the_title(); ?></h3>
+                        <!-- <h3 class="title-animation"><?php the_title(); ?></h3> -->
                      </div>
                   </div>
                </div>
@@ -52,7 +52,7 @@ get_header(); ?>
                </style>
                <div class="container">
                   <!-- start -->
-                  <div class="card rounded-4 shadow border-0 col-sm-9 mx-auto">
+                  <div class="card rounded-4 shadow border-0 col-sm-12 mx-auto">
                      <div class="card-body p-5">
                         <?php if(have_rows('newsletter')): ?>
                            <?php while(have_rows('newsletter')): the_row(); ?>
