@@ -5828,6 +5828,11 @@ __webpack_require__.r(__webpack_exports__);
 
       // set active
       this.setActive(tab);
+
+      // Recalculate admin menu pinning so a previously taller tab (e.g. one
+      // containing WYSIWYG fields) doesn't leave the menu pinned against a
+      // shorter page, which can lock page scroll.
+      $(document).trigger('wp-pin-menu');
     },
     closeTab: function (tab) {
       // close
@@ -8364,8 +8369,29 @@ __webpack_require__.r(__webpack_exports__);
       MediaPopup.prototype.addFrameEvents.apply(this, arguments);
     },
     customizeFilters: function (toolbar) {
-      // vars
-      var filters = toolbar.get('filters');
+      // Get the AttachmentFilters view from the toolbar.
+      // WP < 7.0: toolbar.get('filters') returns the AttachmentFilters view directly.
+      // WP 7.0+: toolbar.get('filters') returns a wrapper View; the
+      //          AttachmentFilters view is nested inside its subviews.
+      var filtersView = toolbar.get('filters');
+      var filters = filtersView;
+      if (filtersView && !filtersView.filters) {
+        // WP 7.0+: find the AttachmentFilters view in the container's subviews.
+        var subviews = filtersView.views ? filtersView.views.get() : [];
+        for (var i = 0; i < subviews.length; i++) {
+          if (subviews[i].filters) {
+            filters = subviews[i];
+            break;
+          }
+        }
+      }
+
+      // Bail if the AttachmentFilters view couldn't be resolved (e.g. core
+      // moves the view again), so the modal degrades to the default filters
+      // instead of crashing.
+      if (!filters || !filters.filters) {
+        return;
+      }
 
       // image
       if (this.get('type') == 'image') {

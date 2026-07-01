@@ -131,7 +131,7 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 				$key   = '';
 			}
 
-			if ( ! acf_verify_ajax( $nonce, $key, $is_field_key ) ) {
+			if ( ! acf_verify_ajax( $nonce, $key, $is_field_key, 'select' ) ) {
 				die();
 			}
 
@@ -575,12 +575,18 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 
 			// Format array of values.
 			// - Parse each value as string for SQL LIKE queries.
+			// - Guard against nested arrays (e.g. crafted POST input) by stringifying scalars only.
 			if ( is_array( $value ) ) {
-				$value = array_map( 'strval', $value );
+				$value = array_map(
+					static function ( $v ) {
+						return is_scalar( $v ) ? strval( $v ) : '';
+					},
+					$value
+				);
 			}
 
 			// Save custom options back to the field definition if configured.
-			if ( ! empty( $field['save_options'] ) && is_array( $value ) ) {
+			if ( ! empty( $field['save_options'] ) && is_array( $value ) && scf_current_user_has_capability() ) {
 				// Get the raw field, using the ID if present or the key otherwise (i.e. when using JSON).
 				$selector = $field['ID'] ? $field['ID'] : $field['key'];
 				$field    = acf_get_field( $selector );

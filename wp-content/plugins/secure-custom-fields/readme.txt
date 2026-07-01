@@ -2,9 +2,9 @@
 Contributors: wordpressdotorg
 Tags: fields, custom fields, meta, scf
 Requires at least: 6.2
-Tested up to: 6.9.1
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 6.8.4
+Stable tag: 6.8.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,65 @@ This plugin builds upon and is a fork of the previous work done by the contribut
 
 
 == Changelog ==
+= 6.9.0 =
+*Release Date 23rd June 2026*
+
+*Hardening*
+
+- Improved input validation when duplicating field groups, post types, and taxonomies, including ownership and type checks on the target.
+- Restricted persistence of custom choices on checkbox, radio, and select fields to authorized users.
+- Constrained the field update ability input schema to known properties.
+- Sanitized flexible content layout labels and cleaned up orphaned row meta on layout removal.
+- Hardened REST type field-group metadata exposure and oEmbed source formatting.
+- Normalized non-scalar block binding attribute values.
+- Required authentication and nonce verification before saving fields on WooCommerce orders.
+- Preserved localization wrappers in PHP exports and corrected nav menu field ID output.
+
+= 6.8.9 =
+*Release Date 15th June 2026*
+
+*Security*
+
+- Hardened the escaping of wp_options LIKE queries used when loading option-page meta and during taxonomy term cleanup, switching to esc_like() so option-name prefixes are always matched as literals rather than as patterns.
+
+*Fixes*
+
+- The URL, text, textarea, and select-style fields no longer raise PHP errors when a non-scalar value (such as an array) is submitted; such input is now treated as invalid.
+
+= 6.8.8 =
+*Release Date 11th June 2026*
+
+*Security*
+
+- AJAX field handlers now validate that the request nonce was created for the expected field type, so a nonce minted for one field type can no longer be replayed against another field type's AJAX handler. The gallery field was also aligned with the typed nonce scheme used by all other AJAX fields.
+- `acf_decrypt()` now treats malformed payloads as a decrypt failure and returns `false` instead of emitting PHP 8 warnings.
+
+*Enhancements*
+
+- `acf_inline_toolbar_editing_attrs()` now accepts a `return_array` argument that returns the attributes as an escaped array suitable for use with `wp_get_attachment_image()`.
+
+*Fixes*
+
+- `acf_form()` with `'post_id' => 'new_post'` and a `fields` list of field names no longer fatal errors when `acf_form_head()` runs before WordPress's main query is built.
+- Multiple `acf_form()` calls wrapped inside a single outer form tag with one submit button no longer silently drop field values, `post_title`, or `post_content` from the non-last forms. A new `acf/form/meta_ttl` filter controls how long per-form metadata remains valid.
+- Duplicating a V3 block with identical attributes no longer displays corrupted preview content in the duplicate.
+- Switching between tabs containing WYSIWYG fields no longer leaves the admin menu pinned against a shorter page, which could lock page scroll.
+
+= 6.8.7 =
+*Release Date 8th June 2026*
+
+*Fixes*
+
+- SCF's Abilities API integration for its internal post types no longer triggers PHP warnings, notices, or a fatal error (500) on block editor and REST API requests when another active plugin builds the WordPress abilities registry earlier in the request; registration is skipped cleanly in that case and normal abilities behavior is otherwise unchanged.
+
+= 6.8.6 =
+*Release Date 27th May 2026*
+
+*Security*
+
+- Hardened the oEmbed field's AJAX preview handling by restricting provider discovery for visitors and users without content-authoring capability while preserving previews from WordPress's registered oEmbed providers.
+- Hardened front-end `acf_form()` submission processing so the `post_title` and `post_content` form options are respected on save, and the save pipeline only accepts values for fields the rendered form exposed. A new `acf/form/allowed_field_keys` filter is available for sites that legitimately extend a form at runtime.
+
 = 6.8.5 =
 *Release Date 19th May 2026*
 

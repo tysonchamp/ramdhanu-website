@@ -11,6 +11,7 @@ import {
 	useRef,
 	createPortal,
 	useMemo,
+	useCallback,
 } from '@wordpress/element';
 
 import {
@@ -353,26 +354,52 @@ export const BlockEdit = ( props ) => {
 			return false;
 		}
 
-		const preloadedBlocks = acf.get( 'preloadedBlocks' );
-		if ( ! preloadedBlocks || ! preloadedBlocks[ hash ] ) {
+		const data = getPreloadedBlockData(
+			hash,
+			clientId,
+			acf.get( 'preloadedBlocks' )
+		);
+
+		if ( ! data ) {
 			acf.debug( 'Preload failed: not preloaded.' );
 			return false;
 		}
 
-		const data = preloadedBlocks[ hash ];
+		acf.debug( 'Preload successful', data );
+		return data;
+	}
+
+	/**
+	 * Returns a copy of a preloaded block entry with the placeholder hash
+	 * replaced by the actual client ID.
+	 *
+	 * Works on a deep clone so the shared preloaded entry is never mutated —
+	 * duplicating a block with identical attributes reuses the same hash, and
+	 * an in-place replacement would corrupt the entry for the duplicate.
+	 *
+	 * @param {string} hash            - Attributes hash
+	 * @param {string} blockClientId   - Block client ID
+	 * @param {Object} preloadedBlocks - The preloaded blocks store
+	 * @return {Object|boolean} - Preloaded data or false
+	 */
+	function getPreloadedBlockData( hash, blockClientId, preloadedBlocks ) {
+		if ( ! preloadedBlocks || ! preloadedBlocks[ hash ] ) {
+			return false;
+		}
+
+		const data = JSON.parse( JSON.stringify( preloadedBlocks[ hash ] ) );
 
 		// Replace placeholder client ID with actual client ID
-		data.html = data.html.replaceAll( hash, clientId );
-		data.form = data.form.replaceAll( hash, clientId );
+		data.html = data.html.replaceAll( hash, blockClientId );
+		data.form = data.form.replaceAll( hash, blockClientId );
 
-		if ( data?.validation && data?.validation.errors ) {
+		if ( data?.validation?.errors ) {
 			data.validation.errors = data.validation.errors.map( ( error ) => {
-				error.input = error.input.replaceAll( hash, clientId );
+				error.input = error.input.replaceAll( hash, blockClientId );
 				return error;
 			} );
 		}
 
-		acf.debug( 'Preload successful', data );
 		return data;
 	}
 
@@ -693,8 +720,24 @@ function BlockEditInner( props ) {
 	const modalFormContainerRef = useRef();
 	const [ currentFormContainer, setCurrentFormContainer ] = useState();
 	const [ canRenderForm, setCanRenderForm ] = useState( false );
+	const [ shouldShowModalDoneFallback, setShouldShowModalDoneFallback ] =
+		useState( false );
 	const [ invisibleBlockFormContainer, setInvisibleBlockFormContainer ] =
 		useState();
+	const closeBlockFormModal = useCallback( () => {
+		setCurrentFormContainer( null );
+		setBlockFormModalOpen( false );
+	}, [] );
+	const setModalFormContainer = useCallback(
+		( container ) => {
+			modalFormContainerRef.current = container;
+
+			if ( container && blockFormModalOpen ) {
+				setCurrentFormContainer( container );
+			}
+		},
+		[ blockFormModalOpen ]
+	);
 
 	// Render counter for debugging
 	const renderCount = useRef( 0 );
@@ -742,8 +785,7 @@ function BlockEditInner( props ) {
 	}, [ blockEditorInspectorSidebarOpen ] );
 
 	useEffect( () => {
-		if ( blockFormModalOpen && modalFormContainerRef?.current ) {
-			setCurrentFormContainer( modalFormContainerRef.current );
+		if ( blockFormModalOpen ) {
 			return;
 		}
 
@@ -752,13 +794,63 @@ function BlockEditInner( props ) {
 				? inspectorControlsRef.current
 				: invisibleBlockFormContainer
 		);
-	}, [ blockFormModalOpen, modalFormContainerRef ] );
+	}, [
+		blockEditorInspectorSidebarOpen,
+		invisibleBlockFormContainer,
+		blockFormModalOpen,
+	] );
 
 	useEffect( () => {
-		if ( blockEditorInspectorSidebarOpen ) {
-			if ( ! blockFormModalOpen ) {
-				setCurrentFormContainer( inspectorControlsRef.current );
+		if ( ! blockFormModalOpen ) {
+			return;
+		}
+
+		const setModalContainer = () => {
+			if ( modalFormContainerRef?.current ) {
+				setCurrentFormContainer( modalFormContainerRef.current );
 			}
+		};
+
+		setModalContainer();
+		const timeout = setTimeout( setModalContainer, 0 );
+
+		return () => {
+			clearTimeout( timeout );
+		};
+	}, [ blockFormModalOpen ] );
+
+	useEffect( () => {
+		if ( ! blockFormModalOpen ) {
+			setShouldShowModalDoneFallback( false );
+			return;
+		}
+
+		const updateFallbackVisibility = () => {
+			const modal = modalFormContainerRef?.current?.closest(
+				'.acf-block-form-modal'
+			);
+			const hasHeaderActions = modal?.querySelector(
+				'.components-modal__header .components-button'
+			);
+
+			setShouldShowModalDoneFallback( ! hasHeaderActions );
+		};
+
+		updateFallbackVisibility();
+		const timeout = setTimeout( updateFallbackVisibility, 0 );
+
+		return () => {
+			clearTimeout( timeout );
+		};
+	}, [ blockFormModalOpen ] );
+
+	useEffect( () => {
+		if ( blockFormModalOpen ) {
+			return;
+		}
+
+		if ( blockEditorInspectorSidebarOpen ) {
+			setCurrentFormContainer( inspectorControlsRef.current );
 			return;
 		}
 
@@ -1134,18 +1226,30 @@ function BlockEditInner( props ) {
 									isFetchingBlock && ! validationErrors
 								}
 								isBusy={ isFetchingBlock }
-								onClick={ () => {
-									setCurrentFormContainer( null );
-									setBlockFormModalOpen( false );
-								} }
+								onClick={ closeBlockFormModal }
 							>
 								{ acf.__( 'Done' ) }
 							</Button>,
 						] }
 					>
+						{ shouldShowModalDoneFallback && (
+							<div className="acf-block-form-modal__actions">
+								<Button
+									className="acf-block-form-modal__done-button"
+									variant="primary"
+									disabled={
+										isFetchingBlock && ! validationErrors
+									}
+									isBusy={ isFetchingBlock }
+									onClick={ closeBlockFormModal }
+								>
+									{ acf.__( 'Done' ) }
+								</Button>
+							</div>
+						) }
 						<div
 							className="acf-modal-block-form-container"
-							ref={ modalFormContainerRef }
+							ref={ setModalFormContainer }
 						/>
 					</Modal>
 				) }

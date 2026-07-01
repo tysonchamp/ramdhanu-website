@@ -175,7 +175,7 @@ get_header();
             </div>
          </div>
          <div class="cta-bg">
-            <img src="<?php echo get_template_directory_uri(  ); ?>/assets/images/cta/cta-bg.png" alt="Image" class="parallax-image">
+            <img src="<?php echo get_template_directory_uri(  ); ?>/assets/images/cta/cta-bg.webp" alt="Image" class="parallax-image">
          </div>
          <div class="shape-left" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
             <img src="<?php echo get_template_directory_uri(  ); ?>/assets/images/cta/shape-left.png" alt="Image">
@@ -198,9 +198,9 @@ get_header();
             </div>
 
             <div class="cause__slider-wrapper">
-               <div class="cause__slider swiper">
-                  <div class="swiper-wrapper">
-                     <?php if(have_rows('all_videos')): ?>
+               <?php if(have_rows('all_videos')): ?>
+                  <div class="cause__slider swiper">
+                     <div class="swiper-wrapper">
                         <?php while(have_rows('all_videos')): the_row(); ?>
                            <div class="swiper-slide">
                               <div class="cause__slider-inner">
@@ -221,23 +221,27 @@ get_header();
                               </div>
                            </div>
                         <?php endwhile; ?>
-                     <?php endif; ?>
-                  </div>
-                  <div class="slider-navigation">
-                     <button type="button" aria-label="prev slide" title="prev slide" class="prev-cause slider-btn">
-                        <i class="fa-solid fa-arrow-left"></i>
-                     </button>
-                     <div class="section__cta cta text-center mt-0">
-                        <!-- <a href="our-team.html" aria-label="our team" title="our team" class="btn--primary">View All
-                           <i class="fa-solid fa-arrow-right"></i>
-                        </a> -->
                      </div>
-                     <button type="button" aria-label="next slide" title="next slide"
-                        class="next-cause slider-btn slider-btn-next">
-                        <i class="fa-solid fa-arrow-right"></i>
-                     </button>
+                     <div class="slider-navigation">
+                        <button type="button" aria-label="prev slide" title="prev slide" class="prev-cause slider-btn">
+                           <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <div class="section__cta cta text-center mt-0">
+                           <!-- <a href="our-team.html" aria-label="our team" title="our team" class="btn--primary">View All
+                              <i class="fa-solid fa-arrow-right"></i>
+                           </a> -->
+                        </div>
+                        <button type="button" aria-label="next slide" title="next slide"
+                           class="next-cause slider-btn slider-btn-next">
+                           <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                     </div>
                   </div>
-               </div>
+               <?php else: ?>
+                  <div class="swiper-slide text-center w-full">
+                     <h4 class="text-center w-full">No Video Found</h4>
+                  </div>
+               <?php endif; ?>               
             </div>
          </div>
       </section>
