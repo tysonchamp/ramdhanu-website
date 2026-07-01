@@ -78,7 +78,7 @@ get_header();
                                     <i class="icon-support-heart"></i>
                                  </div>
                                  <div class="content">
-                                    <h6>Our Vission</h6>
+                                    <h6>Our Vision</h6>
                                     <p><?php echo get_field('vision_texts'); ?></p>
                                  </div>
                               </div>
