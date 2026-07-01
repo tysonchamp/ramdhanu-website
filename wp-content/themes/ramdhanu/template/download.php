@@ -39,6 +39,17 @@ get_header(); ?>
                </div>
             </div>
             <div class="download-section">
+               <style>
+                  .download-section .btn-primary {
+                     background-color: var(--base-color);
+                     border-color: var(--base-color);
+                  }
+                  .download-section .btn-primary:hover {
+                     background-color: var(--base-color);
+                     border-color: var(--base-color);
+                     filter: brightness(0.9);
+                  }
+               </style>
                <div class="container">
                   <!-- start -->
                   <div class="card rounded-4 shadow border-0 col-sm-9 mx-auto">
