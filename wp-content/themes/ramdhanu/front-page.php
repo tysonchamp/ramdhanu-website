@@ -251,22 +251,22 @@ get_header();
             <div class="row text-center g-4">
                <div class="col-6 col-md-3">
                   <div class="counter-icon mb-4 text-primary py-3"><i class="fas fa-child fa-3x"></i></div>
-                  <div class="counter-number display-4 fw-bold text-white" data-target="300">0</div><span>+</span>
+                  <span class="counter-number display-4 fw-bold text-white" data-target="300">0</span><span class="display-4 fw-bold text-white">+</span>
                   <p class="lead mt-4">Children Supported</p>
                </div>
                <div class="col-6 col-md-3">
                   <div class="counter-icon mb-4 text-primary py-3"><i class="fas fa-female fa-3x"></i></div>
-                  <div class="counter-number display-4 fw-bold text-white" data-target="20">0</div><span>+</span>
+                  <span class="counter-number display-4 fw-bold text-white" data-target="20">0</span><span class="display-4 fw-bold text-white">+</span>
                   <p class="lead mt-4">Women Empowered</p>
                </div>
                <div class="col-6 col-md-3">
                   <div class="counter-icon mb-4 text-primary py-3"><i class="fas fa-hand-holding-heart fa-3x"></i></div>
-                  <div class="counter-number display-4 fw-bold text-white" data-target="6">0</div><span>+</span>
+                  <span class="counter-number display-4 fw-bold text-white" data-target="6">0</span><span class="display-4 fw-bold text-white">+</span>
                   <p class="lead mt-4">Years of Impact</p>
                </div>
                <div class="col-6 col-md-3">
                   <div class="counter-icon mb-4 text-primary py-3"><i class="fas fa-globe-asia fa-3x"></i></div>
-                  <div class="counter-number display-4 fw-bold text-white" data-target="100">0</div><span>%</span>
+                  <span class="counter-number display-4 fw-bold text-white" data-target="100">0</span><span class="display-4 fw-bold text-white">%</span>
                   <p class="lead mt-4">School Admissions</p>
                </div>
             </div>
